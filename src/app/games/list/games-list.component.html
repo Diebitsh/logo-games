@@ -1,0 +1,33 @@
+<div style="margin-left: 15%;" class="float-left">
+  <button class="btn btn-primary my-2 mx-5 w-35" (click)="clearActiveTheme()" [hidden]="!activeTheme">Назад</button>
+</div>
+<div class="list-topics-content">
+    <ul [hidden]="!!activeTheme">
+        <li (click)="showGamesByTheme(theme)" *ngFor="let theme of themes">
+            <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">
+                <div class="single-list-topics-icon">
+                    <i [class]="'fi '+ theme.icon"></i>
+                </div>
+                <h2 style="font-size: 1.9rem;">{{theme.name}}</h2>
+            </div>
+        </li>
+    </ul>
+   
+</div>
+<div (click)="goToGame(game)" *ngFor="let game of games">
+    <div class="service-item">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon">
+              <i style="font-size: 2.5em;" [class]="game.icon"></i>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="right-content">
+              <h1>{{game.name}}</h1>
+              <p style="font-size: 1.5em;">{{game.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

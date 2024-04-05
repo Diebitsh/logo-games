@@ -1,0 +1,15 @@
+
+<div class="player"><span>Play</span></div>
+
+<div class="row">
+
+    <div class="col-6" (click)="sendAnswer(answer)" *ngFor="let answer of currentAnswers">
+        <div class="card">
+            <img [src]="'assets/images/ '">
+            <div class="card-body text-center">
+                <h2>
+                    {{answer}}</h2>
+            </div>
+        </div>
+    </div>
+</div>

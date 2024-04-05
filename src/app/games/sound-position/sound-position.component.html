@@ -1,0 +1,4 @@
+<button  class="btn btn-primary" (click)="sendAnswer(answer.position)" *ngFor="let answer of answerOptions">
+    {{answer.name}}
+</button>
+{{this.currentQuestion.word}}

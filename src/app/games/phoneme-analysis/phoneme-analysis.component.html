@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center mb-2">
+    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+</div>
+<div class="row">
+    <div  *ngFor="let answer of answers; let i = index" class="col-6">
+        <div (click)="sendAnswer(i)" class="card " style="width: 50px; margin: auto;">
+            <img style="width: 180px; height: 200px;" class="card-img-top mx-auto d-block" [src]="answer">
+            
+    </div>
+    </div>
+</div>
+

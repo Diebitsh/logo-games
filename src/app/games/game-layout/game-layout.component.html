@@ -1,0 +1,23 @@
+<button (click)="goToList({'theme': game.theme})">назад</button>
+<div style="background-image: url({{background}}); background-repeat: no-repeat;background-size: 100% 100%;"
+    class="game-container">
+
+    <div class="common-content">
+        <div class="game-window character-window">
+            <img [src]="'assets/' + character" alt="Персонаж">
+        </div>
+
+        <div style="z-index: 999;" class="thought">{{showedMessage}}</div>
+    </div>
+
+    <div [hidden]="levelComplete" class="game-content">
+        <ng-template *ngIf="!gameFinished" #gameContent></ng-template>
+    </div>
+
+    <button (click)="goToNextLevel()" class="btn btn-primary btn-lg btn-block w-15" *ngIf="levelComplete && !gameFinished">Продолжить</button>
+
+    <button style="position: absolute; width: 100%; bottom: 0;" (click)="goToList({theme: game.theme})"
+        *ngIf="gameFinished" type="button" class="btn btn-primary btn-lg btn-block">
+        Выход
+    </button>
+</div>

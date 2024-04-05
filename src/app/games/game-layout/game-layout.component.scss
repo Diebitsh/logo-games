@@ -1,0 +1,401 @@
+
+.frame {
+    width: 80%;
+    height: 100%;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Добавлено для позиционирования потомков */
+}
+
+.character-window {
+    background-color: #f0f0f0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 10vw;
+}
+
+.character-window img {
+    max-width: 100%;
+    height: auto;
+}
+
+.game-content {
+    overflow: hidden !important;
+    padding: 20px;
+}
+
+
+
+body {background-color: #ddd; margin: 3rem;}
+
+#tv {
+  background: white;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+  color: white;
+  box-shadow: 20px 20px rgba(0,0,0,.15);
+  transition: all .4s ease;
+}
+#tv:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+  box-shadow: 10px 10px rgba(0,0,0,.25);
+}
+
+
+.game-container {
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    margin: 2%;
+    
+    border: 4px solid #744b9f; /* Увеличил толщину рамки */
+    border-radius: 15px; /* Закругление углов */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    background-size: 100%; /* Растягивает изображение, чтобы оно покрывало весь фон контейнера */
+    background-position: center center; /* Выравнивание изображения по центру контейнера */
+    background-repeat: no-repeat; /* Запрет повторения изображения */
+}
+
+.common-content {
+    height: 30%;
+    margin-bottom: 5em;
+}
+
+.game-window {
+    overflow: hidden;
+    height: 20%;
+    border-bottom: 2px solid #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x: hidden;
+    /* Добавлен стиль, чтобы контент не выходил за границы окна */
+}
+
+.character-window {
+    background-color: #ffffff;
+    max-width: 100%;
+    max-height: 100%;
+    width: 25%; /* Задайте фиксированную ширину окна персонажа */
+    height: 25%; /* Задайте фиксированную высоту окна персонажа */
+    box-sizing: border-box; /* Учитываем padding в расчетах размеров элемента */
+    /* Позиционируем в правом верхнем углу */
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid #3498db; /* Цвет и толщина обводки */
+    border-radius: 5px; /* Закругление углов обводки */
+}
+
+.instruction-window {
+    background-color: #f39c12;
+}
+
+.game-content {
+    overflow-x: hidden;
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+
+[speech-bubble],
+[speech-bubble] * {
+    box-sizing: border-box
+}
+
+[speech-bubble] {
+    --bbColor: grey;
+    --bbArrowSize: 1.5rem;
+    --bbBorderRadius: 0.25rem;
+    --bbPadding: 1rem;
+    background: var(--bbColor);
+    border-radius: var(--bbBorderRadius);
+    padding: var(--bbPadding);
+    position: relative;
+}
+
+[speech-bubble]::before {
+    content: '';
+    position: absolute;
+    background: var(--bbColor);
+}
+
+[speech-bubble][pbottom] {
+    margin-bottom: var(--bbArrowSize)
+}
+
+[speech-bubble][ptop] {
+    margin-top: var(--bbArrowSize);
+}
+
+[speech-bubble][pleft] {
+    margin-left: var(--bbArrowSize);
+}
+
+[speech-bubble][pright] {
+    margin-right: var(--bbArrowSize);
+}
+
+
+/* bottom and top  */
+[speech-bubble][pbottom]::before,
+[speech-bubble][ptop]::before {
+    --width: calc(var(--bbArrowSize) / 2 * 3);
+    height: var(--bbArrowSize);
+    width: var(--width);
+}
+
+/* bottom */
+[speech-bubble][pbottom]::before {
+    top: calc(100% - 2px);
+}
+
+[speech-bubble][pbottom][aleft]::before {
+    left: 1rem;
+    clip-path: polygon(25% 0, 100% 0, 0% 100%)
+}
+
+[speech-bubble][pbottom][acenter]::before {
+    left: calc(50% - var(--width) / 2);
+    clip-path: polygon(12.5% 0, 87.5% 0, 50% 100%)
+}
+
+[speech-bubble][pbottom][aright]::before {
+    right: 1rem;
+    clip-path: polygon(0 0, 75% 0, 100% 100%)
+}
+
+/* top */
+[speech-bubble][ptop]::before {
+    bottom: calc(100% - 2px);
+}
+
+[speech-bubble][ptop][aleft]::before {
+    left: var(--bbPadding);
+    clip-path: polygon(0 0, 100% 100%, 25% 100%)
+}
+
+[speech-bubble][ptop][acenter]::before {
+    left: calc(50% - var(--width) / 2);
+    clip-path: polygon(12.5% 100%, 50% 0, 87.5% 100%)
+}
+
+[speech-bubble][ptop][aright]::before {
+    right: var(--bbPadding);
+    clip-path: polygon(0 100%, 100% 0, 75% 100%)
+}
+
+/* left and right  */
+[speech-bubble][pleft]::before,
+[speech-bubble][pright]::before {
+    --height: calc(var(--bbArrowSize) / 2 * 3);
+    width: var(--bbArrowSize);
+    height: var(--height);
+}
+
+/* right */
+[speech-bubble][pright]::before {
+    left: calc(100% - 2px);
+}
+
+[speech-bubble][pright][atop]::before {
+    top: var(--bbPadding);
+    clip-path: polygon(100% 0, 0 100%, 0 25%)
+}
+
+[speech-bubble][pright][acenter]::before {
+    top: calc(50% - var(--height) / 2);
+    clip-path: polygon(0 12.5%, 100% 50%, 0 87.5%)
+}
+
+[speech-bubble][pright][abottom]::before {
+    bottom: var(--bbPadding);
+    clip-path: polygon(0 0, 100% 100%, 0 75%)
+}
+
+/* left */
+[speech-bubble][pleft]::before {
+    right: calc(100% - 2px);
+}
+
+[speech-bubble][pleft][atop]::before {
+    top: var(--bbPadding);
+    clip-path: polygon(0 0, 100% 25%, 100% 100%)
+}
+
+[speech-bubble][pleft][acenter]::before {
+    top: calc(50% - var(--height) / 2);
+    clip-path: polygon(0 50%, 100% 12.5%, 100% 87.5%);
+}
+
+[speech-bubble][pleft][abottom]::before {
+    bottom: var(--bbPadding);
+    clip-path: polygon(0 100%, 100% 0, 100% 75%)
+}
+
+/* flip */
+[speech-bubble][pbottom][flip]::before,
+[speech-bubble][ptop][flip]::before {
+    transform: scaleX(-1)
+}
+
+[speech-bubble][pleft][flip]::before,
+[speech-bubble][pright][flip]::before {
+    transform: scaleY(-1)
+}
+
+
+
+
+
+/* for demo */
+
+
+.middle {
+    grid-area: cc;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    color: white;
+}
+
+[speech-bubble][pbottom][aleft] {
+    grid-area: bl
+}
+
+[speech-bubble][pbottom][acenter] {
+    grid-area: bc
+}
+
+[speech-bubble][pbottom][aright] {
+    grid-area: br
+}
+
+[speech-bubble][pright][atop] {
+    grid-area: rt
+}
+
+[speech-bubble][pright][acenter] {
+    grid-area: rc
+}
+
+[speech-bubble][pright][abottom] {
+    grid-area: rb
+}
+
+[speech-bubble][pleft][atop] {
+    grid-area: lt
+}
+
+[speech-bubble][pleft][acenter] {
+    grid-area: lc
+}
+
+[speech-bubble][pleft][abottom] {
+    grid-area: lb
+}
+
+[speech-bubble][ptop][aleft] {
+    grid-area: tl
+}
+
+[speech-bubble][ptop][acenter] {
+    grid-area: tc
+}
+
+[speech-bubble][ptop][aright] {
+    grid-area: tr
+}
+
+[speech-bubble][pbottom],
+[speech-bubble][ptop] {
+    margin: 0
+}
+
+[speech-bubble] {
+    filter: drop-shadow(0px 0px 0.2rem black);
+    transition: transform 0.25s ease
+}
+
+[speech-bubble]:hover {
+    transform: scale(1.05);
+    filter:
+        drop-shadow(0px 0px 0.2rem black) drop-shadow(0px 0px 1rem var(--bbColor));
+}
+
+[speech-bubble] .title {
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 0.5rem
+}
+
+[speech-bubble] code {
+    background: white;
+    margin: 0.125rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    white-space: nowrap;
+    font-size: .9rem
+}
+
+.middle code {
+    font-size: 1rem;
+}
+
+.thought {
+    font-size: 1.8em;
+    line-height: 1em;
+    font-weight: 900;
+    display:flex;
+    background-color:#fff;
+    padding: 10px;
+    border-radius:30px;
+    min-width:40px;
+    max-width:70%;
+    min-height:40px;
+    margin:20px;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .thought:before,
+  .thought:after {
+    content:"";
+    background-color:#fff;
+    border-radius:50%;
+    display:block;
+    position:absolute;
+    z-index:-1;
+  }
+  .thought:before {
+    width:44px;
+    height:44px;
+    top:-12px;
+    left:28px;
+    box-shadow:-50px 30px 0 -12px #fff;
+  }
+  .thought:after {
+    bottom:-10px;
+    right:26px;
+    width:30px;
+    height:30px;
+    box-shadow:40px -34px 0 0 #fff,
+               -28px -6px 0 -2px #fff,
+               -24px 17px 0 -6px #fff,
+               -5px 25px 0 -10px #fff;
+    
+  }

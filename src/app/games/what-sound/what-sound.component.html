@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center mb-2">
+    <!-- <div (click)="play()" class="player"><span>Play</span></div> -->
+    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+</div>
+
+<div class="row">
+    <div (click)="answer(sound)" *ngFor="let sound of currentSounds" class="col-6">
+
+        <div class="card">
+            <img style="width: 180px; height: 200px;" class="card-img-top mx-auto d-block" [src]="sound.image">
+            <div class="card-body text-center">
+
+                <h2>
+                    {{sound.text}}
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+.letter {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.letter:hover {
+    background-color: #002fff;
+    transition: 10ms;
+}
+
+.word-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 10px;
+}
+
+.keyboard-letter {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.badge {
+    font-size: 5em;
+    font-weight: 700;
+}

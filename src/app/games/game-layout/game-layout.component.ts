@@ -33,8 +33,20 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private router: Router) { }
 
+		
+	@ViewChild('gameContent', { read: ViewContainerRef }) private viewRef: ViewContainerRef;
+	private componentRef: ComponentRef<PhonemeAnalysisComponent | MakeWordBySoundsComponent | PhonemicAwarenessComponent | any>;
+
+	@ViewChild('gameContainer') private gameContainer: ElementRef;
+
+	@ViewChild("messageWindow") private messageWindow: ElementRef;
+
+	typeWriter!: Typewriter;
+
+	private readonly breakSound: Subject<void> = new Subject<void>();
+
 	private gameId: number;
- game: GameModel;
+	game: GameModel;
 	showedMessage: string;
 	background: string;
 
@@ -44,11 +56,11 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private nextLevelEvent: Subject<void> = new Subject<void>;
 
-ngOnDestroy(): void {
-	console.log(1)
-	this.breakSound.next();
-	this.breakSound.complete();
-}
+	ngOnDestroy(): void {
+		console.log(1)
+		this.breakSound.next();
+		this.breakSound.complete();
+	}
 
 	ngAfterViewInit(): void {
 		this.createComp();
@@ -75,28 +87,27 @@ ngOnDestroy(): void {
 		});
 
 		this.componentRef.instance.setTextAsActiveMsg?.subscribe((text) => {
-			
+
 			this.showedMessage = text;
 		});
+
+		setTimeout(() => {
+			this.gameContainer.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
+		}, 300);
+		
 	}
 
-	@ViewChild('gameContent', { read: ViewContainerRef }) private viewRef: ViewContainerRef;
-	private componentRef: ComponentRef<PhonemeAnalysisComponent | MakeWordBySoundsComponent | PhonemicAwarenessComponent | any>;
+	audioPlayer: HTMLAudioElement = new Audio();
 
-	@ViewChild("messageWindow") private messageWindow: ElementRef;
-
-	typeWriter!: Typewriter;
-
-	private readonly breakSound: Subject<void> = new Subject<void>();
 
 	ngOnInit(): void {
 		const gameId = Number(this.activatedRoute.snapshot.queryParamMap.get("game"));
 		this.game = this.gamesService.getGameById(gameId);
-		this.background =  this.game.backgroundImage
+		this.background = this.game.backgroundImage
 		this.character = this.game.character;
 		this.gameId = Number(this.activatedRoute.snapshot.queryParamMap.get("game"));
 		this.player.src = this.game.welcomeSpeech;
-		from(play(this.game.welcomeSpeech)).pipe(takeUntil(this.breakSound)).subscribe(() => {
+		play(this.game.welcomeSpeech).then(() => {
 			this.showedMessage = this.game.instructionsText;
 			play(this.game.instructionsSpeech).then(() => this.instrcutionEnded.next())
 			this.isInstructionsShow = true;
@@ -129,7 +140,7 @@ ngOnDestroy(): void {
 				this.componentRef.instance.game = this.game;
 				this.componentRef.instance.nextLevelEvent = this.nextLevelEvent;
 				this.componentRef.instance.init();
-				
+
 				break;
 			}
 			case 3: {

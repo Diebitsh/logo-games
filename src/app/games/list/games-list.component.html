@@ -1,7 +1,7 @@
 <div style="margin-left: 15%;" class="float-left">
   <button class="btn btn-primary my-2 mx-5 w-35" (click)="clearActiveTheme()" [hidden]="!activeTheme">Назад</button>
 </div>
-<div class="list-topics-content">
+<div #list class="list-topics-content">
     <ul [hidden]="!!activeTheme">
         <li (click)="showGamesByTheme(theme)" *ngFor="let theme of themes">
             <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">

@@ -42,7 +42,7 @@ export class MakeWordBySoundsComponent extends GameBaseComponent<MakeWordBySound
 			this.answer[firstEmptyIndex] = ({ char: `${this.currentSyllables[syllbableIndex]}`, origIndex: syllbableIndex })
 		this.currentSyllables[syllbableIndex] = undefined;
 
-		if (this.answer.length == this.currentSyllables.length) {
+		if (this.answer.length == this.currentSyllables.length && !this.answer.some(x => x.char === undefined)) {
 			this.checkAnswer();
 		}
 	}

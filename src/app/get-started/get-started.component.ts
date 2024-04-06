@@ -9,6 +9,6 @@ export class GetStartedComponent implements OnInit {
 
   ngOnInit(): void {
     
-		document.body.className = "image-back";
+		// document.body.className = "image-back";
   }
 }

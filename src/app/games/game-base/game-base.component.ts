@@ -35,15 +35,18 @@ export abstract class GameBaseComponent<TGame extends BaseGameModel<TContent>, T
 	}
 
 	protected sendAnswer(isCorrect: boolean): void {
-		this.onAnswer.next(isCorrect);
-
 		if (isCorrect) {
 
 			this.completedLevels.push(this.currentLevel);
 
-			if (this.completedLevels.length == this.game.content.length)
+			if (this.completedLevels.length == this.game.content.length) {
 				this.onGameFinish.next();
+				return
+			}
 		}
+
+		this.onAnswer.next(isCorrect);
+
 	}
 
 	protected get currentLevelInfo(): TContent {

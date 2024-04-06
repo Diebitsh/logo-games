@@ -23,7 +23,7 @@ export class GamesListComponent implements OnInit {
 	activeTheme: number;
 
 	ngOnInit(): void {
-		document.body.className = "image-back";
+		// document.body.className = "image-back";
 		this.loadThemes();
 		this.activeTheme = Number(this.activatedRoute.snapshot.queryParamMap.get("theme"));
 		if (this.activeTheme != null) {

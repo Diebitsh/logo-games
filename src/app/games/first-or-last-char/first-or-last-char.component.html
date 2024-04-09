@@ -5,7 +5,7 @@
 
     <div class="col-6" (click)="sendAnswer(answer)" *ngFor="let answer of currentAnswers">
         <div class="card">
-            <img [src]="'assets/images/ '">
+            <img [src]="'assets/images/'+answer.image">
             <div class="card-body text-center">
                 <h2>
                     {{answer}}</h2>

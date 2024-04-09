@@ -355,57 +355,63 @@
         {
             "id": 5,
             "name": "Ферма",
+            "description": "Вместе с фермером расселяем животных по домам",
             "icon": "fi fi-rs-farm",
             "type": 1,
             "theme": 2,
             "backgroundImage": "assets/backgrounds/farm.jpg",
             "welcomeText": "Здравствуй дорогой друг! Добро пожаловать на мою ферму, давай познакомимся со всеми животными? Только я уже старенький, слух меня подводит, поможешь мне расселить животных по их домам?",
+            "welcomeSpeech": "assets/speech/farm/welcome.ogg",
+            "instructionsSpeech": "assets/speech/farm/insctructions.ogg",
             "instructionsText": "Послушай какие звуки издают животные и попробуй догадаться кому принадлежит тот или иной звук и нажми на картинку!",
             "character": "characters/farmer.jpg",
-            "finishText": "спасибо за помощь, без тебя бы я не справился! Хочешь еще раз помочь мне?",
-            "correctAnswerText": "молодец,у тебя отлично получается! Давай дальше",
-            "incorrectAnswerText": "Ой,кажется это не совсем так,послушай еще раз",
+            "finishText": "Cпасибо за помощь, без тебя бы я не справился! Хочешь еще раз помочь мне?",
+            "finishSpeech": "assets/speech/farm/finish.ogg",
+            "correctAnswerText": "Молодец, у тебя отлично получается! Давай дальше",
+            "correctAnswerSpeech": "assets/speech/farm/correct.ogg",
+            "incorrectAnswerText": "Ой ,кажется это не совсем так,послушай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/farm/incorrect.ogg",
             "content": [
                 {
                     "id": 1,
-                    "sound": "birdsound.mp3",
-                    "image": "birdsound.jpg",
-                    "text": "коровы"
+                    "sound": "cow.ogg",
+                    "image": "assets/images/farm/cow.jpg",
+                    "text": "корова"
                 },
                 {
                     "id": 2,
-                    "sound": "",
-                    "image": "",
+                    "sound": "cockorel.ogg",
+                    "image": "assets/images/farm/cockorel.png",
                     "text": "петух"
                 },
                 {
                     "id": 3,
-                    "sound": "",
-                    "image": "",
+                    "sound": "horse.ogg",
+                    "image": "assets/images/farm/horse.avif",
                     "text": "лошадь"
                 },
                 {
                     "id": 4,
-                    "sound": "",
-                    "image": "",
+                    "sound": "goose.ogg",
+                    "image": "assets/images/farm/goose.webp",
                     "text": "гусь"
                 },
                 {
                     "id": 5,
-                    "sound": "",
-                    "image": "",
+                    "sound": "dog_wof.ogg",
+                    "image": "assets/images/farm/dog.png",
                     "text": "собака"
                 },
                 {
                     "id": 6,
-                    "sound": "",
-                    "image": "",
+                    "sound": "ship.ogg",
+                    "image": "assets/images/farm/ship.png",
                     "text": "овца"
                 },
                 {
                     "id": 7,
-                    "sound": "",
-                    "image": "",
+                    "sound": "pig.ogg",
+                    "image": "assets/images/farm/pig.webp",
                     "text": "свинья"
                 }
             ]
@@ -413,127 +419,163 @@
         {
             "id": 6,
             "name": "Как я говорю",
+            "description": "Повторяем за животными",
             "icon": "fi fi-rr-comment-question",
             "type": 2,
             "theme": 2,
             "backgroundImage": "assets/backgrounds/farm-2.jpg",
             "welcomeText": "Привет, давай поиграем и проверим твою внимательность? Животные будут издавать свои звуки, а ты должен повторить за ними",
-            "instructionsText": "Нажми на кнопку, чтобы прослушать звук, ниже расположены картинки. Угадай кто или что издает звук и нажми на верную картинку. Если возникнут трудности,галками на кнопку «Повтор», чтобы прослушать звук еще раз",
+            "welcomeSpeech": "assets/speech/how-i-say/welcome.ogg",
+            "instructionsText": "Послушай внимательно последовательность слогов и запомни её. Затем выбери верную последовательность. Если затруднишься, нажми на кнопку \"Повтор\", чтобы прослушать еще раз",
+            "instructionsSpeech": "assets/speech/how-i-say/instructions.ogg",
             "character": "characters/farmer.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
-            "correctAnswerText": "молодец,у тебя отлично получается! Давай дальше",
-            "incorrectAnswerText": "Ой,кажется это не совсем так,послушай еще раз",
+            "finishText": "Как легко ты справился! Молодец!  Поиграем еще раз?",
+            "finishSpeech": "assets/speech/how-i-say/finish.ogg",
+            "correctAnswerText": "Прекрасно! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/how-i-say/correct.ogg",
+            "incorrectAnswerText": "Не торопись, послушай еще раз ",
+            "incorrectAnswerSpeech": "assets/speech/how-i-say/incorrect.ogg",
             "content": [
                 {
+                    "id": 1,
                     "correctAnswer": {
-                        "word": "му ма му",
-                        "image": "assets/images/puddle.jpg"
+                        "word": "му-ма-му"
                     },
                     "incorrectAnswer": {
-                        "word": "му ма му",
-                        "image": "assets/images/pear.jpg"
+                        "word": "му-му-ма"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/sounds/mu-ma-mu.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "га-го-га"
+                    },
+                    "incorrectAnswer": {
+                        "word": "га-га-гы"
+                    },
+                    "wordSpeech": "assets/sounds/gagoga.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "бе-бе-ме"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ме-бе-бе"
+                    },
+                    "wordSpeech": "assets/sounds/bebeme.ogg"
+                },
+                {
+                    "id": 4,
+                    "correctAnswer": {
+                        "word": "мяу-мур-мур"
+                    },
+                    "incorrectAnswer": {
+                        "word": "мур-мяу-мяу"
+                    },
+                    "wordSpeech": "assets/sounds/meowmumur.ogg"
                 }
             ]
         },
         {
             "id": 7,
-            "name": "найди картинку",
+            "name": "Найди картинку",
+            "description": "В названии какого животного спрятался звук?",
             "icon": "fi fi-rr-search",
             "type": 5,
             "theme": 2,
             "backgroundImage": "assets/backgrounds/farm-3.jpg",
             "welcomeText": "И снова здравствуй! Давай с тобой попробуем найти картинки наших животных?",
-            "instructionsText": "нажми на кнопку и послушай какой звук нужно найти, затем посмотри на картинки и определи в какой картинке нсть этот звук",
+            "welcomeSpeech": "assets/speech/find-image/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и послушай какой звук нужно найти, затем посмотри на картинки и определи в какой картинке есть этот звук",
+            "instructionsSpeech": "assets/speech/find-image/instructions.ogg",
             "character": "characters/farmer.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
-            "correctAnswerText": "молодец,у тебя отлично получается! Давай дальше",
-            "incorrectAnswerText": "Ой,кажется это не совсем так,послушай еще раз",
+            "finishText": "Ты так легко с этим справился! Ты настоящий молодец! Спасибо за помощь!",
+            "finishSpeech": "assets/speech/find-image/finish.ogg",
+            "correctAnswerText": "Молодец, отличная работа!",
+            "correctAnswerSpeech": "assets/speech/find-image/correct.ogg",
+            "incorrectAnswerText": "Кажется там нет этого звука, послушай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/find-image/incorrect.ogg",
             "content": [
                 {
                     "correctAnswer": "свинья",
-                    "incorrectAnswer": "рыжик",
+                    "incorrectAnswer": "телёнок",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [г]"
+                    "text": "В каком слове есть звук [С]",
+                    "image": "find-image/pig.webp"
                 },
                 {
                     "correctAnswer": "теленок",
-                    "incorrectAnswer": "подосиновик",
+                    "incorrectAnswer": "курица",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [ш]"
+                    "text": "В каком слове есть звук [Н]"
                 },
                 {
                     "correctAnswer": "лошадь",
-                    "incorrectAnswer": "вешенка",
+                    "incorrectAnswer": "петух",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
+                    "text": "В каком слове есть звук [Ш]"
                 },
                 {
                     "correctAnswer": "жеребенок",
-                    "incorrectAnswer": "вешенка",
+                    "incorrectAnswer": "лошадь",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
+                    "text": "В каком слове есть звук [К]"
                 },
                 {
                     "correctAnswer": "гусь",
-                    "incorrectAnswer": "вешенка",
+                    "incorrectAnswer": "курица",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
-                },
-                {
-                    "correctAnswer": "курица",
-                    "incorrectAnswer": "вешенка",
-                    "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
-                },
-                {
-                    "correctAnswer": "петух",
-                    "incorrectAnswer": "вешенка",
-                    "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
+                    "text": "В каком слове есть звук [Г]"
                 },
                 {
                     "correctAnswer": "цыпленок",
-                    "incorrectAnswer": "вешенка",
+                    "incorrectAnswer": "телёнок",
                     "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
+                    "text": "В каком слове есть звук [Ц]"
                 }
             ]
         },
         {
             "id": 8,
-            "name": "собери нас вместе",
+            "description": "Подписываем дома животных",
+            "name": "Собери нас вместе",
             "icon": "fi fi-rr-paw",
             "type": 7,
             "theme": 2,
             "backgroundImage": "assets/backgrounds/farm-3.jpg",
-            "welcomeText": "Здравствуй, можешь мне помочь? Я собирался подписать вольеры животных, но один не справлюсь ,давай вместе?",
-            "instructionsText": "нажми на кнопку и послушай,чей вольер мы будем подписывать. Картинка тебе поможет ! Затем нажимай на буквы в правильной последовательности,, подпишем вольер вместе! Обрати внимания, что мягкие звуки выделены зеленым! Если затруднишься, нажми на кнопку повтор ,чтобы прослушать еще раз . ",
+            "welcomeText": "Здравствуй, можешь мне помочь? Я собирался подписать вольеры животных, но один не справлюсь, давай вместе?",
+            "welcomeSpeech": "assets/speech/bring-together/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и послушай, чей вольер мы будем подписывать. Затем нажимай на буквы в правильной последовательности, подпишем вольер вместе! Если затруднишься, нажми на кнопку \"Повтор\", чтобы прослушать еще раз. ",
+            "instructionsSpeech": "assets/speech/bring-together/instruction.ogg",
             "character": "characters/farmer.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
+            "finishText": "Это было сложно,но не для тебя! Ты умница, спасибо за помощь",
+            "finishSpeech": "assets/speech/bring-together/finish.ogg",
             "correctAnswerText": "Прекрасно! Переходим к следующему ",
+            "correctAnswerSpeech": "assets/speech/bring-together/correct.ogg",
             "incorrectAnswerText": "Попробуй еще раз, давай переслушаем?",
+            "incorrectAnswerSpeech": "assets/speech/bring-together/incorrect.ogg",
             "content": [
                 {
                     "id": 1,
                     "word": "гуси",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/bring-together/goose.ogg"
                 },
                 {
                     "id": 2,
                     "word": "лошади",
-                    "speech": ""
+                    "speech": "assets/speech/bring-together/horse.ogg"
                 },
                 {
                     "id": 3,
                     "word": "курицы",
-                    "speech": ""
+                    "speech": "assets/speech/bring-together/chicken.ogg"
                 },
                 {
                     "id": 4,
                     "word": "бараны",
-                    "speech": ""
+                    "speech": "assets/speech/bring-together/baran.ogg"
                 }
             ]
         },

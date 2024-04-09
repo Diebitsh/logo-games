@@ -21,10 +21,10 @@ export class PhonemicAwarenessComponent extends GameBaseComponent<PhonemicAwaren
 	}
 
 
-	currentAnswers: { word: string, image: string }[];
+	currentAnswers: { word: string, image?: string }[];
 
 
-	override checkAnswer(answer: { word: string, image: string }) {
+	override checkAnswer(answer: { word: string, image?: string }) {
 		const isCorrectAnswer = answer.word == this.currentLevelInfo.correctAnswer.word;
 		this.sendAnswer(isCorrectAnswer);
 	}

@@ -22,23 +22,24 @@ export class FirstOrLastCharComponent implements OnInit {
 	currentQuestion: any;
 	private currentIndex: number = 0;
 
-	currentAnswers: any[] = [];
+	currentAnswers: {answer: string, image: string}[] = [];
 
 	ngOnInit(): void {
 		this.currentQuestion = this.game.content[this.currentIndex];
 		this.currentAnswers = shuffle([
-			this.currentQuestion.correctAnswer,
-			this.currentQuestion.incorrectAnswer,
+			{answer: this.currentQuestion.correctAnswer, image: this.currentQuestion.correctImage},
+			{answer:this.currentQuestion.incorrectAnswer, image: this.currentQuestion.incorrectImage},
 		])
 		this.onInstrcutionEnded.subscribe(x => {
 			this.setTextAsActiveMsg.next(this.currentQuestion.text);
+			this.play();
 		})
 		
 		this.nextLevelEvent.subscribe(() => this.nextLevel())
 	}
 
-	sendAnswer(answer: any) {
-		const isCorrect = this.currentQuestion.correctAnswer === answer;
+	sendAnswer(answer: {answer: string, image: string}) {
+		const isCorrect = this.currentQuestion.correctAnswer === answer.answer;
 		this.onAnswer.next(isCorrect);
 	}
 
@@ -51,8 +52,13 @@ export class FirstOrLastCharComponent implements OnInit {
 		this.currentQuestion = this.game.content[this.currentIndex];
 		this.setTextAsActiveMsg.next(this.currentQuestion.text);
 		this.currentAnswers = shuffle([
-			this.currentQuestion.correctAnswer,
-			this.currentQuestion.incorrectAnswer,
+			{answer: this.currentQuestion.correctAnswer, image: this.currentQuestion.correctImage},
+			{answer:this.currentQuestion.incorrectAnswer, image: this.currentQuestion.incorrectImage},
 		])
+	}
+
+	play() {
+		var audio = new Audio(this.currentQuestion.speech)
+		audio.play();
 	}
 }

@@ -1,14 +1,16 @@
 
-<div class="player"><span>Play</span></div>
+<div class="d-flex justify-content-center mb-2">
+    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+</div>
 
 <div class="row">
 
     <div class="col-6" (click)="sendAnswer(answer)" *ngFor="let answer of currentAnswers">
         <div class="card">
-            <img [src]="'assets/images/'+answer.image">
+            <img style="width: 180px; height: 200px;" class="card-img-top mx-auto d-block" [src]="answer.image">
             <div class="card-body text-center">
                 <h2>
-                    {{answer}}</h2>
+                    {{answer.answer}}</h2>
             </div>
         </div>
     </div>

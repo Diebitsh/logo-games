@@ -581,160 +581,176 @@
         },
         {
             "id": 9,
-            "name": "готовим суп",
+            "name": "Готовим суп",
+            "description": "Помоги повару выбрать нужные ингридиенты",
             "icon": "fi fi-rr-soup",
             "type": 2,
             "theme": 3,
             "backgroundImage": "assets/backgrounds/kitchen.jpg",
-            "welcomeText": "Здравствуй! Я хочу стать главным шеф-поваром ресторана! Поможешь мне приготовить самые вкусные блюда? Нам нужно будет выбрать правильные ингредиенты для супа,начнем?",
-            "instructionsText": "Нажми на кнопку и послушай название овоща, затем нажми на картинку овоща ,который ты услышишь ",
+            "welcomeText": "Здравствуй! Я хочу стать главным шеф-поваром ресторана! Поможешь мне приготовить самые вкусные блюда? Нам нужно будет выбрать правильные ингредиенты для супа, начнем?",
+            "welcomeSpeech": "assets/speech/prepare-soup/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и послушай название овоща, затем нажми на картинку овоща, который ты услышишь ",
+            "instructionsSpeech": "assets/speech/prepare-soup/instruction.ogg",
             "character": "characters/chief.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
-            "correctAnswerText": "Прекрасно! Давай добавим следующий ингредиент ",
-            "incorrectAnswerText": "Ой, что то не то, давай попробуем еще раз ",
+            "finishText": "Какой вкусный у нас получился суп, спасибо за помощь! Хочешь еще раз приготовить?",
+            "finishSpeech": "assets/speech/prepare-soup/finish.ogg",
+            "correctAnswerText": "Прекрасно! Давай добавим следующий ингредиент",
+            "correctAnswerSpeech": "assets/speech/prepare-soup/correct.ogg",
+            "incorrectAnswerText": "Ой, что то не то, давай попробуем еще раз",
+            "incorrectAnswerSpeech": "assets/speech/prepare-soup/incorrect.ogg",
             "content": [
                 {
+                    "id": 1,
                     "correctAnswer": {
                         "word": "лук",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/prepare-soup/onion.webp"
                     },
                     "incorrectAnswer": {
                         "word": "луга",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/prepare-soup/lug.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/prepare-soup/onion.ogg"
                 },
                 {
+                    "id": 2,
                     "correctAnswer": {
                         "word": "картофель",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/prepare-soup/potato.png"
                     },
                     "incorrectAnswer": {
                         "word": "картон",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/prepare-soup/carton.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/prepare-soup/potato.ogg"
                 },
                 {
+                    "id": 3,
                     "correctAnswer": {
                         "word": "тыква",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/prepare-soup/pumpkin.png"
                     },
                     "incorrectAnswer": {
                         "word": "кабачок",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/prepare-soup/kabachok.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/prepare-soup/pumpkin.ogg"
                 },
                 {
+                    "id": 4,
                     "correctAnswer": {
-                        "word": "свекла",
-                        "image": "assets/images/puddle.jpg"
+                        "word": "свёкла",
+                        "image": "assets/images/prepare-soup/svekla.jpg"
                     },
                     "incorrectAnswer": {
                         "word": "томат",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/prepare-soup/tomato.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/prepare-soup/svekla.ogg"
                 },
                 {
+                    "id": 5,
                     "correctAnswer": {
                         "word": "капуста",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/prepare-soup/kapusta.webp"
                     },
                     "incorrectAnswer": {
                         "word": "картофель",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/prepare-soup/potato.png"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/prepare-soup/kapusta.ogg"
                 }
             ]
         },
         {
             "id": 10,
-            "name": "магазин",
+            "name": "Магазин",
+            "description": "Помоги повару купить нужные овощи",
             "icon": "fi fi-rr-shop",
             "type": 7,
             "theme": 3,
             "backgroundImage": "assets/backgrounds/shop.jpg",
-            "welcomeText": "Здравствуй, мне нужно купить некоторые овощи, но я совсем не могу прочитать названия, модешь пожалуйста написать название овоща, который мне нужен чтобы я мог его найти?",
-            "instructionsText": "надми на кнопку и послушай название овоща,который мне нужен, затем выбери буквы и напиши его название. Будь внимателен,мягкие звуки выделены зеленым цветом!",
+            "welcomeText": "Здравствуй, мне нужно купить некоторые овощи, но я совсем не могу прочитать названия, модешь пожалуйста написать название овоща, который мне нужен чтобы я могла его найти?",
+            "welcomeSpeech": "assets/speech/shop/welcome.ogg",
+            "instructionsText": "надми на кнопку и послушай название овоща,который мне нужен, затем выбери буквы и напиши его название. ",
+            "instructionsSpeech": "assets/speech/shop/instruction.ogg",
             "character": "characters/chief.jpg",
-            "finishText": "Спасибо,я бы без тебя не справился! Ты молодец, Поиграем еще ?",
-            "correctAnswerText": "Прекрасно, давай посмотрим что у нас следующее по списку ",
-            "incorrectAnswerText": "Что то не похоже на нужный овощ! Попробуй еще раз !",
+            "finishText": "Спасибо, я бы без тебя не справилась! Ты молодец, поиграем еще?",
+            "finishSpeech": "assets/speech/shop/finish.ogg",
+            "correctAnswerText": "Прекрасно, давай посмотрим что у нас следующее по списку",
+            "correctAnswerSpeech": "assets/speech/shop/correct.ogg",
+            "incorrectAnswerText": "Что то не похоже на нужный овощ! Попробуй еще раз!",
+            "incorrectAnswerSpeech": "assets/speech/shop/incorrect.ogg",
             "content": [
                 {
                     "id": 1,
                     "word": "перец",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/shop/perec.ogg"
                 },
                 {
                     "id": 2,
                     "word": "капуста",
-                    "speech": ""
+                    "speech": "assets/speech/shop/kapusta.ogg"
                 },
                 {
                     "id": 3,
                     "word": "редис",
-                    "speech": ""
+                    "speech": "assets/speech/shop/redis.ogg"
                 },
                 {
                     "id": 4,
                     "word": "кукуруза",
-                    "speech": ""
+                    "speech": "assets/speech/shop/corn.ogg"
                 }
             ]
         },
         {
             "id": 11,
             "name": "Перерыв",
+            "description": "Отдохнем от готовки и сыграем в игру на внимательность",
             "icon": "fi fi-rr-mug-hot-alt",
             "type": 4,
             "theme": 3,
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/break/welcome.ogg",
+            "instructionsSpeech": "assets/speech/break/instruction.ogg",
             "backgroundImage": "assets/backgrounds/kitchen.jpg",
-            "welcomeText": "ой заработались мы с тобой, давай немного отдохнем? Я предлагаю тебе сыграть в веселую игру. Попробуй меня переиграть!Только будь внимателен!",
+            "welcomeText": "Ой заработались мы с тобой, давай немного отдохнем? Я предлагаю тебе сыграть в веселую игру. Попробуй меня переиграть! Только будь внимателен!",
             "instructionsText": "нажми на кнопку и послушай название овоща, затем попробуй определить где находится тот или иной звук в этом слове : в начале, в середине , в конце",
             "character": "characters/chief.jpg",
-            "finishText": "тебя не проведешь! Ты лучший в этом деле, хочешь еще раз сыграть?",
-            "correctAnswerText": "Прекрасно, давай посмотрим что у нас следующее по списку ",
-            "incorrectAnswerText": "Что то не похоже на нужный овощ! Попробуй еще раз !",
+            "finishText": "Тебя не проведешь! Ты лучший в этом деле, хочешь еще раз сыграть?",
+            "finishSpeech": "assets/speech/break/finish.ogg",
+            "correctAnswerText": "Великолепно! Ты очень внимателен" ,
+            "correctAnswerSpeech": "assets/speech/break/correct.ogg",
+            "incorrectAnswerText": "Не торопись, послушай и подумай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/break/incorrect.ogg",
             "content": [
                 {
                     "word": "Лук",
-                    "speech": "assets/speech/autumn/welcome.m4a",
-                    "image": "",
-                    "text": "Где звук к в слове лук",
-                    "answer": 2
+                    "speech": "assets/speech/break/onion.ogg",
+                    "text": "Где находится звук [Л] в слове лук",
+                    "answer": 0
                 },
                 {
-                    "word": "Огуруц",
-                    "speech": "assets/speech/autumn/welcome.m4a",
-                    "image": "",
-                    "text": "Где звук у в слове огурец",
+                    "word": "Огурец",
+                    "speech": "assets/speech/break/cucumber.ogg",
+                    "text": "Где нахоидтся звук [Г] в слове огурец",
                     "answer": 1
                 },
                 {
                     "word": "Баклажан",
-                    "speech": "assets/speech/autumn/welcome.m4a",
-                    "image": "",
-                    "text": "Где звук у в слове огурец",
-                    "answer": 0
+                    "speech": "assets/speech/break/bakl.ogg",
+                    "text": "Где звук [Ж] в слове баклажан",
+                    "answer": 1
                 },
                 {
                     "word": "Кабачок",
-                    "speech": "assets/speech/autumn/welcome.m4a",
-                    "image": "",
-                    "text": "Где звук у в слове огурец",
+                    "speech": "assets/speech/break/kabachok.ogg",
+                    "text": "Где находится звук [Ч] в слове кабачок",
                     "answer": 1
                 },
                 {
                     "word": "Морковь",
-                    "speech": "assets/speech/autumn/welcome.m4a",
-                    "image": "",
-                    "text": "Где звук у в слове огурец",
+                    "speech": "assets/speech/break/carrot.ogg",
+                    "text": "Где звук [М] в слове морковь",
                     "answer": 0
                 }
             ]
@@ -742,72 +758,92 @@
         {
             "id": 12,
             "name": "Сбор урожая ",
+            "description": "Вместе с фермером собираем овощи для повара",
             "icon": "fi fi-rr-apple-crate",
             "type": 5,
             "theme": 3,
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/harvesting/welcome.ogg",
+            "instructionsSpeech": "assets/speech/harvesting/instruction.ogg",
             "backgroundImage": "assets/backgrounds/gryadki.jpg",
             "welcomeText": "Здравствуй, дорогой друг! Мне нужно собрать созревшие овощи для повара, поможешь мне?",
-            "instructionsText": "нажми на кнопку, я буду назввать звук , на который начинается нужный овощ,тебе нужно будет выбрать из предложенных картинок верный ",
+            "instructionsText": "Нажми на кнопку, я буду назввать звук , на который начинается нужный овощ, тебе нужно будет выбрать из предложенных картинок верный ",
             "character": "characters/farmer.jpg",
-            "finishText": "прекрасно,теперь повар получит свои овощи! Спасибо тебе, что бы мы без тебя делали!",
+            "finishText": "Прекрасно,теперь повар получит свои овощи! Спасибо тебе, что бы мы без тебя делали!",
+            "finishSpeech": "assets/speech/harvesting/finish.ogg",
             "correctAnswerText": "Прекрасно, отлично справляешься!",
-            "incorrectAnswerText": "Это не тот овощ,будь внимателен!",
+            "correctAnswerSpeech": "assets/speech/harvesting/correct.ogg",
+            "incorrectAnswerText": "Это не тот овощ ,будь внимателен!",
+            "incorrectAnswerSpeech": "assets/speech/harvesting/incorrect.ogg",
             "content": [
                 {
                     "correctAnswer": "чеснок",
                     "incorrectAnswer": "огурец",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Ч'] "
+                    "speech": "assets/speech/harvesting/chesnok.ogg",
+                    "text": "В каком слове есть звук [Ч'] ",
+                    "correctImage": "assets/images/chesnok.webp",
+                    "incorrectImage": "assets/images/ogurec.png"
                 },
                 {
                     "correctAnswer": "тыква",
                     "incorrectAnswer": "баклажан",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Т] "
+                    "speech": "assets/speech/harvesting/tikva.ogg",
+                    "text": "В каком слове есть звук [Т] ",
+                    "correctImage": "assets/images/prepare-soup/pumpkin.png",
+                    "incorrectImage": "assets/images/bakl.png"
                 },
                 {
                     "correctAnswer": "Картофель",
                     "incorrectAnswer": "редис",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [К] "
+                    "speech": "assets/speech/harvesting/kart.ogg",
+                    "text": "В каком слове есть звук [К] ",
+                    "correctImage": "assets/images/prepare-soup/potato.png",
+                    "incorrectImage": "assets/images/redis.png"
                 },
                 {
                     "correctAnswer": "морковь",
                     "incorrectAnswer": "картофель",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [М] "
+                    "speech": "assets/speech/harvesting/morkov.ogg",
+                    "text": "В каком слове есть звук [М] ",
+                    "correctImage": "assets/images/carrot.jpg",
+                    "incorrectImage": "assets/images/prepare-soup/potato.png"
                 },
                 {
                     "correctAnswer": "свекла",
                     "incorrectAnswer": "помидор",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [С] "
+                    "speech": "assets/speech/harvesting/svekla.ogg",
+                    "text": "В каком слове есть звук [С] ",
+                    "correctImage": "assets/images/svekla.jpg",
+                    "incorrectImage": "assets/images/prepare-soup/tomato.jpg"
                 },
                 {
                     "correctAnswer": "перец",
                     "incorrectAnswer": "огурец",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [П] "
+                    "speech": "assets/speech/harvesting/perec.ogg",
+                    "text": "В каком слове есть звук [П] ",
+                    "correctImage": "assets/images/perec.png",
+                    "incorrectImage": "assets/images/ogurec.png"
                 }
             ]
         },
         {
             "id": 13,
-            "name": "готовим коктейль",
+            "name": "Готовим коктейль",
+            "description": "Помоги девочке подобрать нужные ингридиенты для коктейля",
             "icon": "fi fi-rr-cocktail-alt",
             "type": 5,
             "theme": 4,
             "backgroundImage": "assets/backgrounds/kitchen.jpg",
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/prepare-coctail/welcome.ogg",
+            "instructionsSpeech": "assets/speech/prepare-coctail/instruction.ogg",
             "welcomeText": "Привет! Давай с тобой приготовим самый вкусный фруктовый коктейль!",
             "instructionsText": "нажми на кнопку и прослушай звук,затем выбери фрукт,который начинается на этот звук",
             "character": "characters/girl.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
+            "finishText": "Отличная работа! Ты прекрасно справился,приготовим еще коктейлей?",
+            "finishSpeech": "assets/speech/prepare-coctail/finish.ogg",
             "correctAnswerText": "Прекрасно,то что нужно! Давай дальше!",
+            "incorrectAnswerSpeech": "assets/speech/prepare-coctail/incorrect.ogg",
             "incorrectAnswerText": "О нет,кажется что то не так,попробуй еще раз ",
+            "correctAnswerSpeech": "assets/speech/prepare-coctail/correct.ogg",
             "content": [
                 {
                     "correctAnswer": "апельсин",
@@ -849,100 +885,110 @@
         },
         {
             "id": 14,
-            "name": "путаница",
+            "name": "Путаница",
+            "description": "Готовим фруктовый салат",
             "icon": "fi fi-rr-face-confused",
             "type": 7,
             "theme": 4,
             "backgroundImage": "assets/backgrounds/kitchen.jpg",
-            "welcomeText": "Здравствуй, я очень люблю свежие фрукты, хочу сделать из них салат.поможешь мне? Попробуй собрать названия фруктов,которые мне нужны, из предложенных звуков !",
-            "instructionsText": "нажми на кнопку и послушай название фрукта, затем попытайся собрать слово самостоятельно.будь внимателен! Мягки согласные помечены зеленым цветом! Если возникнут трудности нажми на кнопку и прослушай слово еще раз ",
+            "welcomeText": "Здравствуй, я очень люблю свежие фрукты, хочу сделать из них салат. Поможешь мне? Попробуй собрать названия фруктов,которые мне нужны, из предложенных звуков!",
+            "welcomeSpeech":"assets/speech/confusion/welcome.ogg",
+            "instructionsText": "нажми на кнопку и послушай название фрукта, затем попытайся собрать слово самостоятельно. Будь внимателен! Если возникнут трудности нажми на кнопку и прослушай слово еще раз ",
+            "instructionsSpeech": "assets/speech/confusion/instruction.ogg",
             "character": "characters/girl.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
+            "finishText": "Чудесно! Спасибо за помощь, поиграем еще раз?",
+            "finishSpeech": "assets/speech/confusion/finish.ogg",
             "correctAnswerText": "Прекрасно! Тебе нет равных!",
+            "correctAnswerSpeech": "assets/speech/confusion/correct.ogg",
             "incorrectAnswerText": "Будь внимателен!давай попробуем еще раз?",
+            "incorrectAnswerSpeech": "assets/speech/confusion/incorrect.ogg",
             "content": [
                 {
                     "id": 1,
                     "word": "киви",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/confusion/kiwi.ogg"
                 },
                 {
                     "id": 2,
                     "word": "банан",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/confusion/banana.ogg"
                 },
                 {
                     "id": 3,
                     "word": "ананас",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/confusion/ananas.ogg"
                 },
                 {
                     "id": 4,
                     "word": "груша",
-                    "speech": "assets/speech/autumn/welcome.m4a"
+                    "speech": "assets/speech/confusion/pear.ogg"
                 }
             ]
         },
         {
             "id": 15,
-            "name": "найди звук",
+            "name": "Найди звук",
+            "description": "Экскурсия по фруктовому саду",
             "icon": "fi fi-rr-volume",
             "type": 3,
             "theme": 4,
             "backgroundImage": "assets/backgrounds/garden.jpg",
-            "welcomeText": "Привет,это мой сад,где растут разные фрукты! Давай с тобой посмотрим что здесь растет, а заодно проверим твою внимательность,готов?",
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsText": "нажми на кнопку и прослушай инструкцию есть ли тот или иной звук в названи фрукта,ниже нажми  на карточку да или нет ",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeText": "Привет, это мой сад, где растут разные фрукты! Давай с тобой посмотрим что здесь растет, а заодно проверим твою внимательность, готов?",
+            "welcomeSpeech": "assets/speech/find-zvuk/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и прослушай инструкцию есть ли тот или иной звук в названи фрукта, ниже нажми на карточку да или нет",
+            "instructionsSpeech": "assets/speech/find-zvuk/instruction.ogg",
             "character": "characters/girl.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
-            "correctAnswerText": "Прекрасно! Тебе нет равных!",
-            "incorrectAnswerText": "Кажется что то не так,послушай еще раз ",
+            "finishText": "Отлично, спасибо за помощь! Поиграем еще раз?",
+            "finishSpeech": "assets/speech/find-zvuk/finish.ogg",
+            "correctAnswerText": "Отлично, молодец!",
+            "correctAnswerSpeech": "assets/speech/find-zvuk/correct.ogg",
+            "incorrectAnswerText": "Кажется что то не так,послушай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/find-zvuk/incorrect.ogg",
             "content": {
                 "textures": {
-                    "yes": "assets/images/snowflake-yes.jpg",
-                    "no": "assets/images/snowflake-no.jpg"
+                    "yes": "assets/images/apple-yes.png",
+                    "no": "assets/images/apple-no.png"
                 },
                 "data": [
                     {
-                        "taskText": "ЕСТЬ ЛИ ЗВУК [С] В СЛОВЕ СНЕГ",
-                        "speechTask": "assets/speech/autumn/welcome.m4a",
-                        "correctAnswer": 0,
+                        "taskText": "Есть ли звук [С] в слове ананас",
+                        "speechTask": "assets/speech/find-zvuk/ananas.ogg",
+                        "correctAnswer": 1,
                         "word": "ананас"
                     },
                     {
-                        "taskText": "ЕСТЬ ЛИ ЗВУК [С] В СЛОВЕ ХОЛОД",
-                        "speechTask": "",
-                        "correctAnswer": 0,
+                        "taskText": "Есть ли звук [В] в слове айва",
+                        "speechTask": "assets/speech/find-zvuk/ayva.ogg",
+                        "correctAnswer": 1,
                         "word": "айва"
                     },
                     {
-                        "taskText": "ЕСТЬ ЛИ ЗВУК [С] В СЛОВЕ МЕТЕЛЬ",
-                        "speechTask": "",
+                        "taskText": "Есть ли звук [Г] в слове персик",
+                        "speechTask": "assets/speech/find-zvuk/persik.ogg",
                         "correctAnswer": 0,
                         "word": "персик"
                     },
                     {
-                        "taskText": "ЕСТЬ ЛИ ЗВУК [С] В СЛОВЕ СНЕГОВИК",
-                        "speechTask": "",
-                        "correctAnswer": 0,
+                        "taskText": "Есть ли звук [Г] в слове гранат",
+                        "speechTask": "assets/speech/find-zvuk/granat.ogg",
+                        "correctAnswer": 1,
                         "word": "гранат"
                     },
                     {
-                        "taskText": "",
-                        "speechTask": "",
+                        "taskText": "Есть ли звук [К] в слове хурма",
+                        "speechTask": "assets/speech/find-zvuk/hurma.ogg",
                         "correctAnswer": 0,
                         "word": "хурма"
                     },
                     {
-                        "taskText": "",
-                        "speechTask": "",
-                        "correctAnswer": 0,
+                        "taskText": "Есть ли звук [X] в слове хурма",
+                        "speechTask": "assets/speech/find-zvuk/fakeoa.ogg",
+                        "correctAnswer": 1,
                         "word": "фейхоа"
                     },
                     {
-                        "taskText": "",
-                        "speechTask": "",
+                        "taskText": "Есть ли звук [П] в слове абрикос",
+                        "speechTask": "assets/speech/find-zvuk/abrikos.ogg",
                         "correctAnswer": 0,
                         "word": "абрикос"
                     }
@@ -951,180 +997,210 @@
         },
         {
             "id": 16,
-            "name": "что за фрукт",
+            "name": "Что за фрукт",
+            "description": "Собираем спелые фрукты в саду",
             "icon": "fi fi-rr-apple-whole",
             "type": 2,
             "theme": 4,
             "backgroundImage": "assets/backgrounds/garden.jpg",
-            "welcomeText": "Здорово гулять в саду,здесь очень красиво! Поможешь мне собрать созревшие фрукты? Я буду называть тот фрукт,который мне нужен, а ты выберешь его",
+            "welcomeText": "Здорово гулять в саду ,здесь очень красиво! Поможешь мне собрать созревшие фрукты? Я буду называть тот фрукт, который мне нужен, а ты выберешь его",
+            "welcomeSpeech": "assets/speech/what-fruit/welcome.ogg",
             "instructionsText": "нажми на кнопку и послушай название фрукта,затем выбери на картинке фрукт ,название которого ты услышал. Если возникнут сложности нажми на кнопку «повтор», чтобы прослушать слово",
+            "instructionsSpeech": "assets/speech/what-fruit/instruction.ogg",
             "character": "characters/girl.jpg",
-            "finishText": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
-            "correctAnswerText": "Прекрасно! Тебе нет равных!",
-            "incorrectAnswerText": "Кажется что то не так,послушай еще раз ",
+            "finishText": "Спасибо за помощь, я бы без тебя не справилась! Пособираем еще фруктов?",
+            "finishSpeech": "assets/speech/what-fruit/finish.ogg",
+            "correctAnswerText": "Да, то что нужно! Ты молодец",
+            "correctAnswerSpeech": "assets/speech/what-fruit/correct.ogg",
+            "incorrectAnswerText": "Нет, это не тот фрукт, попробуй еще раз!",
+            "incorrectAnswerSpeech": "assets/speech/what-fruit/incorrect.ogg",
             "content": [
                 {
+                    "id": 1,
                     "correctAnswer": {
                         "word": "яблоко",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/apple.png"
                     },
                     "incorrectAnswer": {
                         "word": "ягода",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/berry.webp"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/apple.ogg"
                 },
                 {
+                    "id": 2,
                     "correctAnswer": {
                         "word": "лимон",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/lemon.png"
                     },
                     "incorrectAnswer": {
                         "word": "пион",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/pion.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/lemon.ogg"
                 },
                 {
+                    "id": 3,
                     "correctAnswer": {
                         "word": "персик",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/persik.png"
                     },
                     "incorrectAnswer": {
                         "word": "кексик",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/cake.png"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/persik.ogg"
                 },
                 {
+                    "id": 4,
                     "correctAnswer": {
                         "word": "хурма",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/hurma.webp"
                     },
                     "incorrectAnswer": {
                         "word": "фейхоа",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/fakeoa.webp"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/hurma.ogg"
                 },
                 {
+                    "id": 5,
                     "correctAnswer": {
                         "word": "слива",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/sliva.jpg"
                     },
                     "incorrectAnswer": {
                         "word": "олива",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/oliva.png"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/sliva.ogg"
                 },
                 {
+                    "id": 6,
                     "correctAnswer": {
                         "word": "абрикос",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/abrikos.jpg"
                     },
                     "incorrectAnswer": {
                         "word": "кокос",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/coconut.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/abrikos.ogg"
                 },
                 {
+                    "id": 7,
                     "correctAnswer": {
                         "word": "мандарин",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/what-fruit/mandarin.webp"
                     },
                     "incorrectAnswer": {
                         "word": "апельсин",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/what-fruit/orange.jpg"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/what-fruit/orange.ogg"
                 }
             ]
         },
         {
             "id": 17,
             "name": "Собираем грибы",
+            "description": "Собираем грибы для супа в лесу",
             "icon": "fi fi-rr-basket-shopping-simple",
             "type": 5,
             "theme": 5,
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/collcet-gribs/welcome.ogg",
+            "instructionsSpeech": "assets/speech/collcet-gribs/instruction.ogg",
             "backgroundImage": "assets/backgrounds/mushroom-forest.jpg",
             "welcomeText": "Здравствуй, дорогой друг, добро пожаловать в мой лес, на мою опушку! Оглянись вокруг, посмотри сколько здесь грибов! Я как раз собирался приготовить вкуснейший грибной суп! Поможешь мне собрать грибы? Я буду называть первый звук нужного нам гриба, а ты постарайся найти его!",
             "instructionsText": "Нажми на кнопку и послушай звук, затем выбери гриб, который начинается на этот звук",
             "character": "characters/old-man-borovichok.jpg",
             "finishText": "Ух ты, посмотри, как много грибов мы собрали! Может ты захочешь собрать еще?",
-            "correctAnswerText": "Прекрасно, отлично справляешься!",
-            "incorrectAnswerText": "Это не тот овощ,будь внимателен!",
+            "finishSpeech": "assets/speech/collcet-gribs/finish.ogg",
+            "correctAnswerText": "Молодец, у тебя отлично получается! Давай дальше",
+            "correctAnswerSpeech": "assets/speech/collcet-gribs/correct.ogg",
+            "incorrectAnswerText": "Ой, кажется это не совсем так, послушай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/collcet-gribs/incorrect.ogg",
             "content": [
                 {
                     "correctAnswer": "лисичка",
                     "incorrectAnswer": "мухомор",
-                    "speech": "сказать чь",
-                    "text": "на звук [л]"
+                    "speech": "assets/speech/collcet-gribs/l.ogg",
+                    "text": "на звук [л]",
+                    "correctImage": "assets/images/collcet-gribs/lisa.png",
+                    "incorrectImage": "assets/images/collcet-gribs/muhomor.jpg"
                 },
                 {
                     "correctAnswer": "масленок",
                     "incorrectAnswer": "поганка",
-                    "speech": "сказать чь",
-                    "text": "на звук [м]"
+                    "speech": "assets/speech/collcet-gribs/m.ogg",
+                    "text": "на звук [м]",
+                    "correctImage": "assets/images/collcet-gribs/masl.png",
+                    "incorrectImage": "assets/images/collcet-gribs/poganka.png"
                 },
                 {
                     "correctAnswer": "волнушка",
                     "incorrectAnswer": "боровик",
-                    "speech": "сказать чь",
-                    "text": "на звук [в]"
+                    "speech": "assets/speech/collcet-gribs/v.ogg",
+                    "text": "на звук [в]",
+                    "correctImage": "assets/images/collcet-gribs/volnushka.jpg",
+                    "incorrectImage": "assets/images/collcet-gribs/borovik.png"
                 },
                 {
                     "correctAnswer": "рыжик",
                     "incorrectAnswer": "мухомор",
-                    "speech": "сказать чь",
-                    "text": "на звук [р] "
+                    "speech": "assets/speech/collcet-gribs/r.ogg",
+                    "text": "на звук [р] ",
+                    "correctImage": "assets/images/collcet-gribs/rizhik.webp",
+                    "incorrectImage": "assets/images/collcet-gribs/muhomor.jpg"
                 }
             ]
         },
         {
             "id": 18,
-            "name": "Съедобное-несъедобное             ",
+            "name": "Съедобное-несъедобное",
+            "icon": "fi fi-rr-fork",
+            "description": "Знакомимся с несъедобными грибами",
             "type": 4,
             "theme": 5,
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/edible-inedible/welcome.ogg",
+            "instructionsSpeech": "assets/speech/edible-inedible/instruction.ogg",
             "backgroundImage": "assets/backgrounds/mushroom-forest.jpg",
             "welcomeText": "Здравствуй! Хочешь я помогу тебе запомнить, как выглядят несъедобные грибы? У меня для этого есть отличная игра!",
-            "instructionsText": "Я буду называть звук, а ты скажи, где находится этот звук в начале, в середине или в конце слова. Картинка подскажет тебе слово! Нажми на кнопку, чтобы послушать звук и нажми на кнопки ниже, чтобы дать ответ.",
+            "instructionsText": "Я буду называть звук, а ты скажи, где находится этот звук в начале, в середине или в конце слова. Нажми на кнопку, чтобы послушать звук и нажми на кнопки ниже, чтобы дать ответ.",
             "character": "characters/old-man-borovichok.jpg",
             "finishText": "Теперь ты знаешь, как выглядят несъедобные грибы, и никогда не соберешь их в лесу! Хочешь, узнаем про другие несъедобные грибы и повторим нашу игру?",
+            "finishSpeech":"assets/speech/edible-inedible/finish.ogg",
             "correctAnswerText": "Молодец, продолжай в том же духе! У тебя отлично получается!",
+            "correctAnswerSpeech": "assets/speech/edible-inedible/correct.ogg",
             "incorrectAnswerText": "Подумай еще немного, все получится!",
+            "incorrectAnswerSpeech": "assets/speech/edible-inedible/incorrect.ogg",
             "content": [ 
                 {
                     "word": "Поганка",
-                    "speech": "assets/speech/autumn/welcome.m4a",
+                    "speech": "assets/speech/edible-inedible/poganka.ogg",
                     "image": "",
-                    "text": "где звук [г] в слове поганка",
+                    "text": "Где звук [Г] в слове поганка",
                     "answer": 1
                 },
                 {
                     "word": "мухомор",
-                    "speech": "assets/speech/autumn/welcome.m4a",
+                    "speech": "assets/speech/edible-inedible/muhomor.ogg",
                     "image": "",
-                    "text": "где звук [о] в слове мухомор",
+                    "text": "Где звук [О] в слове мухомор",
                     "answer": 1
                 },
                 {
                     "word": "трутовик",
-                    "speech": "assets/speech/autumn/welcome.m4a",
+                    "speech": "assets/speech/edible-inedible/trutovik.ogg",
                     "image": "",
-                    "text": "где звук [к] в слове трутовик",
+                    "text": "Где звук [К] в слове трутовик",
                     "answer": 2
                 },
                 {
                     "word": "паутинник",
-                    "speech": "assets/speech/autumn/welcome.m4a",
+                    "speech": "assets/speech/edible-inedible/pautina.ogg",
                     "image": "",
-                    "text": "где звук [п] в слове паутинник",
+                    "text": "Где звук [П] в слове паутинник",
                     "answer": 0
                 }
             ]
@@ -1132,105 +1208,116 @@
         { 
             "id": 19,
             "name": "Как называется гриб",
+            "description": "Пербираем грибы",
             "icon": "fi fi-br-question",
             "type": 5,
             "theme": 5,
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
-            "instructionsSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/grib-name/welcome.ogg",
+            "instructionsSpeech": "assets/speech/grib-name/instruction.ogg",
             "backgroundImage": "assets/backgrounds/mushroom-forest.jpg",
             "welcomeText": "Здравствуй! Я хочу перебрать грибы. Давай поиграем, а тем самым ты мне поможешь?",
             "instructionsText": "Я буду называть звук, на который начинается название гриба, который мне нужен. Твоя задача выбрать верный гриб!",
             "character": "characters/old-man-borovichok.jpg",
             "finishText": "Как хорошо, что мы перебрали все грибы, хочешь продолжить?",
+            "finishSpeech": "assets/speech/grib-name/finish.ogg",
             "correctAnswerText": "Молодец! Ты хорошо разбираешься в грибах, давай дальше",
+            "correctAnswerSpeech": "assets/speech/grib-name/correct.ogg",
             "incorrectAnswerText": "О нет, попробуй еще раз!",
+            "incorrectAnswerSpeech": "assets/speech/grib-name/incorrect.ogg",
             "content": [
                 {
                     "correctAnswer": "груздь",
                     "incorrectAnswer": "рыжик",
-                    "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [г]"
+                    "speech": "assets/speech/grib-name/gruzd.ogg",
+                    "text": "Мне нужен гриб на звук [Г]",
+                    "correctImage": "assets/images/grib-name/gruzd.webp",
+                    "incorrectImage": "assets/images/collcet-gribs/rizhik.webp"
                 },
                 {
                     "correctAnswer": "шампиньон",
                     "incorrectAnswer": "подосиновик",
-                    "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [ш]"
+                    "speech": "assets/speech/grib-name/shamp.ogg",
+                    "text": "Мне нужен гриб на звук [Ш]",
+                    "correctImage": "assets/images/grib-name/shamp.webp",
+                    "incorrectImage": "assets/images/grib-name/osina.webp"
                 },
                 {
                     "correctAnswer": "опенок",
                     "incorrectAnswer": "вешенка",
-                    "speech": "сказать чь",
-                    "text": "мне нужен гриб на звук [о]"
+                    "speech": "assets/speech/grib-name/openok.ogg",
+                    "text": "Мне нужен гриб на звук [О]",
+                    "correctImage": "assets/images/grib-name/openok.webp",
+                    "incorrectImage": "assets/images/collcet-gribs/muhomor.jpg"
                 }
             ]
         },
         {
             "id": 20,
             "icon": "fi fi-rr-soup",
+            "description": "Выбираем ингридиенты для супа",
             "name": "Снова суп!",
             "type": 2,
             "theme": 5,
             "backgroundImage": "assets/backgrounds/mushroom-forest.jpg",
             "welcomeText": "Ну вот мы и выучили все грибы, теперь ты сам можешь их собирать! Я буду говорить название гриба, а ты его собирай!",
-            "welcomeSpeech": "assets/speech/autumn/welcome.m4a",
+            "welcomeSpeech": "assets/speech/again-soup/welcome.ogg",
             "instructionsText": "Нажми на кнопку и прослушай слово, затем выбери картинку, соответствующую этому слову",
-            "instructionsSpeech": "assets/speech/autumn/insctructions.m4a",
+            "instructionsSpeech": "assets/speech/again-soup/instruction.ogg",
             "finishText": "Ты потрудился на славу! Ты отличный грибник! Хочешь еще раз сыграем?",
-            "finishSpeech": "Ух ты,посмотри какой красивый букет мы собрали! Может ты захочешь собрать еще один?",
+            "finishSpeech": "assets/speech/again-soup/finish.ogg",
             "character": "characters/old-man-borovichok.jpg",
             "correctAnswerText": "Прекрасно, давай дальше!",
-            "correctAnswerSpeech": "молодец,у тебя отлично получается! Давай дальше",
+            "correctAnswerSpeech": "assets/speech/again-soup/correct.ogg",
             "incorrectAnswerText": "Подумай еще раз, это не то, что нам нужно!",
-            "incorrectAnswerSpeech": "Ой,кажется это не совсем так,послушай еще раз",
+            "incorrectAnswerSpeech": "assets/speech/again-soup/incorrect.ogg",
             "content": [
                 {
                     "id": 1,
                     "correctAnswer": {
                         "word": "опята",
-                        "image": "assets/images/puddle.jpg"
+                        "image": "assets/images/grib-name/openok.webp"
                     },
                     "incorrectAnswer": {
                         "word": "ребята",
-                        "image": "assets/images/pear.jpg"
+                        "image": "assets/images/again-soup/guys.png"
                     },
-                    "wordSpeech": "assets/speech/autumn/pear.m4a"
+                    "wordSpeech": "assets/speech/again-soup/opyata.ogg"
                 },
                 {
                     "id": 2,
                     "correctAnswer": {
                         "word": "лисичка",
-                        "image": "assets/images"
+                        "image": "assets/images/collcet-gribs/lisa.png"
                     },
                     "incorrectAnswer": {
                         "word": "косичка",
-                        "image": "assets/images"
+                        "image": "assets/images/again-soup/kosa.webp"
                     },
-                    "wordSpeech": ""
+                    "wordSpeech": "assets/speech/again-soup/lisa.ogg"
                 },
                 {
                     "id": 3,
                     "correctAnswer": {
                         "word": "шампиньон",
-                        "image": "assets/images"
+                        "image": "assets/images/grib-name/shamp.webp"
                     },
                     "incorrectAnswer": {
                         "word": "батальон",
-                        "image": "assets/images"
+                        "image": "assets/images/again-soup/army.webp"
                     },
-                    "wordSpeech": ""
+                    "wordSpeech": "assets/speech/again-soup/shamp.ogg"
                 },
                 {
                     "id": 4,
                     "correctAnswer": {
                         "word": "сыроежка",
-                        "image": "assets/images"
+                        "image": "assets/images/again-soup/siroy.webp"
                     },
                     "incorrectAnswer": {
                         "word": "сладкоежка",
-                        "image": "assets/images"
+                        "image": "assets/images/again-soup/sladko.jpg"
                     },
-                    "wordSpeech": ""
+                    "wordSpeech": "assets/speech/again-soup/siroy.ogg"
                 }
             ]
         }

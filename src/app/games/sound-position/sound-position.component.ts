@@ -30,6 +30,7 @@ export class SoundPositionComponent implements OnInit {
 		this.currentQuestion = this.game.content[this.currentIndex];
 		this.onInstrcutionEnded.subscribe(x => {
 			this.setTextAsActiveMsg.next(this.currentQuestion.text);
+			this.play();
 		})
 		
 		this.nextLevelEvent.subscribe(() => this.nextLevel())
@@ -48,5 +49,11 @@ export class SoundPositionComponent implements OnInit {
 		this.currentIndex++;
 		this.currentQuestion = this.game.content[this.currentIndex];
 		this.setTextAsActiveMsg.next(this.currentQuestion.text);
+	}
+
+	
+	play() {
+		var audio = new Audio(this.currentQuestion.speech)
+		audio.play();
 	}
 }

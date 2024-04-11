@@ -1,4 +1,10 @@
-<button  class="btn btn-primary" (click)="sendAnswer(answer.position)" *ngFor="let answer of answerOptions">
-    {{answer.name}}
-</button>
-{{this.currentQuestion.word}}
+<div class="d-flex justify-content-center mb-2">
+    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+</div>
+
+<div class="d-flex justify-content-center mb-2">
+
+    <button  class="btn btn-primary btn-lg btn-block w-35 mx-5" (click)="sendAnswer(answer.position)" *ngFor="let answer of answerOptions">
+        {{answer.name}}
+    </button>
+</div>

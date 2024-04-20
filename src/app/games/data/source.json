@@ -1599,6 +1599,409 @@
                     "speech": "assets/speech/magic-word/pion.ogg"
                 }
             ]
+        },
+        { 
+            "id": 26,
+            "name": "Букет для мамы",
+            "description": "Букет для мамы",
+            "icon": "fi fi-rr-flower-bouquet",
+            "type": 5,
+            "theme": 7,
+            "welcomeSpeech": "assets/speech/bouqet-for-mum/welcome.ogg",
+            "instructionsSpeech": "assets/speech/bouqet-for-mum/instruction.ogg",
+            "backgroundImage": "assets/backgrounds/polyana.jpg",
+            "welcomeText": "Привет! Меня зовут Варя! Я хочу собрать для мамы самый красивый букет цветов! Поможешь мне?",
+            "instructionsText": "Я буду называть звук, на который начинается название нужного цветка, а ты выбери картинку соответствующего цветка. Если у тебя возникнут трудности, нажми на кнопку «повтор», чтобы прослушать звук еще раз",
+            "character": "characters/girl.jpg",
+            "finishText": "Смотри какая красота получилась! Это все благодаря тебе! Теперь мама обрадуется, спасибо!",
+            "finishSpeech": "assets/speech/bouqet-for-mum/finish.ogg",
+            "correctAnswerText": "Точно! Это тот цветок, очень красивый. Продолжим?",
+            "correctAnswerSpeech": "assets/speech/bouqet-for-mum/correct.ogg",
+            "incorrectAnswerText": "Это не тот цветок! Давай попробуем еще раз?",
+            "incorrectAnswerSpeech": "assets/speech/bouqet-for-mum/incorrect.ogg",
+            "content": [
+                {
+                    "correctAnswer": "мак",
+                    "incorrectAnswer": "фиалка",
+                    "speech": "assets/speech/bouqet-for-mum/m.ogg",
+                    "text": "Мне нужен цветок на звук [М]",
+                    "correctImage": "assets/images/mak.jpg",
+                    "incorrectImage": "assets/images/fialka.jpg"
+                },
+                {
+                    "correctAnswer": "лилия",
+                    "incorrectAnswer": "тюльпан",
+                    "speech": "assets/speech/bouqet-for-mum/l.ogg",
+                    "text": "Мне нужен цветок на звук [Л`]",
+                    "correctImage": "assets/images/liliya.jpg",
+                    "incorrectImage": "assets/images/tulpan.webp"
+                },
+                {
+                    "correctAnswer": "тюльпан",
+                    "incorrectAnswer": "ромашка",
+                    "speech": "assets/speech/bouqet-for-mum/t.ogg",
+                    "text": "Мне нужен цветок на звук [Т`]",
+                    "correctImage": "assets/images/tulpan.webp",
+                    "incorrectImage": "assets/images/romashka.webp"
+                },
+                {
+                    "correctAnswer": "подсолнух",
+                    "incorrectAnswer": "тюльпан",
+                    "speech": "assets/speech/bouqet-for-mum/p.ogg",
+                    "text": "Мне нужен цветок на звук [П]",
+                    "correctImage": "assets/images/podsolnuh.webp",
+                    "incorrectImage": "assets/images/tulpan.webp"
+                },
+                {
+                    "correctAnswer": "фиалка",
+                    "incorrectAnswer": "лилия",
+                    "speech": "assets/speech/bouqet-for-mum/f.ogg",
+                    "text": "Мне нужен цветок на звук [Ф]",
+                    "correctImage": "assets/images/fialka.jpg",
+                    "incorrectImage": "assets/images/liliya.jpg"
+                },
+                {
+                    "correctAnswer": "ромашка",
+                    "incorrectAnswer": "подсолнух",
+                    "speech": "assets/speech/bouqet-for-mum/r.ogg",
+                    "text": "Мне нужен цветок на звук [Р]",
+                    "correctImage": "assets/images/romashka.webp",
+                    "incorrectImage": "assets/images/podsolnuh.webp"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Я - флорист!",
+            "description": "Я - флорист!",
+            "icon": "fi fi-rr-hand-holding-seeding",
+            "type": 5,
+            "theme": 7,
+            "welcomeSpeech": "assets/speech/im-florist/welcome.ogg",
+            "instructionsSpeech": "assets/speech/im-florist/instruction.ogg",
+            "backgroundImage": "assets/backgrounds/flower-shop.jpg",
+            "welcomeText": "Здравствуй, меня зовут Анна! Я работаю в цветочном магазине, моя профессия - флорист. Я собираю красивые букет цветов, по желанию покупателей! Но я сегодня так устала! Хочешь помочь мне и побыть моим заместителем? Будешь сам собирать нужные цветы для букета? Только будь внимателен, покупатели здесь обращают внимание не только на красоту цветов! А вот кстати и твой первый покупатель, удачи!",
+            "instructionsText": "Собери букет из цветов, в которых есть звук,сказанный покупателем! Не переживай, если у тетя возникнут проблемы, то нажми на кнопку «повтор », чтобы прослушать звук еще раз!",
+            "character": "characters/anna.jpg",
+            "finishText": "Как ты быстро со всем справился! Все клиенты ушли довольные. Я надеюсь тебе понравилась работа флориста! Ты просто мастерски справился! Спасибо за помощь! Если хочешь можешь еще раз попробовать себя в роли флориста!",
+            "finishSpeech": "assets/speech/im-florist/finish.ogg",
+            "correctAnswerText": "Прекрасно! Это твой первый довольный клиент, ты умница! Продолжим?",
+            "correctAnswerSpeech": "assets/speech/im-florist/correct.ogg",
+            "incorrectAnswerText": "Давай еще раз переслушаем, мне кажется это не тот цветок!",
+            "incorrectAnswerSpeech": "assets/speech/im-florist/incorrect.ogg",
+            "content": [
+                {
+                    "correctAnswer": "пион",
+                    "incorrectAnswer": "роза",
+                    "speech": "assets/speech/im-florist/n.ogg",
+                    "text": "В каком слове есть звук [Н] ",
+                    "correctImage": "assets/images/what-fruit/pion.jpg",
+                    "incorrectImage": "assets/images/rose.png"
+                },
+                {
+                    "correctAnswer": "ирис",
+                    "incorrectAnswer": "мак",
+                    "speech": "assets/speech/im-florist/i.ogg",
+                    "text": "В каком слове есть звук [И] ",
+                    "correctImage": "assets/images/iris.png",
+                    "incorrectImage": "assets/images/mak.jpg"
+                },
+                {
+                    "correctAnswer": "гвоздика",
+                    "incorrectAnswer": "ромашка",
+                    "speech": "assets/speech/im-florist/g.ogg",
+                    "text": "В каком слове есть звук [Г] ",
+                    "correctImage": "assets/images/gvozdika.avif",
+                    "incorrectImage": "assets/images/romashka.webp"
+                },
+                {
+                    "correctAnswer": "бархатцы",
+                    "incorrectAnswer": "лилия",
+                    "speech": "assets/speech/im-florist/h.ogg",
+                    "text": "В каком слове есть звук [Х] ",
+                    "correctImage": "assets/images/barhat.jpg",
+                    "incorrectImage": "assets/images/liliya.jpg"
+                },
+                {
+                    "correctAnswer": "астра",
+                    "incorrectAnswer": "петуния",
+                    "speech": "assets/speech/im-florist/s.ogg",
+                    "text": "В каком слове есть звук [С] ",
+                    "correctImage": "assets/images/astra.jpg",
+                    "incorrectImage": "assets/images/petunia.webp"
+                },
+                {
+                    "correctAnswer": "клевер",
+                    "incorrectAnswer": "лотос",
+                    "speech": "assets/speech/im-florist/r.ogg",
+                    "text": "В каком слове есть звук [Р] ",
+                    "correctImage": "assets/images/klever.webp",
+                    "incorrectImage": "assets/images/lotos.webp"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Зимний сад",
+            "description": "Готовим фруктовый салат",
+            "icon": "fi fi-rr-plant-wilt",
+            "type": 7,
+            "theme": 7,
+            "backgroundImage": "assets/backgrounds/winter-garden.webp",
+            "welcomeText": "Здравствуй! Меня зовут Варя! Добро пожаловать в мой зимний сад! Это место,где всегда цветут цветы: и зимой и летом. Здесь им не страшны мороз и зной, наоборот,тут лучшие условия для них! И к тому же я окутываю все растения любовью и заботой! Я хочу поселить в моем зимнем саду новые цветы, но я их всех перепутала и теперь не помню где какие цветы. Можешь мне пожалуйста помочь?",
+            "welcomeSpeech":"assets/speech/winter-garden/welcome.ogg",
+            "instructionsText": "Давай с тобой подпишем горшки с цветами? Я буду называть слово, а ты составь это слово из букв, приведенных ниже. Если у тебя возникнут трудности,то нажми на кнопку «повтор», чтобы еще раз прослушать слово!",
+            "instructionsSpeech": "assets/speech/winter-garden/instruction.ogg",
+            "character": "characters/girl.jpg",
+            "finishText": "Теперь в саду еще красивее, чем было изначально! Спасибо тебе за помощь! Я бы без тебя не справилась!",
+            "finishSpeech": "assets/speech/winter-garden/finish.ogg",
+            "correctAnswerText": "Все верно! Молодец! Давай перейдем к следующему горшку!",
+            "correctAnswerSpeech": "assets/speech/winter-garden/correct.ogg",
+            "incorrectAnswerText": "Кажется, что-то не так. Не торопись, прослушай слово внимательно и попробуй еще раз!",
+            "incorrectAnswerSpeech": "assets/speech/winter-garden/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "роза",
+                    "speech": "assets/speech/winter-garden/rose.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "астра",
+                    "speech": "assets/speech/winter-garden/astra.ogg"
+                },
+                {
+                    "id": 3,
+                    "word": "фиалка",
+                    "speech": "assets/speech/winter-garden/fialka.ogg"
+                },
+                {
+                    "id": 4,
+                    "word": "лилия",
+                    "speech": "assets/speech/winter-garden/liliya.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "ландыш",
+                    "speech": "assets/speech/winter-garden/landish.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "мимоза",
+                    "speech": "assets/speech/winter-garden/mimoza.ogg"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Выбираем наряд",
+            "description": "Выбираем наряд",
+            "icon": "fi fi-rr-clothes-hanger",
+            "type": 5,
+            "theme": 8,
+            "welcomeSpeech": "assets/speech/choose-clothes/welcome.ogg",
+            "instructionsSpeech": "assets/speech/choose-clothes/instruction.ogg",
+            "backgroundImage": "assets/backgrounds/room.jpg",
+            "welcomeText": "Привет, меня зовут Варя! Я собираюсь на прогулку! Поможешь мне собрать наряд? Только мне нужны особенные вещи, я подскажу тебе!",
+            "instructionsText": "Послушай звук и выбери предмет одежды с данным звуком. Если нужно прослушать звук еще раз, нажми на кнопку «повтор»",
+            "character": "characters/girl.jpg",
+            "finishText": "Спасибо тебе за помощь, я бы без тебя не справилась! Хочешь еще раз поиграем?",
+            "finishSpeech": "assets/speech/choose-clothes/finish.ogg",
+            "correctAnswerText": "Молодец, так держать!",
+            "correctAnswerSpeech": "assets/speech/choose-clothes/correct.ogg",
+            "incorrectAnswerText": "Ой, это не то, что я хотела, попробуй еще раз",
+            "incorrectAnswerSpeech": "assets/speech/choose-clothes/incorrect.ogg",
+            "content": [
+                {
+                    "correctAnswer": "носок",
+                    "incorrectAnswer": "платье",
+                    "speech": "assets/speech/choose-clothes/s.ogg",
+                    "text": "В каком слове есть звук [С] ",
+                    "correctImage": "assets/images/nosok.png",
+                    "incorrectImage": "assets/images/dress.jpg"
+                },
+                {
+                    "correctAnswer": "платье",
+                    "incorrectAnswer": "туфли",
+                    "speech": "assets/speech/choose-clothes/p.ogg",
+                    "text": "В каком слове есть звук [П] ",
+                    "correctImage": "assets/images/dress.jpg",
+                    "incorrectImage": "assets/images/tufli.jpg"
+                },
+                {
+                    "correctAnswer": "туфли",
+                    "incorrectAnswer": "носок",
+                    "speech": "assets/speech/choose-clothes/f.ogg",
+                    "text": "В каком слове есть звук [Ф] ",
+                    "correctImage": "assets/images/tufli.jpg",
+                    "incorrectImage": "assets/images/nosok.png"
+                },
+                {
+                    "correctAnswer": "сумка",
+                    "incorrectAnswer": "платье",
+                    "speech": "assets/speech/choose-clothes/m.ogg",
+                    "text": "В каком слове есть звук [М] ",
+                    "correctImage": "assets/images/sumka.jpg",
+                    "incorrectImage": "assets/images/dress.jpg"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Переезд",
+            "description": "Переезд",
+            "icon": "fi fi-rr-box-open",
+            "type": 7,
+            "theme": 8,
+            "backgroundImage": "assets/backgrounds/boxes.jpg",
+            "welcomeText": "Здравствуй, меня зовут Вася! Мы собираемся переезжать! Мне нужно распределить вещи по коробкам и подписать эти коробки! Поможешь мне?",
+            "welcomeSpeech":"assets/speech/pereezd/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и прослушай слово, ниже представлены буквы. Собери буквы в правильном порядке, тем самым подписав коробку. Если возникнут сложности, нажми на кнопку «повтор», чтобы прослушать слово еще раз.",
+            "instructionsSpeech": "assets/speech/pereezd/instruction.ogg",
+            "character": "characters/vasya.png",
+            "finishText": "Спасибо тебе большое, с тобой весело! Я бы не справился без тебя! Хочешь еще раз поиграть?",
+            "finishSpeech": "assets/speech/pereezd/finish.ogg",
+            "correctAnswerText": "Верно! Переходим к следующему слову!",
+            "correctAnswerSpeech": "assets/speech/pereezd/correct.ogg",
+            "incorrectAnswerText": "Ой, что-то не то, попробуй еще раз! Послушай внимательно",
+            "incorrectAnswerSpeech": "assets/speech/pereezd/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "штаны",
+                    "speech": "assets/speech/pereezd/pants.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "плащ",
+                    "speech": "assets/speech/pereezd/raincoat.ogg"
+                },
+                {
+                    "id": 3,
+                    "word": "рубашка",
+                    "speech": "assets/speech/pereezd/shirt.ogg"
+                },
+                {
+                    "id": 4,
+                    "word": "джинсы",
+                    "speech": "assets/speech/pereezd/jeans.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "шорты",
+                    "speech": "assets/speech/pereezd/shorts.ogg"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "name": "Домашнее задание",
+            "description": "Домашнее задание",
+            "icon": "fi fi-rr-book-alt",
+            "type": 4,
+            "theme": 8,
+            "welcomeSpeech": "assets/speech/homework/welcome.ogg",
+            "instructionsSpeech": "assets/speech/homework/instruction.ogg",
+            "backgroundImage": "assets/backgrounds/table.png",
+            "welcomeText": "Здравствуй, помнишь меня? Я Вася! Я иду в школу и мне задали сложное задание, я боюсь, что не справлюсь. Мне нужно определить, где находится тот или иной звук-в начале, середине или в конце слова, поможешь мне пожалуйста?",
+            "instructionsText": "Нажми на кнопку и прослушай задание, внимательно послушай слово, с которым мы будем работать! Затем выбери ниже, где находится звук - в начале, середине или конце. Если у тебя возникнут трудность, нажми на кнопку «повтор», чтобы заново прослушать инструкцию",
+            "character": "characters/vasya.png",
+            "finishText": "Спасибо тебе! Благодаря тебе я получил самую лучшую оценку, и учительница меня похвалила! Я бы без тебя не справился!",
+            "finishSpeech": "assets/speech/homework/finish.ogg",
+            "correctAnswerText": "Верно! Как ты быстро догадался! Спасибо! Давай дальше!" ,
+            "correctAnswerSpeech": "assets/speech/homework/correct.ogg",
+            "incorrectAnswerText": "Ой, это неправильно, послушай еще раз, внимательно",
+            "incorrectAnswerSpeech": "assets/speech/homework/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Носок",
+                    "speech": "assets/speech/homework/s.ogg",
+                    "text": "Где находится звук [С] в слове носок",
+                    "answer": 1
+                },
+                {
+                    "word": "Халат",
+                    "speech": "assets/speech/homework/h.ogg",
+                    "text": "Где нахоидтся звук [Х] в слове Халат",
+                    "answer": 0
+                },
+                {
+                    "word": "Рубашка",
+                    "speech": "assets/speech/homework/k.ogg",
+                    "text": "Где звук [К] в слове рубашка",
+                    "answer": 1
+                },
+                {
+                    "word": "Брюки",
+                    "speech": "assets/speech/homework/i.ogg",
+                    "text": "Где находится звук [И] в слове брюки",
+                    "answer": 2
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/homework/r.ogg",
+                    "text": "Где звук [Р] в слове куртка",
+                    "answer": 1
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "name": "Кто самый внимательный?",
+            "description": "Кто самый внимательный?",
+            "icon": "fi fi-rr-search",
+            "type": 3,
+            "theme": 8,
+            "backgroundImage": "assets/backgrounds/room.jpg",
+            "welcomeText": "Здравствуй, я Варя! Мне так грустно, давай с тобой повеселимся и немного поиграем? Давай узнаем кто из нас самый внимательный, ты готов?",
+            "welcomeSpeech": "assets/speech/who-attentive/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и прослушай слово, а затем скажи есть ли в нем тот или иной звук! Нажми ниже на кнопку «да» или «нет». Если возникнут затруднения, то нажми на кнопку «повтор», чтобы прослушать слово еще раз.",
+            "instructionsSpeech": "assets/speech/who-attentive/instruction.ogg",
+            "character": "characters/girl.jpg",
+            "finishText": "Ух ты! Да ты самый внимательный! А я думала, что смогу тебя победить! Ты молодец, очень хорошо справляешься! Поиграем еще?",
+            "finishSpeech": "assets/speech/who-attentive/finish.ogg",
+            "correctAnswerText": "Точно, ты выигрываешь! Продолжаем!",
+            "correctAnswerSpeech": "assets/speech/who-attentive/correct.ogg",
+            "incorrectAnswerText": "Так, так, так, что-то тут не так, послушай еще раз!",
+            "incorrectAnswerSpeech": "assets/speech/who-attentive/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+                        "taskText": "Есть ли звук [Л] в слове платье",
+                        "speechTask": "assets/speech/who-attentive/l.ogg",
+                        "correctAnswer": 1,
+                        "word": "«платье»"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Б] в слове блуза",
+                        "speechTask": "assets/speech/who-attentive/b.ogg",
+                        "correctAnswer": 1,
+                        "word": "блуза"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Д] в слове шорты",
+                        "speechTask": "assets/speech/who-attentive/d.ogg",
+                        "correctAnswer": 0,
+                        "word": "шорты"
+                    },
+                    {
+                        "taskText": "Есть ли звук [П] в слове юбка",
+                        "speechTask": "assets/speech/who-attentive/p.ogg",
+                        "correctAnswer": 0,
+                        "word": "юбка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [О] в слове пальто",
+                        "speechTask": "assets/speech/who-attentive/o.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    }
+                ]
+            }
         }
     ]
 }

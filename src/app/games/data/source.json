@@ -1320,6 +1320,285 @@
                     "wordSpeech": "assets/speech/again-soup/siroy.ogg"
                 }
             ]
+        },
+        {
+            "id": 21,
+            "name": "Собираем мебель",
+            "description": "Собираем мебель",
+            "icon": "fi fi-rr-wrench-simple",
+            "type": 4,
+            "theme": 6,
+            "welcomeSpeech": "assets/speech/build-furniture/welcome.ogg",
+            "instructionsSpeech": "assets/speech/build-furniture/instruction.ogg",
+            "backgroundImage": "assets/backgrounds/remont.jpg",
+            "welcomeText": "Здравствуй, меня зовут Павел, я собираю мебель, хочешь мне помочь? Я буду собирать и называть предметы мебели, а ты мне будешь подсказывать куда поставить тот или иной звук",
+            "instructionsText": "Прослушай название предмета мебели и определи в каком месте (начало, середина или конец) находится тот или иной звук",
+            "character": "characters/paul.jpg",
+            "finishText": "Быстро мы с тобой справились! Спасибо, ты отличный помощник! Поиграем еще раз?",
+            "finishSpeech": "assets/speech/build-furniture/finish.ogg",
+            "correctAnswerText": "Отлично! Ты хорошо справляешься" ,
+            "correctAnswerSpeech": "assets/speech/build-furniture/correct.ogg",
+            "incorrectAnswerText": "Будь внимателен! Попробуй еще раз",
+            "incorrectAnswerSpeech": "assets/speech/build-furniture/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Комод",
+                    "speech": "assets/speech/build-furniture/komod.ogg",
+                    "text": "Где звук [К] в слове комод",
+                    "answer": 0
+                },
+                {
+                    "word": "Лампа",
+                    "speech": "assets/speech/build-furniture/light.ogg",
+                    "text": "Где звук [Л] в слове лампа",
+                    "answer": 0
+                },
+                {
+                    "word": "Шкаф",
+                    "speech": "assets/speech/build-furniture/wardrobe.ogg",
+                    "text": "Где звук [Ш] в слове шкаф",
+                    "answer": 0
+                },
+                {
+                    "word": "Стул",
+                    "speech": "assets/speech/build-furniture/chair.ogg",
+                    "text": "Где звук [Л] в слове стул,",
+                    "answer": 2
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "icon": "fi fi-rr-chair-office",
+            "description": "Угадай предмет",
+            "name": "Угадай предмет",
+            "type": 2,
+            "theme": 6,
+            "backgroundImage": "assets/backgrounds/remont.jpg",
+            "welcomeText": "Здравствуй! Меня зовут Павел. Я так устал собирать мебель, что уже забыл, что как называется.  Поможешь мне вспомнить названия предметов мебели?",
+            "welcomeSpeech": "assets/speech/choose-object/welcome.ogg",
+            "instructionsText": "Я буду называть слово, а ты выбери соответствующую этому слову картинку!",
+            "instructionsSpeech": "assets/speech/choose-object/instruction.ogg",
+            "finishText": "Ты настоящий помощник! Не знаю, чтобы я без тебя делал. Спасибо за помощь!",
+            "finishSpeech": "assets/speech/choose-object/finish.ogg",
+            "character": "characters/paul.jpg",
+            "correctAnswerText": "Точно! Молодец, давай продолжим?",
+            "correctAnswerSpeech": "assets/speech/choose-object/correct.ogg",
+            "incorrectAnswerText": "Так, так, что-то здесь не то. Подумай еще!",
+            "incorrectAnswerSpeech": "assets/speech/choose-object/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "correctAnswer": {
+                        "word": "стул",
+                        "image": "assets/images/chair.png"
+                    },
+                    "incorrectAnswer": {
+                        "word": "стол",
+                        "image": "assets/images/table.png"
+                    },
+                    "wordSpeech": "assets/speech/choose-object/chair.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "тумбочка",
+                        "image": "assets/images/drawer.webp"
+                    },
+                    "incorrectAnswer": {
+                        "word": "табуретка",
+                        "image": "assets/images/stool.png"
+                    },
+                    "wordSpeech": "assets/speech/choose-object/drawer.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "комод",
+                        "image": "assets/images/komod.webp"
+                    },
+                    "incorrectAnswer": {
+                        "word": "кресло",
+                        "image": "assets/images/kreslo.jpg"
+                    },
+                    "wordSpeech": "assets/speech/choose-object/komod.ogg"
+                },
+                {
+                    "id": 4,
+                    "correctAnswer": {
+                        "word": "ширма",
+                        "image": "assets/images/shirma.jpg"
+                    },
+                    "incorrectAnswer": {
+                        "word": "шкаф",
+                        "image": "assets/images/sckaf.jpg"
+                    },
+                    "wordSpeech": "assets/speech/choose-object/shirma.ogg"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Что мы собрали",
+            "description": "Что мы собрали",
+            "icon": "fi fi-rr-archive",
+            "type": 7,
+            "theme": 6,
+            "backgroundImage": "assets/backgrounds/remont.jpg",
+            "welcomeText": "Здравствуй друг! Я Павел, занимаюсь сборкой мебели! Слушай, мне нужно подписать мебель, которую я собрал, но я не успеваю этого сделать! Поможешь мне?",
+            "welcomeSpeech":"assets/speech/what-collected/welcome.ogg",
+            "instructionsText": "Нажми на кнопку и послушай, как надо подписать предмет. Затем нажимай на буквы и составь услышанное слово. Если у тебя возникнут трудности, нажми на кнопку «Повтор»",
+            "instructionsSpeech": "assets/speech/what-collected/instruction.ogg",
+            "character": "characters/paul.jpg",
+            "finishText": "Как хорошо ты справляешься! Спасибо тебе, ты всегда меня выручишь!",
+            "finishSpeech": "assets/speech/what-collected/finish.ogg",
+            "correctAnswerText": "Ты очень быстро справляешься, умница!",
+            "correctAnswerSpeech": "assets/speech/what-collected/correct.ogg",
+            "incorrectAnswerText": "Ну это совсем не тот предмет! Будь внимательнее!",
+            "incorrectAnswerSpeech": "assets/speech/what-collected/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "стол",
+                    "speech": "assets/speech/what-collected/table.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "лампа",
+                    "speech": "assets/speech/what-collected/light.ogg"
+                },
+                {
+                    "id": 3,
+                    "word": "диван",
+                    "speech": "assets/speech/what-collected/divan.ogg"
+                },
+                {
+                    "id": 4,
+                    "word": "тумба",
+                    "speech": "assets/speech/what-collected/tumba.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "шкаф",
+                    "speech": "assets/speech/what-collected/schkaf.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "полка",
+                    "speech": "assets/speech/what-collected/polka.ogg"
+                },
+                {
+                    "id": 7,
+                    "word": "картина",
+                    "speech": "assets/speech/what-collected/image.ogg"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Есть или нет",
+            "description": "Есть или нет",
+            "icon": "fi fi-rr-question-square",
+            "type": 3,
+            "theme": 6,
+            "backgroundImage": "assets/backgrounds/remont.jpg",
+            "welcomeText": "Ну ты мастер! Я хочу дать тебе последнее, сложное задание, справишься? Конечно справишься! Давай начнем!",
+            "welcomeSpeech": "assets/speech/yes-or-no/welcome.ogg",
+            "instructionsText": "Послушай слово и определи есть ли в нем тот или иной звук и нажми внизу на кнопку «да» или «нет». Если возникнут трудности, то нажми на кнопку «Повтор», чтобы прослушать задание еще раз",
+            "instructionsSpeech": "assets/speech/yes-or-no/instruction.ogg",
+            "character": "characters/paul.jpg",
+            "finishText": "Как же весело с тобой играть. Ты очень сильно поднял мне настроение! Хочешь поиграть еще в эту игру?",
+            "finishSpeech": "assets/speech/yes-or-no/finish.ogg",
+            "correctAnswerText": "Точно! Тебя не проведешь!",
+            "correctAnswerSpeech": "assets/speech/yes-or-no/correct.ogg",
+            "incorrectAnswerText": "Давай послушаем еще раз, ты уже близок к ответу!",
+            "incorrectAnswerSpeech": "assets/speech/yes-or-no/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+                        "taskText": "Есть ли звук [Ч] в слове тумбочка",
+                        "speechTask": "assets/speech/yes-or-no/drawer.ogg",
+                        "correctAnswer": 1,
+                        "word": "тумбочка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [К] в слове диван",
+                        "speechTask": "assets/speech/yes-or-no/divan.ogg",
+                        "correctAnswer": 0,
+                        "word": "диван"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Д] в слове кровать",
+                        "speechTask": "assets/speech/yes-or-no/bed.ogg",
+                        "correctAnswer": 0,
+                        "word": "кровать"
+                    },
+                    {
+                        "taskText": "Есть ли звук [О] в слове полка",
+                        "speechTask": "assets/speech/yes-or-no/polka.ogg",
+                        "correctAnswer": 1,
+                        "word": "полка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ф] в слове шкаф",
+                        "speechTask": "assets/speech/yes-or-no/sckaf.ogg",
+                        "correctAnswer": 1,
+                        "word": "шкаф"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ц] в слове софа",
+                        "speechTask": "assets/speech/yes-or-no/sofa.ogg",
+                        "correctAnswer": 0,
+                        "word": "софа"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 25,
+            "name": "Волшебное слово",
+            "description": "Волшебное слово",
+            "icon": "fi fi-rr-magic-wand",
+            "type": 7,
+            "theme": 7,
+            "backgroundImage": "assets/backgrounds/polyana.jpg",
+            "welcomeText": "Здравствуй, я пчелка Майя. Добро пожаловать на мою цветочную поляну. Давай поиграем?",
+            "welcomeSpeech":"assets/speech/magic-word/welcome.ogg",
+            "instructionsText": "Я буду называть тебе цветок, а ты измени в этом слове одну букву и напиши это слово. Ниже будут представлены буквы. Если затруднишься, нажми на кнопку «повтор», чтобы прослушать слово заново.",
+            "instructionsSpeech": "assets/speech/magic-word/instruction.ogg",
+            "character": "characters/bee.png",
+            "finishText": "Я так рада с тобой познакомится, с тобой очень весело! Хочешь поиграть еще?",
+            "finishSpeech": "assets/speech/magic-word/finish.ogg",
+            "correctAnswerText": "Прекрасно! Ты быстро догадался, давай дальше!",
+            "correctAnswerSpeech": "assets/speech/magic-word/correct.ogg",
+            "incorrectAnswerText": "Послушай еще раз! Ты ошибся, давай подумаем еще",
+            "incorrectAnswerSpeech": "assets/speech/magic-word/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "рак",
+                    "speech": "assets/speech/magic-word/mak.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "роса",
+                    "speech": "assets/speech/magic-word/rose.ogg"
+                },
+                {
+                    "id": 3,
+                    "word": "сирена",
+                    "speech": "assets/speech/magic-word/siren.ogg"
+                },
+                {
+                    "id": 4,
+                    "word": "питон",
+                    "speech": "assets/speech/magic-word/pion.ogg"
+                }
+            ]
         }
     ]
 }

@@ -2213,7 +2213,7 @@
                 {
                     "word": "Рубашка",
                     "speech": "assets/speech/s/podnos.ogg",
-                    "text": "Где звук [С] в слове поднос",
+                    "text": "Где находится звук [С] в слове поднос",
                     "answer": 2
                 },
                 {
@@ -2225,31 +2225,31 @@
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/s/list.ogg",
-                    "text": "Где звук [С] в слове лист",
+                    "text": "Где находится звук [С] в слове лист",
                     "answer": 1
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/s/krisa.ogg",
-                    "text": "Где звук [С] в слове крыса",
+                    "text": "Где находится звук [С] в слове крыса",
                     "answer": 1
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/s/kompas.ogg",
-                    "text": "Где звук [С] в слове компас",
+                    "text": "Где находится звук [С] в слове компас",
                     "answer": 2
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/s/posuda.ogg",
-                    "text": "Где звук [С] в слове посуда",
+                    "text": "Где находится звук [С] в слове посуда",
                     "answer": 1
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/s/samokat.ogg",
-                    "text": "Где звук [С] в слове самокат",
+                    "text": "Где находится звук [С] в слове самокат",
                     "answer": 0
                 }
             ]
@@ -2490,7 +2490,7 @@
                 {
                     "word": "Рубашка",
                     "speech": "assets/speech/z/uzel.ogg",
-                    "text": "Где звук [З] в слове узел",
+                    "text": "Где находится звук [З] в слове узел",
                     "answer": 1
                 },
                 {
@@ -2502,25 +2502,25 @@
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/z/znoy.ogg",
-                    "text": "Где звук [З] в слове зной",
+                    "text": "Где находится звук [З] в слове зной",
                     "answer": 0
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/z/bereza.ogg",
-                    "text": "Где звук [З] в слове берёза",
+                    "text": "Где находится звук [З] в слове берёза",
                     "answer": 1
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/z/sleza.ogg",
-                    "text": "Где звук [З] в слове слеза",
+                    "text": "Где находится звук [З] в слове слеза",
                     "answer": 1
                 },
                 {
                     "word": "Куртка",
                     "speech": "assets/speech/z/zavod.ogg",
-                    "text": "Где звук [З] в слове завод",
+                    "text": "Где находится звук [З] в слове завод",
                     "answer": 0
                 }
             ]
@@ -2569,6 +2569,594 @@
                     "id": 7,
                     "word": "газон",
                     "speech": "assets/speech/z/gazon.ogg"
+                }
+            ]
+        },
+        {
+
+            "id": 42,
+            "name": "Веселые слоги",
+            "description": "Веселые слоги",
+            "icon": "fi fi-rr-comment-question",
+            "type": 2,
+            "theme": 11,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай последовательность слогов, а затем выбери правильную последовательность.",
+            "instructionsSpeech": "assets/speech/nested/instruction.ogg",
+            "character": "characters/j.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "correctAnswer": {
+                        "word": "жа-жо-жу"
+                    },
+                    "incorrectAnswer": {
+                        "word": "жа-жо-жа"
+                    },
+                    "wordSpeech": "assets/speech/j/1.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "ажа-ожо-ажа"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ожу-ужу-ожу"
+                    },
+                    "wordSpeech": "assets/speech/j/2.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "жра-жро-жру"
+                    },
+                    "incorrectAnswer": {
+                        "word": "жло-жла-жла"
+                    },
+                    "wordSpeech": "assets/speech/j/3.ogg"
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "name": "Где наш звук",
+            "description": "Где наш звук",
+            "icon": "fi fi-rr-search",
+            "type": 3,
+            "theme": 11,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить есть ли звук [Ж] в данном слове.",
+            "instructionsSpeech": "assets/speech/j/instruction2.ogg",
+            "character": "characters/j.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+
+
+                        "taskText": "Есть ли звук [Ж] в слове жаба",
+                        "speechTask": "assets/speech/j/jaba.ogg",
+                        "correctAnswer": 1,
+                        "word": "«платье»"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове море",
+                        "speechTask": "assets/speech/j/sea.ogg",
+                        "correctAnswer": 0,
+                        "word": "блуза"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове мыло",
+                        "speechTask": "assets/speech/j/soap.ogg",
+                        "correctAnswer": 0,
+                        "word": "юбка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове жара",
+                        "speechTask": "assets/speech/j/heat.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове птица",
+                        "speechTask": "assets/speech/j/bird.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове жаргон",
+                        "speechTask": "assets/speech/j/jargon.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове жалюзи",
+                        "speechTask": "assets/speech/j/jazi.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове кошка",
+                        "speechTask": "assets/speech/j/cat.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове желудок",
+                        "speechTask": "assets/speech/j/stomach.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове ножницы",
+                        "speechTask": "assets/speech/j/nojnitsi.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове крыжовник",
+                        "speechTask": "assets/speech/j/krij.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ж] в слове магазин",
+                        "speechTask": "assets/speech/j/mag.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 44,
+            "name": "Попробуй найти",
+            "description": "Попробуй найти",
+            "icon": "fi fi-rr-book-alt",
+            "type": 4,
+            "theme": 11,
+            "welcomeSpeech": "",
+            "instructionsSpeech": "assets/speech/j/instruction3.ogg",
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить где находится звук [Ж]: в начале, середине или конце слова.",
+            "character": "characters/j.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Носок",
+                    "speech": "assets/speech/j/loja.ogg",
+                    "text": "Где находится звук [Ж] в слове ложа",
+                    "answer": 1
+                },
+                {
+                    "word": "Рубашка",
+                    "speech": "assets/speech/j/life.ogg",
+                    "text": "Где находится звук [Ж] в слове жизнь",
+                    "answer": 0
+                },
+                {
+                    "word": "Брюки",
+                    "speech": "assets/speech/j/jere.ogg",
+                    "text": "Где находится звук [Ж] в слове жеребенок",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/j/skin.ogg",
+                    "text": "Где находится звук [Ж] в слове кожа",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/j/sneg.ogg",
+                    "text": "Где находится звук [Ж] в слове снежинка",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/j/jaket.ogg",
+                    "text": "Где находится звук [Ж] в слове жакет",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/j/jan.ogg",
+                    "text": "Где находится звук [Ж] в слове баклажан",
+                    "answer": 1
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "name": "Кто? Где? Сколько?",
+            "description": "Кто? Где? Сколько?",
+            "icon": "fi fi-rr-box-open",
+            "type": 7,
+            "theme": 11,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech":"",
+            "instructionsText": "Нажми на кнопку и прослушай слово, а затем попробуй собрать это слово из предоставленных букв.",
+            "instructionsSpeech": "assets/speech/nested/instruction4.ogg",
+            "character": "characters/j.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "жук",
+                    "speech": "assets/speech/j/jyk.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "лужа",
+                    "speech": "assets/speech/j/lyja.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "журнал",
+                    "speech": "assets/speech/j/journal.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "дружок",
+                    "speech": "assets/speech/j/friend.ogg"
+                },
+                {
+                    "id": 7,
+                    "word": "жажда",
+                    "speech": "assets/speech/j/thirst.ogg"
+                }
+            ]
+        },
+        {
+
+            "id": 46,
+            "name": "Веселые слоги",
+            "description": "Веселые слоги",
+            "icon": "fi fi-rr-comment-question",
+            "type": 2,
+            "theme": 12,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай последовательность слогов, а затем выбери правильную последовательность.",
+            "instructionsSpeech": "assets/speech/nested/instruction.ogg",
+            "character": "characters/sh.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "correctAnswer": {
+                        "word": "ша-шо-шу"
+                    },
+                    "incorrectAnswer": {
+                        "word": "шу-ша-шу"
+                    },
+                    "wordSpeech": "assets/speech/sh/1.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "уш-аш-ош"
+                    },
+                    "incorrectAnswer": {
+                        "word": "аш-ош-аш"
+                    },
+                    "wordSpeech": "assets/speech/sh/2.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "ашу-ошу-ешу"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ошо-ошо-ушу"
+                    },
+                    "wordSpeech": "assets/speech/sh/3.ogg"
+                },
+                {
+                    "id": 4,
+                    "correctAnswer": {
+                        "word": "ошк-ушк-ышк"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ашт-ошт-ошт"
+                    },
+                    "wordSpeech": "assets/speech/sh/4.ogg"
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "name": "Где наш звук",
+            "description": "Где наш звук",
+            "icon": "fi fi-rr-search",
+            "type": 3,
+            "theme": 12,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить есть ли звук [Ш] в данном слове.",
+            "instructionsSpeech": "assets/speech/sh/instruction2.ogg",
+            "character": "characters/sh.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+
+
+                        "taskText": "Есть ли звук [Ш] в слове шов",
+                        "speechTask": "assets/speech/sh/shov.ogg",
+                        "correctAnswer": 1,
+                        "word": "«платье»"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове слон",
+                        "speechTask": "assets/speech/sh/eleph.ogg",
+                        "correctAnswer": 0,
+                        "word": "блуза"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове шрам",
+                        "speechTask": "assets/speech/sh/scar.ogg",
+                        "correctAnswer": 1,
+                        "word": "юбка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове шелк",
+                        "speechTask": "assets/speech/sh/silk.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове шорты",
+                        "speechTask": "assets/speech/sh/shorts.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове кости",
+                        "speechTask": "assets/speech/sh/bone.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове ширма",
+                        "speechTask": "assets/speech/sh/shirma.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове ушиб",
+                        "speechTask": "assets/speech/sh/yshib.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове ландыш",
+                        "speechTask": "assets/speech/sh/lily.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове дерево",
+                        "speechTask": "assets/speech/sh/tree.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове мишень",
+                        "speechTask": "assets/speech/sh/target.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [Ш] в слове тишина",
+                        "speechTask": "assets/speech/sh/tiho.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 48,
+            "name": "Попробуй найти",
+            "description": "Попробуй найти",
+            "icon": "fi fi-rr-book-alt",
+            "type": 4,
+            "theme": 12,
+            "welcomeSpeech": "",
+            "instructionsSpeech": "assets/speech/sh/instruction3.ogg",
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить где находится звук [Ш]: в начале, середине или конце слова.",
+            "character": "characters/sh.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Носок",
+                    "speech": "assets/speech/sh/yshi.ogg",
+                    "text": "Где находится звук [Ш] в слове уши",
+                    "answer": 1
+                },
+                {
+                    "word": "Рубашка",
+                    "speech": "assets/speech/sh/shumok.ogg",
+                    "text": "Где находится звук [Ш] в слове шум",
+                    "answer": 0
+                },
+                {
+                    "word": "Брюки",
+                    "speech": "assets/speech/sh/shib.ogg",
+                    "text": "Где находится звук [Ш] в слове ушиб",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/spike.ogg",
+                    "text": "Где находится звук [Ш] в слове шипы",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/roof.ogg",
+                    "text": "Где находится звук [Ш] в слове крыша",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/hat.ogg",
+                    "text": "Где находится звук [Ш] в слове шапка",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/bear.ogg",
+                    "text": "Где находится звук [Ш] в слове мишка",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/lan.ogg",
+                    "text": "Где находится звук [Ш] в слове ландыш",
+                    "answer": 2
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/bed.ogg",
+                    "text": "Где находится звук [Ш] в слове кушетка",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/oshei.ogg",
+                    "text": "Где находится звук [Ш] в слове ошейник",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/kam.ogg",
+                    "text": "Где находится звук [Ш] в слове камыш",
+                    "answer": 2
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/sh/kid.ogg",
+                    "text": "Где находится звук [Ш] в слове малыш",
+                    "answer": 2
+                }
+
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Кто? Где? Сколько?",
+            "description": "Кто? Где? Сколько?",
+            "icon": "fi fi-rr-box-open",
+            "type": 7,
+            "theme": 12,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech":"",
+            "instructionsText": "Нажми на кнопку и прослушай слово, а затем попробуй собрать это слово из предоставленных букв.",
+            "instructionsSpeech": "assets/speech/nested/instruction4.ogg",
+            "character": "characters/sh.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "шум",
+                    "speech": "assets/speech/sh/shym.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "шнур",
+                    "speech": "assets/speech/sh/shnyr.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "каша",
+                    "speech": "assets/speech/sh/kasha.ogg"
+                },
+                {
+                    "id": 7,
+                    "word": "крыша",
+                    "speech": "assets/speech/sh/krisha.ogg"
+                },
+                {
+                    "id": 8,
+                    "word": "шахта",
+                    "speech": "assets/speech/sh/shahta.ogg"
+                },
+                {
+                    "id": 9,
+                    "word": "камыш",
+                    "speech": "assets/speech/sh/kamish.ogg"
+                },
+                {
+                    "id": 10,
+                    "word": "мышка",
+                    "speech": "assets/speech/sh/mouse.ogg"
+                },
+                {
+                    "id": 11,
+                    "word": "шахматы",
+                    "speech": "assets/speech/sh/chess.ogg"
                 }
             ]
         }

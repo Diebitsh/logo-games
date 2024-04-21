@@ -4,4 +4,5 @@ export class GameThemeModel {
     theme: number;
     icon: string;
     isActive: boolean;
+    isNested?: boolean;
 }

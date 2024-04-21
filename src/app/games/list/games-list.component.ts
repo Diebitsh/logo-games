@@ -15,10 +15,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 	styleUrl: './games-list.component.scss'
 })
 export class GamesListComponent implements OnInit {
+	isShowNestedThemes: boolean = false;
 
 	constructor(private gamesService: GamesService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
 	themes: GameThemeModel[] = [];
+	nestedThemes: GameThemeModel[] = [];
 	games: GameModel[] = [];
 	activeTheme: number;
 
@@ -34,6 +36,15 @@ export class GamesListComponent implements OnInit {
 
 	loadThemes() {
 		this.themes = this.gamesService.getThemesList();
+		this.nestedThemes = this.gamesService.getNestedThemesList();
+	}
+
+	showNestedThemes() {
+		this.isShowNestedThemes = true;
+	}
+
+	hideNestedThemes() {
+		this.isShowNestedThemes = false;
 	}
 
 	clearActiveTheme() {
@@ -45,7 +56,8 @@ export class GamesListComponent implements OnInit {
 			}
 		})
 		this.games = [];
-		this.themes.forEach(x => x.isActive = false)
+		this.themes.forEach(x => x.isActive = false);
+		this.nestedThemes.forEach(x => x.isActive = false)
 	}
 
 	showGamesByTheme(theme: GameThemeModel) {

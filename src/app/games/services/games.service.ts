@@ -8,7 +8,12 @@ export class GamesService {
 
 
     getThemesList(): GameThemeModel[] {
-        return data.themes as GameThemeModel[];
+        return data.themes.filter(x => !x.isNested) as GameThemeModel[];
+    }
+
+
+    getNestedThemesList(): GameThemeModel[] {
+        return data.themes.filter(x => x.isNested) as GameThemeModel[];
     }
 
     getGamesByTheme(themeId: number): GameModel[] {

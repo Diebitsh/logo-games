@@ -74,6 +74,30 @@
             "id": 8,
             "name": "Одежда",
             "icon": "fi fi-rr-shirt-long-sleeve"
+        },
+        {
+            "id": 9,
+            "name": "Звук [С]",
+            "icon": "fi fi-rr-shirt-long-sleeve",
+            "isNested": true
+        },
+        {
+            "id": 10,
+            "name": "Звук [З]",
+            "icon": "fi fi-rr-shirt-long-sleeve",
+            "isNested": true
+        },
+        {
+            "id": 11,
+            "name": "Звук [Ж]",
+            "icon": "fi fi-rr-shirt-long-sleeve",
+            "isNested": true
+        },
+        {
+            "id": 12,
+            "name": "Звук [Ш]",
+            "icon": "fi fi-rr-shirt-long-sleeve",
+            "isNested": true
         }
         
     ],
@@ -2002,6 +2026,551 @@
                     }
                 ]
             }
+        },
+        {
+            "id": 33,
+            "name": "Веселые слоги",
+            "description": "Веселые слоги",
+            "icon": "fi fi-rr-comment-question",
+            "type": 2,
+            "theme": 9,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай последовательность слогов, а затем выбери правильную последовательность.",
+            "instructionsSpeech": "assets/speech/nested/instruction.ogg",
+            "character": "characters/s.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "correctAnswer": {
+                        "word": "са-со-са"
+                    },
+                    "incorrectAnswer": {
+                        "word": "су-со-сы"
+                    },
+                    "wordSpeech": "assets/speech/s/1.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "ас-ос-ус"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ис-ыс-ис"
+                    },
+                    "wordSpeech": "assets/speech/s/2.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "аса-осо-аса"
+                    },
+                    "incorrectAnswer": {
+                        "word": "уса-оса-ыса"
+                    },
+                    "wordSpeech": "assets/speech/s/3.ogg"
+                },
+                {
+                    "id": 4,
+                    "correctAnswer": {
+                        "word": "ста-сто-сту"
+                    },
+                    "incorrectAnswer": {
+                        "word": "ска-ско-ско"
+                    },
+                    "wordSpeech": "assets/speech/s/4.ogg"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "name": "Где наш звук",
+            "description": "Где наш звук",
+            "icon": "fi fi-rr-search",
+            "type": 3,
+            "theme": 9,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить есть ли звук [С] в данном слове.",
+            "instructionsSpeech": "assets/speech/s/instruction2.ogg",
+            "character": "characters/s.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+
+                        "taskText": "Есть ли звук [С] в слове мост",
+                        "speechTask": "assets/speech/s/most.ogg",
+                        "correctAnswer": 1,
+                        "word": "«платье»"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове свет",
+                        "speechTask": "assets/speech/s/svet.ogg",
+                        "correctAnswer": 1,
+                        "word": "блуза"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове полка",
+                        "speechTask": "assets/speech/s/polka.ogg",
+                        "correctAnswer": 0,
+                        "word": "юбка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове крот",
+                        "speechTask": "assets/speech/s/krot.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове стул",
+                        "speechTask": "assets/speech/s/stul.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове пирог",
+                        "speechTask": "assets/speech/s/pirog.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове солнце",
+                        "speechTask": "assets/speech/s/sun.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове квартира",
+                        "speechTask": "assets/speech/s/kvartira.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове сорока",
+                        "speechTask": "assets/speech/s/soroka.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [С] в слове космос",
+                        "speechTask": "assets/speech/s/kosmos.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 35,
+            "name": "Попробуй найти",
+            "description": "Попробуй найти",
+            "icon": "fi fi-rr-book-alt",
+            "type": 4,
+            "theme": 9,
+            "welcomeSpeech": "",
+            "instructionsSpeech": "assets/speech/s/instruction3.ogg",
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить где находится звук [С]: в начале, середине или конце слова.",
+            "character": "characters/s.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Носок",
+                    "speech": "assets/speech/s/slon.ogg",
+                    "text": "Где находится звук [С] в слове слон",
+                    "answer": 0
+                },
+                {
+                    "word": "Халат",
+                    "speech": "assets/speech/s/hvost.ogg",
+                    "text": "Где нахоидтся звук [С] в слове хвост",
+                    "answer": 1
+                },
+                {
+                    "word": "Рубашка",
+                    "speech": "assets/speech/s/podnos.ogg",
+                    "text": "Где звук [С] в слове поднос",
+                    "answer": 2
+                },
+                {
+                    "word": "Брюки",
+                    "speech": "assets/speech/s/sovok.ogg",
+                    "text": "Где находится звук [С] в слове совок",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/s/list.ogg",
+                    "text": "Где звук [С] в слове лист",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/s/krisa.ogg",
+                    "text": "Где звук [С] в слове крыса",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/s/kompas.ogg",
+                    "text": "Где звук [С] в слове компас",
+                    "answer": 2
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/s/posuda.ogg",
+                    "text": "Где звук [С] в слове посуда",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/s/samokat.ogg",
+                    "text": "Где звук [С] в слове самокат",
+                    "answer": 0
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "name": "Кто? Где? Сколько?",
+            "description": "Кто? Где? Сколько?",
+            "icon": "fi fi-rr-box-open",
+            "type": 7,
+            "theme": 9,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech":"",
+            "instructionsText": "Нажми на кнопку и прослушай слово, а затем попробуй собрать это слово из предоставленных букв.",
+            "instructionsSpeech": "assets/speech/nested/instruction4.ogg",
+            "character": "characters/s.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "сок",
+                    "speech": "assets/speech/s/sok.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "нос",
+                    "speech": "assets/speech/s/nos.ogg"
+                },
+                {
+                    "id": 3,
+                    "word": "сода",
+                    "speech": "assets/speech/s/soda.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "сумка",
+                    "speech": "assets/speech/s/simka.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "сахар",
+                    "speech": "assets/speech/s/sahar.ogg"
+                },
+                {
+                    "id": 7,
+                    "word": "краска",
+                    "speech": "assets/speech/s/kraska.ogg"
+                }
+            ]
+        },
+        {
+
+            "id": 38,
+            "name": "Веселые слоги",
+            "description": "Веселые слоги",
+            "icon": "fi fi-rr-comment-question",
+            "type": 2,
+            "theme": 10,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай последовательность слогов, а затем выбери правильную последовательность.",
+            "instructionsSpeech": "assets/speech/nested/instruction.ogg",
+            "character": "characters/z.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "correctAnswer": {
+                        "word": "за-зо-зу"
+                    },
+                    "incorrectAnswer": {
+                        "word": "зы-зу-зы"
+                    },
+                    "wordSpeech": "assets/speech/z/1.ogg"
+                },
+                {
+                    "id": 2,
+                    "correctAnswer": {
+                        "word": "аза-озо-узу "
+                    },
+                    "incorrectAnswer": {
+                        "word": "иза-уза-оза"
+                    },
+                    "wordSpeech": "assets/speech/z/2.ogg"
+                },
+                {
+                    "id": 3,
+                    "correctAnswer": {
+                        "word": "зла-злу-злы"
+                    },
+                    "incorrectAnswer": {
+                        "word": "взо-взу-взо"
+                    },
+                    "wordSpeech": "assets/speech/z/3.ogg"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "name": "Где наш звук",
+            "description": "Где наш звук",
+            "icon": "fi fi-rr-search",
+            "type": 3,
+            "theme": 10,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить есть ли звук [З] в данном слове.",
+            "instructionsSpeech": "assets/speech/z/instruction2.ogg",
+            "character": "characters/z.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": {
+                "textures": {
+                    "yes": "assets/images/build-yes.png",
+                    "no": "assets/images/build-no.png"
+                },
+                "data": [
+                    {
+
+
+                        "taskText": "Есть ли звук [З] в слове коза",
+                        "speechTask": "assets/speech/z/koza.ogg",
+                        "correctAnswer": 1,
+                        "word": "«платье»"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове вода",
+                        "speechTask": "assets/speech/z/voda.ogg",
+                        "correctAnswer": 0,
+                        "word": "блуза"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове роза",
+                        "speechTask": "assets/speech/z/roza.ogg",
+                        "correctAnswer": 1,
+                        "word": "юбка"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове ваза",
+                        "speechTask": "assets/speech/z/vaza.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове забор",
+                        "speechTask": "assets/speech/z/zabor.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове гнездо",
+                        "speechTask": "assets/speech/z/gnezdo.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове колесо",
+                        "speechTask": "assets/speech/z/koleso.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове заноза",
+                        "speechTask": "assets/speech/z/zanoza.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове незабудка",
+                        "speechTask": "assets/speech/z/nezabudka.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове цветок",
+                        "speechTask": "assets/speech/z/cvetok.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове голос",
+                        "speechTask": "assets/speech/z/golos.ogg",
+                        "correctAnswer": 0,
+                        "word": "пальто"
+                    },
+                    {
+                        "taskText": "Есть ли звук [З] в слове азбука",
+                        "speechTask": "assets/speech/z/azbuka.ogg",
+                        "correctAnswer": 1,
+                        "word": "пальто"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 40,
+            "name": "Попробуй найти",
+            "description": "Попробуй найти",
+            "icon": "fi fi-rr-book-alt",
+            "type": 4,
+            "theme": 10,
+            "welcomeSpeech": "",
+            "instructionsSpeech": "assets/speech/z/instruction3.ogg",
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "instructionsText": "Нажми на кнопку и прослушай слово. Тебе нужно определить где находится звук [З]: в начале, середине или конце слова.",
+            "character": "characters/z.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "word": "Носок",
+                    "speech": "assets/speech/z/zub.ogg",
+                    "text": "Где находится звук [З] в слове зуб",
+                    "answer": 0
+                },
+                {
+                    "word": "Рубашка",
+                    "speech": "assets/speech/z/uzel.ogg",
+                    "text": "Где звук [З] в слове узел",
+                    "answer": 1
+                },
+                {
+                    "word": "Брюки",
+                    "speech": "assets/speech/z/zoloto.ogg",
+                    "text": "Где находится звук [З] в слове золото",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/z/znoy.ogg",
+                    "text": "Где звук [З] в слове зной",
+                    "answer": 0
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/z/bereza.ogg",
+                    "text": "Где звук [З] в слове берёза",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/z/sleza.ogg",
+                    "text": "Где звук [З] в слове слеза",
+                    "answer": 1
+                },
+                {
+                    "word": "Куртка",
+                    "speech": "assets/speech/z/zavod.ogg",
+                    "text": "Где звук [З] в слове завод",
+                    "answer": 0
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "name": "Кто? Где? Сколько?",
+            "description": "Кто? Где? Сколько?",
+            "icon": "fi fi-rr-box-open",
+            "type": 7,
+            "theme": 10,
+            "backgroundImage": "assets/backgrounds/nested.jpg",
+            "welcomeText": "",
+            "welcomeSpeech":"",
+            "instructionsText": "Нажми на кнопку и прослушай слово, а затем попробуй собрать это слово из предоставленных букв.",
+            "instructionsSpeech": "assets/speech/nested/instruction4.ogg",
+            "character": "characters/z.png",
+            "finishText": "Молодец, отличная работа!",
+            "finishSpeech": "assets/speech/nested/finish.ogg",
+            "correctAnswerText": "Хорошо! Двигаемся дальше",
+            "correctAnswerSpeech": "assets/speech/nested/correct.ogg",
+            "incorrectAnswerText": "Подумай еще",
+            "incorrectAnswerSpeech": "assets/speech/nested/incorrect.ogg",
+            "content": [
+                {
+                    "id": 1,
+                    "word": "узлы",
+                    "speech": "assets/speech/z/uzli.ogg"
+                },
+                {
+                    "id": 2,
+                    "word": "зубы",
+                    "speech": "assets/speech/z/zubi.ogg"
+                },
+                {
+                    "id": 5,
+                    "word": "глаза",
+                    "speech": "assets/speech/z/glaza.ogg"
+                },
+                {
+                    "id": 6,
+                    "word": "замок",
+                    "speech": "assets/speech/z/zamok.ogg"
+                },
+                {
+                    "id": 7,
+                    "word": "газон",
+                    "speech": "assets/speech/z/gazon.ogg"
+                }
+            ]
         }
     ]
 }

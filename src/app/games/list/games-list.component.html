@@ -1,8 +1,9 @@
 <div style="margin-left: 15%;" class="float-left">
   <button class="btn btn-primary my-2 mx-5 w-35" (click)="clearActiveTheme()" [hidden]="!activeTheme">Назад</button>
+  <button class="btn btn-primary my-2 mx-5 w-35" (click)="hideNestedThemes()" *ngIf="isShowNestedThemes && !activeTheme">Назад</button>
 </div>
 <div #list class="list-topics-content">
-    <ul [hidden]="!!activeTheme">
+    <ul [hidden]="!!activeTheme || isShowNestedThemes">
         <li (click)="showGamesByTheme(theme)" *ngFor="let theme of themes">
             <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">
                 <div class="single-list-topics-icon">
@@ -11,16 +12,29 @@
                 <h2 style="font-size: 1.9rem;">{{theme.name}}</h2>
             </div>
         </li>
-        <li>
+        <li (click)="showNestedThemes()">
           <div class="single-list-topics-content">
               <div class="single-list-topics-icon">
                   <i [class]="'fi fi fi-rr-book-bookmark'"></i>
               </div>
-              <h2 style="font-size: 1.9rem;">Звуки</h2>
+              <h2 style="font-size: 1.8rem;">Группы звуков</h2>
           </div>
       </li>
     </ul>
    
+</div>
+<div *ngIf="isShowNestedThemes"  class="list-topics-content">
+  <ul [hidden]="!!activeTheme">
+      <li (click)="showGamesByTheme(theme)" *ngFor="let theme of nestedThemes">
+          <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">
+              <div class="single-list-topics-icon">
+                  <i [class]="'fi '+ theme.icon"></i>
+              </div>
+              <h2 style="font-size: 1.9rem;">{{theme.name}}</h2>
+          </div>
+      </li>
+  </ul>
+ 
 </div>
 <div (click)="goToGame(game)" *ngFor="let game of games">
     <div class="service-item">

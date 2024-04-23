@@ -1,4 +1,4 @@
-<button class="btn btn-primary my-2 mx-5 w-35" (click)="goToList({'theme': game.theme})">назад</button>
+<button class="btn btn-primary my-2 mx-5 w-35" (click)="goToList({'theme': game.theme, 'showNested': isShowNestedThemes})">назад</button>
 <div #gameContainer style="background-image: url({{background}}); background-repeat: no-repeat;background-size: 100% 100%;"
     class="game-container">
 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="text-center" *ngIf="gameFinished">
-        <button  (click)="goToList({theme: game.theme})"
+        <button  (click)="goToList({theme: game.theme, 'showNested': isShowNestedThemes})"
             type="button" class="btn btn-primary btn-lg btn-block">
             Выход
         </button>

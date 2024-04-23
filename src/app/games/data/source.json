@@ -78,25 +78,25 @@
         {
             "id": 9,
             "name": "Звук [С]",
-            "icon": "fi fi-rr-shirt-long-sleeve",
+            "icon": "fi fi-rr-sun",
             "isNested": true
         },
         {
             "id": 10,
             "name": "Звук [З]",
-            "icon": "fi fi-rr-shirt-long-sleeve",
+            "icon": "fi fi-rr-umbrella",
             "isNested": true
         },
         {
             "id": 11,
             "name": "Звук [Ж]",
-            "icon": "fi fi-rr-shirt-long-sleeve",
+            "icon": "fi fi-rr-acorn",
             "isNested": true
         },
         {
             "id": 12,
             "name": "Звук [Ш]",
-            "icon": "fi fi-rr-shirt-long-sleeve",
+            "icon": "fi fi-rr-balloon",
             "isNested": true
         }
         
@@ -525,39 +525,50 @@
                 {
                     "correctAnswer": "свинья",
                     "incorrectAnswer": "телёнок",
-                    "speech": "сказать чь",
+                    "speech": "assets/speech/find-image/s.ogg",
                     "text": "В каком слове есть звук [С]",
-                    "image": "find-image/pig.webp"
+                    "correctImage": "assets/images/farm/pig.webp",
+                    "incorrectImage": "assets/images/find-image/bichok.jpg"
                 },
                 {
                     "correctAnswer": "теленок",
                     "incorrectAnswer": "курица",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Н]"
+                    "speech": "assets/speech/find-image/n.ogg",
+                    "text": "В каком слове есть звук [Н]",
+                    "correctImage": "assets/images/find-image/bichok.jpg",
+                    "incorrectImage": "assets/images/find-image/chicken.jpg"
                 },
                 {
                     "correctAnswer": "лошадь",
                     "incorrectAnswer": "петух",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Ш]"
+                    "speech": "assets/speech/find-image/sh.ogg",
+                    "text": "В каком слове есть звук [Ш]",
+                    "correctImage": "assets/images/find-image/horse.avif",
+                    "incorrectImage": "assets/images/find-image/cockorel.png"
                 },
                 {
                     "correctAnswer": "жеребенок",
                     "incorrectAnswer": "лошадь",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [К]"
+                    "speech": "assets/speech/find-image/k.ogg",
+                    "text": "В каком слове есть звук [К]",
+                    "correctImage": "assets/images/find-image/pony.jpg",
+                    "incorrectImage": "assets/images/find-image/horse.avif"
                 },
                 {
                     "correctAnswer": "гусь",
                     "incorrectAnswer": "курица",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Г]"
+                    "speech": "assets/speech/find-image/g.ogg",
+                    "text": "В каком слове есть звук [Г]",
+                    "correctImage": "assets/images/find-image/goose.webp",
+                    "incorrectImage": "assets/images/find-image/chicken.jpg"
                 },
                 {
                     "correctAnswer": "цыпленок",
                     "incorrectAnswer": "телёнок",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Ц]"
+                    "speech": "assets/speech/find-image/c.ogg",
+                    "text": "В каком слове есть звук [Ц]",
+                    "correctImage": "assets/images/find-image/cip.png",
+                    "incorrectImage": "assets/images/find-image/bichok.jpg"
                 }
             ]
         },
@@ -860,7 +871,7 @@
             "welcomeSpeech": "assets/speech/prepare-coctail/welcome.ogg",
             "instructionsSpeech": "assets/speech/prepare-coctail/instruction.ogg",
             "welcomeText": "Привет! Давай с тобой приготовим самый вкусный фруктовый коктейль!",
-            "instructionsText": "нажми на кнопку и прослушай звук,затем выбери фрукт,который начинается на этот звук",
+            "instructionsText": "Нажми на кнопку и прослушай звук,затем выбери фрукт,который начинается на этот звук",
             "character": "characters/girl.jpg",
             "finishText": "Отличная работа! Ты прекрасно справился,приготовим еще коктейлей?",
             "finishSpeech": "assets/speech/prepare-coctail/finish.ogg",
@@ -872,38 +883,50 @@
                 {
                     "correctAnswer": "апельсин",
                     "incorrectAnswer": "огурец",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Ч'] "
+                    "speech": "assets/speech/prepare-coctail/n.ogg",
+                    "text": "В каком слове есть звук [Н] ",
+                    "correctImage": "assets/images/what-fruit/orange.jpg",
+                    "incorrectImage": "assets/images/ogurec.png"
                 },
                 {
-                    "correctAnswer": "банан",
-                    "incorrectAnswer": "баклажан",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [Т] "
+                    "correctAnswer": "баклажан",
+                    "incorrectAnswer": "банан",
+                    "speech": "assets/speech/prepare-coctail/k.ogg",
+                    "text": "В каком слове есть звук [К] ",
+                    "correctImage": "assets/images/bakl.png",
+                    "incorrectImage": "assets/images/banana.png"
                 },
                 {
                     "correctAnswer": "лимон",
                     "incorrectAnswer": "редис",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [К] "
+                    "speech": "assets/speech/prepare-coctail/m.ogg",
+                    "text": "В каком слове есть звук [М] ",
+                    "correctImage": "assets/images/what-fruit/lemon.png",
+                    "incorrectImage": "assets/images/redis.png"
                 },
                 {
                     "correctAnswer": "мандарин",
                     "incorrectAnswer": "картофель",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [М] "
+                    "speech": "assets/speech/prepare-coctail/d.ogg",
+                    "text": "В каком слове есть звук [Д] ",
+                    "correctImage": "assets/images/what-fruit/mandarin.webp",
+                    "incorrectImage": "assets/images/prepare-soup/potato.png"
                 },
                 {
-                    "correctAnswer": "киви",
-                    "incorrectAnswer": "помидор",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [С] "
+                    "correctAnswer": "помидор",
+                    "incorrectAnswer": "киви",
+                    "speech": "assets/speech/prepare-coctail/r.ogg",
+                    "text": "В каком слове есть звук [Р] ",
+                    "correctImage": "assets/images/prepare-soup/tomato.jpg",
+                    "incorrectImage": "assets/images/kiwi.webp"
                 },
                 {
                     "correctAnswer": "груша",
                     "incorrectAnswer": "огурец",
-                    "speech": "сказать чь",
-                    "text": "В каком слове есть звук [П] "
+                    "speech": "assets/speech/prepare-coctail/sh.ogg",
+                    "text": "В каком слове есть звук [Ш] ",
+                    "correctImage": "assets/images/pear.jpg",
+                    "incorrectImage": "assets/images/ogurec.png"
                 }
             ]
         },
@@ -1348,7 +1371,7 @@
         {
             "id": 21,
             "name": "Собираем мебель",
-            "description": "Собираем мебель",
+            "description": "Помоги Павлу собрать мебель",
             "icon": "fi fi-rr-wrench-simple",
             "type": 4,
             "theme": 6,
@@ -1394,7 +1417,7 @@
         {
             "id": 22,
             "icon": "fi fi-rr-chair-office",
-            "description": "Угадай предмет",
+            "description": "Угадай предмет мебели вместе с Павлом",
             "name": "Угадай предмет",
             "type": 2,
             "theme": 6,
@@ -1464,7 +1487,7 @@
         {
             "id": 23,
             "name": "Что мы собрали",
-            "description": "Что мы собрали",
+            "description": "Подписываем мебель вместе с Павлом",
             "icon": "fi fi-rr-archive",
             "type": 7,
             "theme": 6,
@@ -1521,7 +1544,7 @@
         {
             "id": 24,
             "name": "Есть или нет",
-            "description": "Есть или нет",
+            "description": "Игра на внимательность вместе с павлом",
             "icon": "fi fi-rr-question-square",
             "type": 3,
             "theme": 6,
@@ -1585,7 +1608,7 @@
         {
             "id": 25,
             "name": "Волшебное слово",
-            "description": "Волшебное слово",
+            "description": "Решаем ребусы вместе с пчелкой Майей",
             "icon": "fi fi-rr-magic-wand",
             "type": 7,
             "theme": 7,
@@ -1627,7 +1650,7 @@
         { 
             "id": 26,
             "name": "Букет для мамы",
-            "description": "Букет для мамы",
+            "description": "Собираем цветы вместе с Варей",
             "icon": "fi fi-rr-flower-bouquet",
             "type": 5,
             "theme": 7,
@@ -1697,7 +1720,7 @@
         {
             "id": 27,
             "name": "Я - флорист!",
-            "description": "Я - флорист!",
+            "description": "Создаем краисвые букеты вместе с Анной",
             "icon": "fi fi-rr-hand-holding-seeding",
             "type": 5,
             "theme": 7,
@@ -1767,7 +1790,7 @@
         {
             "id": 28,
             "name": "Зимний сад",
-            "description": "Готовим фруктовый салат",
+            "description": "Выращиваем цветы в зимнем саду вместе с Варей",
             "icon": "fi fi-rr-plant-wilt",
             "type": 7,
             "theme": 7,
@@ -1819,7 +1842,7 @@
         {
             "id": 29,
             "name": "Выбираем наряд",
-            "description": "Выбираем наряд",
+            "description": "Помогаем Варе собраться на прогулку",
             "icon": "fi fi-rr-clothes-hanger",
             "type": 5,
             "theme": 8,
@@ -1873,7 +1896,7 @@
         {
             "id": 30,
             "name": "Переезд",
-            "description": "Переезд",
+            "description": "Помогаем Васе подписать коробки с вещами",
             "icon": "fi fi-rr-box-open",
             "type": 7,
             "theme": 8,
@@ -1920,7 +1943,7 @@
         {
             "id": 31,
             "name": "Домашнее задание",
-            "description": "Домашнее задание",
+            "description": "Помогаем Васе решить сложное задание",
             "icon": "fi fi-rr-book-alt",
             "type": 4,
             "theme": 8,
@@ -1972,7 +1995,7 @@
         {
             "id": 32,
             "name": "Кто самый внимательный?",
-            "description": "Кто самый внимательный?",
+            "description": "Играем в звуки с Варей",
             "icon": "fi fi-rr-search",
             "type": 3,
             "theme": 8,
@@ -2030,7 +2053,7 @@
         {
             "id": 33,
             "name": "Веселые слоги",
-            "description": "Веселые слоги",
+            "description": "Определяем правильную последовательность слогов",
             "icon": "fi fi-rr-comment-question",
             "type": 2,
             "theme": 9,
@@ -2092,7 +2115,7 @@
         {
             "id": 34,
             "name": "Где наш звук",
-            "description": "Где наш звук",
+            "description": "Определяем есть ли звук в слове",
             "icon": "fi fi-rr-search",
             "type": 3,
             "theme": 9,
@@ -2181,7 +2204,7 @@
         {
             "id": 35,
             "name": "Попробуй найти",
-            "description": "Попробуй найти",
+            "description": "Попробуй определить где находится звук в слове",
             "icon": "fi fi-rr-book-alt",
             "type": 4,
             "theme": 9,
@@ -2257,7 +2280,7 @@
         {
             "id": 37,
             "name": "Кто? Где? Сколько?",
-            "description": "Кто? Где? Сколько?",
+            "description": "Собираем слово из предоставленных букв",
             "icon": "fi fi-rr-box-open",
             "type": 7,
             "theme": 9,
@@ -2310,7 +2333,7 @@
 
             "id": 38,
             "name": "Веселые слоги",
-            "description": "Веселые слоги",
+            "description": "Определяем правильную последовательность слогов",
             "icon": "fi fi-rr-comment-question",
             "type": 2,
             "theme": 10,
@@ -2362,7 +2385,7 @@
         {
             "id": 39,
             "name": "Где наш звук",
-            "description": "Где наш звук",
+            "description": "Определяем есть ли звук в слове",
             "icon": "fi fi-rr-search",
             "type": 3,
             "theme": 10,
@@ -2464,7 +2487,7 @@
         {
             "id": 40,
             "name": "Попробуй найти",
-            "description": "Попробуй найти",
+            "description": "Попробуй определить где находится звук в слове",
             "icon": "fi fi-rr-book-alt",
             "type": 4,
             "theme": 10,
@@ -2528,7 +2551,7 @@
         {
             "id": 41,
             "name": "Кто? Где? Сколько?",
-            "description": "Кто? Где? Сколько?",
+            "description": "Собираем слово из предоставленных букв",
             "icon": "fi fi-rr-box-open",
             "type": 7,
             "theme": 10,
@@ -2576,7 +2599,7 @@
 
             "id": 42,
             "name": "Веселые слоги",
-            "description": "Веселые слоги",
+            "description": "Определяем правильную последовательность слогов",
             "icon": "fi fi-rr-comment-question",
             "type": 2,
             "theme": 11,
@@ -2628,7 +2651,7 @@
         {
             "id": 43,
             "name": "Где наш звук",
-            "description": "Где наш звук",
+            "description": "Определяем есть ли звук в слове",
             "icon": "fi fi-rr-search",
             "type": 3,
             "theme": 11,
@@ -2730,7 +2753,7 @@
         {
             "id": 44,
             "name": "Попробуй найти",
-            "description": "Попробуй найти",
+            "description": "Попробуй определить где находится звук в слове",
             "icon": "fi fi-rr-book-alt",
             "type": 4,
             "theme": 11,
@@ -2794,7 +2817,7 @@
         {
             "id": 45,
             "name": "Кто? Где? Сколько?",
-            "description": "Кто? Где? Сколько?",
+            "description": "Собираем слово из предоставленных букв",
             "icon": "fi fi-rr-box-open",
             "type": 7,
             "theme": 11,
@@ -2842,7 +2865,7 @@
 
             "id": 46,
             "name": "Веселые слоги",
-            "description": "Веселые слоги",
+            "description": "Определяем правильную последовательность слогов",
             "icon": "fi fi-rr-comment-question",
             "type": 2,
             "theme": 12,
@@ -2904,7 +2927,7 @@
         {
             "id": 47,
             "name": "Где наш звук",
-            "description": "Где наш звук",
+            "description": "Определяем есть ли звук в слове",
             "icon": "fi fi-rr-search",
             "type": 3,
             "theme": 12,
@@ -3006,7 +3029,7 @@
         {
             "id": 48,
             "name": "Попробуй найти",
-            "description": "Попробуй найти",
+            "description": "Попробуй определить где находится звук в слове",
             "icon": "fi fi-rr-book-alt",
             "type": 4,
             "theme": 12,
@@ -3101,7 +3124,7 @@
         {
             "id": 49,
             "name": "Кто? Где? Сколько?",
-            "description": "Кто? Где? Сколько?",
+            "description": "Собираем слово из предоставленных букв",
             "icon": "fi fi-rr-box-open",
             "type": 7,
             "theme": 12,

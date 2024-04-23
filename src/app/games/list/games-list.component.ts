@@ -28,8 +28,11 @@ export class GamesListComponent implements OnInit {
 		// document.body.className = "image-back";
 		this.loadThemes();
 		this.activeTheme = Number(this.activatedRoute.snapshot.queryParamMap.get("theme"));
+		let value = (this.activatedRoute.snapshot.queryParamMap.get("showNested"));
+		this.isShowNestedThemes = value ? value.toLocaleLowerCase() === 'true' : false;
+		console.log(this.isShowNestedThemes)
 		if (this.activeTheme != null) {
-			const activeTheme = this.themes.find(x => x.id == this.activeTheme);
+			const activeTheme = !this.isShowNestedThemes ? this.themes.find(x => x.id == this.activeTheme) : this.nestedThemes.find(x => x.id == this.activeTheme);
 			this.showGamesByTheme(activeTheme);
 		};
 	}
@@ -41,10 +44,22 @@ export class GamesListComponent implements OnInit {
 
 	showNestedThemes() {
 		this.isShowNestedThemes = true;
+		this.router.navigate([], {
+			relativeTo: this.activatedRoute,
+			queryParams: {
+				showNested: true
+			}
+		})
 	}
 
 	hideNestedThemes() {
 		this.isShowNestedThemes = false;
+		this.router.navigate([], {
+			relativeTo: this.activatedRoute,
+			queryParams: {
+				showNested: undefined
+			}
+		});
 	}
 
 	clearActiveTheme() {
@@ -52,7 +67,8 @@ export class GamesListComponent implements OnInit {
 		this.router.navigate([], {
 			relativeTo: this.activatedRoute,
 			queryParams: {
-				theme: null
+				theme: null,
+				showNested: this.isShowNestedThemes
 			}
 		})
 		this.games = [];
@@ -65,19 +81,21 @@ export class GamesListComponent implements OnInit {
 		this.router.navigate([], {
 			relativeTo: this.activatedRoute,
 			queryParams: {
-				theme: theme.id
+				theme: theme.id,
+				showNested: this.isShowNestedThemes
 			}
 		})
 		this.themes.forEach(t => t.isActive = false);
 		theme.isActive = true;
-		this.games = this.gamesService.getGamesByTheme(theme.id);
+		this.games =  this.gamesService.getGamesByTheme(theme.id);
 	}
 
 	goToGame(game: GameModel) {
 		this.router.navigate(['../play'], {
 			relativeTo: this.activatedRoute,
 			queryParams: {
-				'game': game.id
+				'game': game.id,
+				'showNested': this.isShowNestedThemes
 			}
 		})
 	}

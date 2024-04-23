@@ -45,12 +45,14 @@ export class WhatSoundComponent implements OnInit {
 
 	answer(answer: any) {
 		const isCorrect = answer.id == this.correctAnswer.id;
-		this.onAnswer.next(isCorrect);
 		if (isCorrect){
 			this.completedLevels.push(this.correctAnswer.id)
-			if (this.completedLevels.length == this.game.content.length)
+			if (this.completedLevels.length == this.game.content.length) {
 				this.onGameFinish.next();
+				return;
+			}
 		}
+		this.onAnswer.next(isCorrect);
 	}
 
 }

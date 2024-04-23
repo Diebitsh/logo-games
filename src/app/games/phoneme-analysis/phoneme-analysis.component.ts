@@ -43,10 +43,11 @@ export class PhonemeAnalysisComponent implements OnInit {
 
 	sendAnswer(answer: number) {
 		const isCorrect = answer == this.currentWord.correctAnswer;
-		this.onAnswer.next(isCorrect);
 		if (isCorrect && this.currentLevelIndex + 1 == this.game.content.data.length) {
 			this.onGameFinish.next();
+			return;
 		}
+		this.onAnswer.next(isCorrect);
 	}
 
 	play() {

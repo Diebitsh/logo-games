@@ -27,6 +27,7 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 	levelComplete: boolean = false;
 	isInstructionsShow: boolean = false;
 	instrcutionEnded: Subject<void> = new Subject<void>();
+	isShowNestedThemes: boolean = false;
 
 	constructor(
 		private gamesService: GamesService,
@@ -63,6 +64,9 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngAfterViewInit(): void {
+		let value = (this.activatedRoute.snapshot.queryParamMap.get("showNested"));
+		this.isShowNestedThemes = value ? value.toLocaleLowerCase() === 'true' : false;
+		console.log(13, this.isShowNestedThemes)
 		this.createComp();
 		// this.typeWriter
 

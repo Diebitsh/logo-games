@@ -79,7 +79,7 @@
     </p>
 
     <div class="levels">
-      <article class="level" *ngFor="let level of levels(); let i = index">
+      <article class="level" *ngFor="let level of levels(); let i = index; trackBy: trackLevel">
         <header class="level__head">
           <strong>Задание №{{ i + 1 }}</strong>
           <button

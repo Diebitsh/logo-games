@@ -152,4 +152,6 @@ export class ConstructorComponent {
   assetPreview(asset?: CustomGameAsset): string | null {
     return asset?.data ?? null;
   }
+
+  trackLevel = (_: number, level: CustomGameLevel) => level.id;
 }

@@ -69,7 +69,8 @@ jobs:
         id: pack
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
-          NAME="logogames-build-${{ github.run_number }}-${SHORT_SHA}.apk"
+          BUILD_NUM=$(git rev-list --count HEAD)
+          NAME="logogames-build-${BUILD_NUM}-${SHORT_SHA}.apk"
           mkdir -p out
           cp android/app/build/outputs/apk/release/app-release.apk "out/${NAME}"
           echo "name=${NAME}" >> "$GITHUB_OUTPUT"
@@ -140,7 +141,8 @@ jobs:
         id: pack
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
-          NAME="logogames-build-${{ github.run_number }}-${SHORT_SHA}.ipa"
+          BUILD_NUM=$(git rev-list --count HEAD)
+          NAME="logogames-build-${BUILD_NUM}-${SHORT_SHA}.ipa"
           APP_PATH="ios/App/build/Build/Products/Release-iphoneos/App.app"
           if [ ! -d "$APP_PATH" ]; then
             echo "App not found at $APP_PATH"; exit 1

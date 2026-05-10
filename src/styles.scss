@@ -1,4 +1,34 @@
-@use "@flaticon/flaticon-uicons/css/all/all";
+/*
+ * Self-hosted fonts. Latin + Cyrillic subsets only — other scripts
+ * (greek/vietnamese/latin-ext) are skipped to keep the offline APK lean.
+ * Both woff and woff2 ship; the browser/WebView picks woff2 everywhere.
+ */
+@use "@fontsource/unbounded/latin-700.css" as u-l-700;
+@use "@fontsource/unbounded/latin-800.css" as u-l-800;
+@use "@fontsource/unbounded/latin-900.css" as u-l-900;
+@use "@fontsource/unbounded/cyrillic-700.css" as u-c-700;
+@use "@fontsource/unbounded/cyrillic-800.css" as u-c-800;
+@use "@fontsource/unbounded/cyrillic-900.css" as u-c-900;
+
+@use "@fontsource/manrope/latin-400.css" as m-l-400;
+@use "@fontsource/manrope/latin-500.css" as m-l-500;
+@use "@fontsource/manrope/latin-600.css" as m-l-600;
+@use "@fontsource/manrope/latin-700.css" as m-l-700;
+@use "@fontsource/manrope/latin-800.css" as m-l-800;
+@use "@fontsource/manrope/cyrillic-400.css" as m-c-400;
+@use "@fontsource/manrope/cyrillic-500.css" as m-c-500;
+@use "@fontsource/manrope/cyrillic-600.css" as m-c-600;
+@use "@fontsource/manrope/cyrillic-700.css" as m-c-700;
+@use "@fontsource/manrope/cyrillic-800.css" as m-c-800;
+
+@use "@fontsource/caveat/latin-700.css" as c-l-700;
+@use "@fontsource/caveat/cyrillic-700.css" as c-c-700;
+
+/* Only the icon families actually used in templates and game data. */
+@use "@flaticon/flaticon-uicons/css/regular/rounded.css" as fi-rr;
+@use "@flaticon/flaticon-uicons/css/solid/rounded.css" as fi-sr;
+@use "@flaticon/flaticon-uicons/css/bold/rounded.css" as fi-br;
+@use "@flaticon/flaticon-uicons/css/regular/straight.css" as fi-rs;
 
 :root {
   /* === Brand palette === */

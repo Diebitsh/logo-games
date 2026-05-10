@@ -1,0 +1,202 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  # ============================================================
+  # Android — Linux runner, builds release APK signed with debug
+  # keystore (installable on any device, but not for Google Play)
+  # ============================================================
+  android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: 'npm' }
+
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0 platform-tools'
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('android/**/*.gradle*', 'android/gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Regenerate Android icons + splash
+        run: npx capacitor-assets generate --android
+
+      - name: Build web bundle
+        run: npx ng build --base-href ./
+
+      - name: Strip legacy font formats
+        run: find dist/logo-games/browser/media \( -name '*.eot' -o -name '*.woff' \) -delete
+
+      - name: Capacitor sync
+        run: npx cap sync android
+
+      - name: Build release APK
+        run: |
+          chmod +x android/gradlew
+          cd android
+          ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Pack APK
+        id: pack
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          NAME="logogames-build-${{ github.run_number }}-${SHORT_SHA}.apk"
+          mkdir -p out
+          cp android/app/build/outputs/apk/release/app-release.apk "out/${NAME}"
+          echo "name=${NAME}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: out/*.apk
+          retention-days: 7
+
+  # ============================================================
+  # iOS — macOS runner, builds unsigned .ipa via Xcode 16 + SPM
+  # ============================================================
+  ios:
+    name: Build iOS IPA
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: 'npm' }
+
+      - name: Select newest Xcode 16 (Capacitor 8 plugins need Swift 6+)
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode_16*.app 2>/dev/null | sort -V | tail -n1)
+          if [ -z "$XCODE_PATH" ]; then echo "No Xcode 16.x found"; exit 1; fi
+          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          xcodebuild -version
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build web bundle
+        run: npx ng build --base-href ./
+
+      - name: Strip legacy font formats
+        run: find dist/logo-games/browser/media \( -name '*.eot' -o -name '*.woff' \) -delete
+
+      - name: Add iOS platform if missing
+        run: |
+          if [ ! -d ios ]; then
+            npx cap add ios
+          fi
+
+      - name: Capacitor sync
+        run: npx cap sync ios
+
+      - name: Regenerate iOS icons + splash
+        run: npx capacitor-assets generate --ios
+
+      - name: Build unsigned .app
+        working-directory: ios/App
+        run: |
+          xcodebuild \
+            -project App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Pack as unsigned .ipa
+        id: pack
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          NAME="logogames-build-${{ github.run_number }}-${SHORT_SHA}.ipa"
+          APP_PATH="ios/App/build/Build/Products/Release-iphoneos/App.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "App not found at $APP_PATH"; exit 1
+          fi
+          mkdir -p out/Payload
+          cp -R "$APP_PATH" out/Payload/
+          (cd out && zip -qr "../${NAME}" Payload)
+          echo "name=${NAME}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: '*.ipa'
+          retention-days: 7
+
+  # ============================================================
+  # Single GitHub Release with both platform binaries
+  # ============================================================
+  release:
+    name: Publish unified release
+    needs: [android, ios]
+    if: always() && (needs.android.result == 'success' || needs.ios.result == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - uses: actions/download-artifact@v4
+        with: { path: artifacts }
+
+      - name: Collect file list
+        id: meta
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          ls -R artifacts || true
+          # flatten so the upload step matches predictable paths
+          mkdir -p dist
+          find artifacts -type f \( -name '*.apk' -o -name '*.ipa' \) -exec mv {} dist/ \;
+          ls -la dist/
+          {
+            echo "tag=build-${{ github.run_number }}"
+            echo "title=Build ${{ github.run_number }} · ${SHORT_SHA}"
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.title }}
+          make_latest: true
+          fail_on_unmatched_files: false
+          files: dist/*
+          body: |
+            Сборка из коммита [`${{ github.sha }}`](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}).
+
+            ## 📱 Android
+            Скачайте `.apk`, разрешите установку из неизвестных источников (Настройки → Безопасность), откройте файл. Подписан debug-keystore — устанавливается на любое устройство.
+
+            ## 🍎 iOS
+            `.ipa` — **неподписанный**. Прямая установка запрещена Apple. См. раздел «Установка iOS» в `README.md`.

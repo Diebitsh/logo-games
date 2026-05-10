@@ -175,14 +175,16 @@ jobs:
         id: meta
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
+          # Monotonic counter that doesn't reset when the workflow file is
+          # renamed (unlike github.run_number).
+          BUILD_NUM=$(git rev-list --count HEAD)
           ls -R artifacts || true
-          # flatten so the upload step matches predictable paths
           mkdir -p dist
           find artifacts -type f \( -name '*.apk' -o -name '*.ipa' \) -exec mv {} dist/ \;
           ls -la dist/
           {
-            echo "tag=build-${{ github.run_number }}"
-            echo "title=Build ${{ github.run_number }} · ${SHORT_SHA}"
+            echo "tag=build-${BUILD_NUM}"
+            echo "title=Build ${BUILD_NUM} · ${SHORT_SHA}"
           } >> "$GITHUB_OUTPUT"
 
       - uses: softprops/action-gh-release@v2

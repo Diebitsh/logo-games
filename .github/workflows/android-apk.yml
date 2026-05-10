@@ -60,9 +60,9 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-      - name: Build debug APK
+      - name: Build release APK
         working-directory: android
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
 
       - name: Prepare release artifact
         id: artifact
@@ -70,7 +70,7 @@ jobs:
           SHORT_SHA=$(git rev-parse --short HEAD)
           NAME="logogames-build-${{ github.run_number }}-${SHORT_SHA}.apk"
           mkdir -p out
-          cp android/app/build/outputs/apk/debug/app-debug.apk "out/${NAME}"
+          cp android/app/build/outputs/apk/release/app-release.apk "out/${NAME}"
           {
             echo "name=${NAME}"
             echo "tag=build-${{ github.run_number }}"
@@ -97,7 +97,8 @@ jobs:
             2. Разрешите установку из неизвестных источников (Настройки → Безопасность).
             3. Откройте файл — приложение установится как обычное.
 
-            > Сборка отладочная (debug). Для Google Play нужна подписанная release-сборка с собственным keystore.
+            > Release-сборка с R8 minify + shrinkResources, ABI `arm64-v8a` (99% Android-устройств).
+            > Подписана debug-keystore — для Google Play нужно заменить на release-keystore.
           files: out/*.apk
           fail_on_unmatched_files: true
           make_latest: true

@@ -10,6 +10,13 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Modern Android is 99% arm64 — drop x86/armv7 to slim the APK.
+        // Bring them back via ./gradlew assembleRelease -PallAbis=true when needed.
+        if (!project.hasProperty('allAbis')) {
+            ndk {
+                abiFilters 'arm64-v8a'
+            }
+        }
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
              // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
@@ -18,8 +25,25 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            // Reuse the debug signing config so CI builds are installable
+            // without managing a release keystore. Swap to a real signingConfig
+            // before submitting to Google Play.
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += [
+                'META-INF/DEPENDENCIES',
+                'META-INF/LICENSE*',
+                'META-INF/NOTICE*',
+                'META-INF/*.kotlin_module',
+                'META-INF/AL2.0',
+                'META-INF/LGPL2.1'
+            ]
         }
     }
 }

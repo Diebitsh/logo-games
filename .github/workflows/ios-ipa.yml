@@ -52,19 +52,17 @@ jobs:
       - name: Generate iOS icons + splash
         run: npx capacitor-assets generate --ios
 
-      - name: Install CocoaPods
-        working-directory: ios/App
-        run: pod install --repo-update
-
       - name: Build unsigned .app
         working-directory: ios/App
         run: |
+          # Capacitor 8 ships iOS deps via Swift Package Manager — no Podfile needed.
           xcodebuild \
-            -workspace App.xcworkspace \
+            -project App.xcodeproj \
             -scheme App \
             -configuration Release \
             -sdk iphoneos \
             -derivedDataPath build \
+            -destination 'generic/platform=iOS' \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGN_IDENTITY="" \

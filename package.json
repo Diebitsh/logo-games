@@ -12,7 +12,9 @@
     "cap:sync": "ng build --base-href ./ && cap sync",
     "cap:android": "npm run cap:sync && cap open android",
     "cap:ios": "npm run cap:sync && cap open ios",
-    "optimize:assets": "node scripts/optimize-assets.mjs"
+    "optimize:assets": "node scripts/optimize-assets.mjs",
+    "icons:render": "node scripts/render-icons.mjs",
+    "icons:generate": "npm run icons:render && capacitor-assets generate"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +45,7 @@
     "@angular-devkit/build-angular": "^21.2.10",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.12",
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^8.3.3",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^3.0.3",

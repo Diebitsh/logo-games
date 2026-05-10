@@ -1,0 +1,110 @@
+name: iOS IPA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ios-ipa-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build unsigned iOS app
+    runs-on: macos-14
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build web bundle
+        run: npx ng build --base-href ./
+
+      - name: Strip legacy font formats (iOS WebView reads only woff2)
+        run: |
+          find dist/logo-games/browser/media \( -name '*.eot' -o -name '*.woff' \) -delete
+
+      - name: Add iOS platform if missing
+        run: |
+          if [ ! -d ios ]; then
+            npx cap add ios
+          fi
+
+      - name: Sync web → iOS
+        run: npx cap sync ios
+
+      - name: Generate iOS icons + splash
+        run: npx capacitor-assets generate --ios
+
+      - name: Install CocoaPods
+        working-directory: ios/App
+        run: pod install --repo-update
+
+      - name: Build unsigned .app
+        working-directory: ios/App
+        run: |
+          xcodebuild \
+            -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Package as unsigned .ipa
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          NAME="logogames-ios-build-${{ github.run_number }}-${SHORT_SHA}.ipa"
+          APP_PATH="ios/App/build/Build/Products/Release-iphoneos/App.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "App not found at $APP_PATH"; ls -R ios/App/build/Build/Products/ || true; exit 1
+          fi
+          mkdir -p out/Payload
+          cp -R "$APP_PATH" out/Payload/
+          (cd out && zip -qr "../$NAME" Payload)
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "tag=ios-build-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+        id: pack
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.pack.outputs.name }}
+          path: ${{ steps.pack.outputs.name }}
+          retention-days: 30
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.pack.outputs.tag }}
+          name: iOS Build ${{ github.run_number }}
+          body: |
+            **Неподписанная iOS-сборка** из коммита ${{ github.sha }}.
+
+            ### Установить на iPhone/iPad нельзя напрямую
+            Apple требует подпись разработчика. Варианты:
+
+            1. **Sideload через Xcode (бесплатно, 7 дней):** клонировать репозиторий на Mac, открыть `ios/App/App.xcworkspace` в Xcode, выбрать ваш Apple ID в «Signing & Capabilities», подключить iPhone, нажать ▶︎. Через 7 дней приложение «протухнет», нужно перезалить.
+            2. **AltStore / SideStore:** установить хелпер на Mac/PC, перетащить .ipa из этого релиза. Тоже 7 дней.
+            3. **TestFlight (Apple Developer Program $99/год):** нужна release-подпись и CI-доступ к App Store Connect. См. README.
+          files: ${{ steps.pack.outputs.name }}
+          fail_on_unmatched_files: true

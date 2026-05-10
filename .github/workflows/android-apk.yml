@@ -54,6 +54,9 @@ jobs:
       - name: Install npm dependencies
         run: npm ci --legacy-peer-deps
 
+      - name: Regenerate icons + splash from sources
+        run: npx capacitor-assets generate --android
+
       - name: Build web bundle
         run: npx ng build --base-href ./
 

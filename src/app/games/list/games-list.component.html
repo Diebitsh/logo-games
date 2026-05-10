@@ -1,55 +1,56 @@
-<div style="margin-left: 15%;" class="float-left">
-  <button class="btn btn-primary my-2 mx-5 w-35" (click)="clearActiveTheme()" [hidden]="!activeTheme">Назад</button>
-  <button class="btn btn-primary my-2 mx-5 w-35" (click)="hideNestedThemes()" *ngIf="isShowNestedThemes && !activeTheme">Назад</button>
-</div>
-<div #list class="list-topics-content">
-    <ul [hidden]="!!activeTheme || isShowNestedThemes">
-        <li (click)="showGamesByTheme(theme)" *ngFor="let theme of themes">
-            <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">
-                <div class="single-list-topics-icon">
-                    <i [class]="'fi '+ theme.icon"></i>
-                </div>
-                <h2 style="font-size: 1.9rem;">{{theme.name}}</h2>
-            </div>
-        </li>
-        <li (click)="showNestedThemes()">
-          <div class="single-list-topics-content">
-              <div class="single-list-topics-icon">
-                  <i [class]="'fi fi fi-rr-book-bookmark'"></i>
-              </div>
-              <h2 style="font-size: 1.8rem;">Группы звуков</h2>
-          </div>
-      </li>
-    </ul>
-   
-</div>
-<div *ngIf="isShowNestedThemes"  class="list-topics-content">
-  <ul [hidden]="!!activeTheme">
-      <li (click)="showGamesByTheme(theme)" *ngFor="let theme of nestedThemes">
-          <div class="single-list-topics-content" [ngClass]="theme.isActive ? 'single-list-topics-content-active' : null">
-              <div class="single-list-topics-icon">
-                  <i [class]="'fi '+ theme.icon"></i>
-              </div>
-              <h2 style="font-size: 1.9rem;">{{theme.name}}</h2>
-          </div>
-      </li>
+<section class="games-list">
+  <header class="list-header">
+    <div>
+      <h1>Полка игр</h1>
+      <span class="crumbs" *ngIf="isShowNestedThemes && !activeTheme">по группам звуков</span>
+      <span class="crumbs" *ngIf="!isShowNestedThemes && !activeTheme">по лексическим темам</span>
+    </div>
+    <button class="lg-btn" type="button" *ngIf="activeTheme || isShowNestedThemes" (click)="goBack()">
+      <i class="fi fi-rr-arrow-left"></i> Назад
+    </button>
+  </header>
+
+  <ul class="theme-grid" *ngIf="!activeTheme && !isShowNestedThemes">
+    <li
+      class="theme-card"
+      *ngFor="let theme of themes"
+      [class.active]="theme.isActive"
+      (click)="showGamesByTheme(theme)"
+    >
+      <i [class]="'fi ' + theme.icon"></i>
+      <h2>{{ theme.name }}</h2>
+    </li>
+    <li class="theme-card" (click)="showNestedThemes()">
+      <i class="fi fi-rr-book-bookmark"></i>
+      <h2>Группы звуков</h2>
+    </li>
   </ul>
- 
-</div>
-<div (click)="goToGame(game)" *ngFor="let game of games">
-    <div class="service-item">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="icon">
-              <i style="font-size: 2.5em;" [class]="game.icon"></i>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="right-content">
-              <h1>{{game.name}}</h1>
-              <p style="font-size: 1.5em;">{{game.description}}</p>
-            </div>
-          </div>
+
+  <ul class="theme-grid" *ngIf="isShowNestedThemes && !activeTheme">
+    <li
+      class="theme-card"
+      *ngFor="let theme of nestedThemes"
+      [class.active]="theme.isActive"
+      (click)="showGamesByTheme(theme)"
+    >
+      <i [class]="'fi ' + theme.icon"></i>
+      <h2>{{ theme.name }}</h2>
+    </li>
+  </ul>
+
+  <section class="games-section" *ngIf="activeTheme">
+    <h2>Игры темы</h2>
+    <div class="games-grid" *ngIf="games.length > 0; else emptyTpl">
+      <button type="button" class="game-tile" *ngFor="let game of games" (click)="goToGame(game)">
+        <span class="icon"><i [class]="'fi ' + (game.icon || 'fi-rr-puzzle-alt')"></i></span>
+        <div>
+          <h3>{{ game.name }}</h3>
+          <p>{{ game.description }}</p>
         </div>
-      </div>
-</div>
+      </button>
+    </div>
+    <ng-template #emptyTpl>
+      <div class="empty">Здесь пока тихо. Соберите игру в конструкторе ✨</div>
+    </ng-template>
+  </section>
+</section>

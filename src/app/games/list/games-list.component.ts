@@ -25,16 +25,23 @@ export class GamesListComponent implements OnInit {
 	activeTheme: number;
 
 	ngOnInit(): void {
-		// document.body.className = "image-back";
 		this.loadThemes();
-		this.activeTheme = Number(this.activatedRoute.snapshot.queryParamMap.get("theme"));
-		let value = (this.activatedRoute.snapshot.queryParamMap.get("showNested"));
-		this.isShowNestedThemes = value ? value.toLocaleLowerCase() === 'true' : false;
-		console.log(this.isShowNestedThemes)
-		if (this.activeTheme != null) {
-			const activeTheme = !this.isShowNestedThemes ? this.themes.find(x => x.id == this.activeTheme) : this.nestedThemes.find(x => x.id == this.activeTheme);
-			this.showGamesByTheme(activeTheme);
-		};
+
+		const themeParam = this.activatedRoute.snapshot.queryParamMap.get('theme');
+		this.activeTheme = themeParam ? Number(themeParam) : null;
+
+		const nestedParam = this.activatedRoute.snapshot.queryParamMap.get('showNested');
+		this.isShowNestedThemes = nestedParam ? nestedParam.toLowerCase() === 'true' : false;
+
+		if (this.activeTheme) {
+			const source = this.isShowNestedThemes ? this.nestedThemes : this.themes;
+			const found = source.find(x => x.id == this.activeTheme);
+			if (found) {
+				this.showGamesByTheme(found);
+			} else {
+				this.activeTheme = null;
+			}
+		}
 	}
 
 	loadThemes() {
@@ -98,5 +105,15 @@ export class GamesListComponent implements OnInit {
 				'showNested': this.isShowNestedThemes
 			}
 		})
+	}
+
+	goBack(): void {
+		if (this.activeTheme) {
+			this.clearActiveTheme();
+			return;
+		}
+		if (this.isShowNestedThemes) {
+			this.hideNestedThemes();
+		}
 	}
 }

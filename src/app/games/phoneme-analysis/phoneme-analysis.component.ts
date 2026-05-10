@@ -1,9 +1,13 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { GameModel } from '../models/game.model';
 import { Observable, Subject } from 'rxjs';
+import { play } from '../../../common/functions/sounds.functions';
 
 @Component({
 	selector: 'app-phoneme-analysis',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './phoneme-analysis.component.html',
 	styleUrl: './phoneme-analysis.component.scss'
 })
@@ -51,8 +55,7 @@ export class PhonemeAnalysisComponent implements OnInit {
 	}
 
 	play() {
-		var audio = new Audio(this.currentWord.speechTask)
-		audio.play();
+		void play(this.currentWord.speechTask);
 	}
 
 }

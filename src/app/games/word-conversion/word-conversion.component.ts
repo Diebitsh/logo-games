@@ -1,9 +1,12 @@
 import { Component, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 import { GameModel } from '../models/game.model';
 
 @Component({
 	selector: 'app-word-conversion',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './word-conversion.component.html',
 	styleUrl: './word-conversion.component.scss'
 })

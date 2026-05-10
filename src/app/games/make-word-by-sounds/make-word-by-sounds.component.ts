@@ -1,11 +1,14 @@
-import { ChangeDetectorRef, Component, Input, OnInit, Output } from '@angular/core';
-import { getRandom, shuffle } from '../../../common/functions/array.functions';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { shuffle } from '../../../common/functions/array.functions';
 import { play } from '../../../common/functions/sounds.functions';
 import { GameBaseComponent } from '../game-base/game-base.component';
 import { MakeWordBySoundsGameContent, MakeWordBySoundsGameModel } from '../models/make-word-by-sounds-game.model';
 
 @Component({
 	selector: 'app-make-word-by-sounds',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './make-word-by-sounds.component.html',
 	styleUrl: './make-word-by-sounds.component.scss'
 })

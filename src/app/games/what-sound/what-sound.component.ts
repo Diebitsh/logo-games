@@ -1,10 +1,14 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 import { GameModel } from '../models/game.model';
 import { getRandom, shuffle } from '../../../common/functions/array.functions';
+import { play } from '../../../common/functions/sounds.functions';
 
 @Component({
 	selector: 'app-what-sound',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './what-sound.component.html',
 	styleUrl: './what-sound.component.scss'
 })
@@ -39,8 +43,7 @@ export class WhatSoundComponent implements OnInit {
 	}
 
 	play() {
-		var audio = new Audio(`assets/sounds/${this.correctAnswer.sound}`)
-		audio.play();
+		void play(`assets/sounds/${this.correctAnswer.sound}`);
 	}
 
 	answer(answer: any) {

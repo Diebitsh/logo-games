@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AfterViewInit, Component, ComponentRef, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Subject } from 'rxjs';
 import { PhonemeAnalysisComponent } from '../phoneme-analysis/phoneme-analysis.component';
 import { GameModel } from '../models/game.model';
 import { GamesService } from '../services/games.service';
 import { MakeWordBySoundsComponent } from '../make-word-by-sounds/make-word-by-sounds.component';
 import { PhonemicAwarenessComponent } from '../phonemic-awareness/phonemic-awareness.component';
-import Typewriter from 't-writer.js';
 import { WhatSoundComponent } from '../what-sound/what-sound.component';
-import { Subject, from, of, takeUntil } from 'rxjs';
-import { play } from '../../../common/functions/sounds.functions';
+import { play, stop } from '../../../common/functions/sounds.functions';
 import { FirstOrLastCharComponent } from '../first-or-last-char/first-or-last-char.component';
 import { SoundPositionComponent } from '../sound-position/sound-position.component';
 import { SoundSequenceComponent } from '../sound-sequence/sound-sequence.component';
@@ -16,11 +16,10 @@ import { WordConversionComponent } from '../word-conversion/word-conversion.comp
 
 @Component({
 	selector: 'app-game-layout',
+	standalone: true,
+	imports: [CommonModule, RouterModule],
 	templateUrl: './game-layout.component.html',
-	styleUrl: './game-layout.component.scss',
-	animations: [
-
-	]
+	styleUrl: './game-layout.component.scss'
 })
 export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 	gameFinished: boolean = false;
@@ -42,8 +41,6 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@ViewChild("messageWindow") private messageWindow: ElementRef;
 
-	typeWriter!: Typewriter;
-
 	private readonly breakSound: Subject<void> = new Subject<void>();
 
 	private gameId: number;
@@ -53,14 +50,12 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	character: string;
 
-	player: HTMLAudioElement = new Audio()
-
 	private nextLevelEvent: Subject<void> = new Subject<void>;
 
 	ngOnDestroy(): void {
-		console.log(1)
 		this.breakSound.next();
 		this.breakSound.complete();
+		stop();
 	}
 
 	ngAfterViewInit(): void {
@@ -101,23 +96,20 @@ export class GameLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 		
 	}
 
-	audioPlayer: HTMLAudioElement = new Audio();
-
-
 	ngOnInit(): void {
 		const gameId = Number(this.activatedRoute.snapshot.queryParamMap.get("game"));
 		this.game = this.gamesService.getGameById(gameId);
-		this.background = this.game.backgroundImage
+		this.background = this.game.backgroundImage;
 		this.character = this.game.character;
-		this.gameId = Number(this.activatedRoute.snapshot.queryParamMap.get("game"));
-		this.player.src = this.game.welcomeSpeech;
-		play(this.game.welcomeSpeech).then(() => {
-			this.showedMessage = this.game.instructionsText;
-			play(this.game.instructionsSpeech).then(() => this.instrcutionEnded.next())
-			this.isInstructionsShow = true;
-		})
+		this.gameId = gameId;
 
 		this.showedMessage = this.game.welcomeText;
+
+		play(this.game.welcomeSpeech).then(() => {
+			this.showedMessage = this.game.instructionsText;
+			this.isInstructionsShow = true;
+			return play(this.game.instructionsSpeech);
+		}).then(() => this.instrcutionEnded.next());
 	}
 
 	goToNextLevel() {

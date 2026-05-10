@@ -1,0 +1,86 @@
+<button
+  type="button"
+  class="a11y-fab"
+  (click)="togglePanel()"
+  [attr.aria-pressed]="panelOpen()"
+  aria-label="Открыть настройки доступности"
+>
+  <i class="fi fi-rr-eye"></i>
+</button>
+
+<aside class="a11y-panel" *ngIf="panelOpen()" role="dialog" aria-label="Версия для слабовидящих">
+  <header class="a11y-panel__head">
+    <h2>Версия для слабовидящих</h2>
+    <button type="button" class="close-btn" (click)="togglePanel()" aria-label="Закрыть">
+      <i class="fi fi-rr-cross-small"></i>
+    </button>
+  </header>
+
+  <div class="a11y-row">
+    <label class="switch">
+      <input type="checkbox" [checked]="settings().enabled" (change)="toggleEnabled()">
+      <span class="switch__toggle"></span>
+      <span class="switch__label">Включить режим</span>
+    </label>
+  </div>
+
+  <fieldset [disabled]="!settings().enabled">
+    <div class="a11y-row">
+      <label>Размер шрифта <strong>{{ (settings().fontScale * 100).toFixed(0) }}%</strong></label>
+      <input
+        type="range" min="0.85" max="2" step="0.05"
+        [value]="settings().fontScale"
+        (input)="onRange(setFontScale.bind(this), $event)">
+    </div>
+
+    <div class="a11y-row">
+      <label>Межбуквенное расстояние <strong>{{ settings().letterSpacing }} px</strong></label>
+      <input
+        type="range" min="0" max="6" step="0.5"
+        [value]="settings().letterSpacing"
+        (input)="onRange(setLetterSpacing.bind(this), $event)">
+    </div>
+
+    <div class="a11y-row">
+      <label>Межстрочный интервал <strong>{{ settings().lineHeight }}</strong></label>
+      <input
+        type="range" min="1.2" max="2.4" step="0.05"
+        [value]="settings().lineHeight"
+        (input)="onRange(setLineHeight.bind(this), $event)">
+    </div>
+
+    <div class="a11y-row">
+      <label>Громкость озвучивания <strong>{{ (settings().volume * 100).toFixed(0) }}%</strong></label>
+      <input
+        type="range" min="0" max="1" step="0.05"
+        [value]="settings().volume"
+        (input)="onRange(setVolume.bind(this), $event)">
+    </div>
+
+    <div class="a11y-row">
+      <label class="switch">
+        <input type="checkbox" [checked]="settings().bold" (change)="toggleBold()">
+        <span class="switch__toggle"></span>
+        <span class="switch__label">Жирный шрифт</span>
+      </label>
+    </div>
+
+    <div class="a11y-row">
+      <label>Цветокоррекция</label>
+      <div class="filter-grid">
+        <button
+          *ngFor="let f of filters"
+          type="button"
+          [class.active]="settings().filter === f"
+          (click)="setFilter(f)">
+          {{ filterLabels[f] }}
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="reset" (click)="reset()">
+      <i class="fi fi-rr-refresh"></i>
+      Сбросить настройки
+    </button>
+  </fieldset>
+</aside>

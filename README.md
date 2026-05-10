@@ -1,27 +1,74 @@
 # LogoGames
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Логопедические игры и конструктор упражнений на фонематическое восприятие.
 
-## Development server
+- **Angular 21** + standalone-компоненты
+- **IndexedDB** (idb) — хранение пользовательских игр
+- **Capacitor 8** — нативные Android / iOS обёртки
+- Хостинг: GitHub Pages (web build)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Разработка
 
-## Code scaffolding
+```bash
+npm install
+npm start           # http://localhost:4200
+npm run build       # production build → dist/logo-games/browser
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Деплой на GitHub Pages
 
-## Build
+```bash
+npm run deploy      # ng deploy --base-href=/logo-games/
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Используется `withHashLocation()`, поэтому `/#/games` и т. п. работают без 404 на статическом хостинге.
 
-## Running unit tests
+## Конструктор игр (без backend)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Все кастомные игры хранятся в IndexedDB браузера пользователя
+- Картинки и аудио сохраняются как `data:` URI и не отправляются никуда
+- Игры можно экспортировать в JSON и импортировать на другом устройстве
+  («Мои игры» → «Экспорт» / «Импорт»)
 
-## Running end-to-end tests
+## Нативное мобильное приложение (Capacitor)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Веб-сборка та же, что и для GitHub Pages, — она просто упакована в нативный
+контейнер.
 
-## Further help
+Установка платформ (один раз):
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npx cap add android        # требует Android SDK
+npx cap add ios            # требует macOS + Xcode
+```
+
+Цикл разработки:
+
+```bash
+npm run cap:sync           # build + cap sync
+npm run cap:android        # открыть в Android Studio
+npm run cap:ios            # открыть в Xcode
+```
+
+`capacitor.config.ts`:
+
+- `webDir: 'dist/logo-games/browser'`
+- `appId: app.logogames.client`
+- splash-экран — фирменный фиолетовый `#4f46e5`
+
+## Версия для слабовидящих
+
+Иконка-глаз в левом нижнем углу. Открывает панель с:
+
+- регулируемым шрифтом (масштаб, жирность, межбуквенное расстояние),
+- межстрочным интервалом,
+- громкостью озвучивания,
+- пятью вариантами цветокоррекции (ч/б, инверсия, протанопия, дейтеранопия, тританопия),
+- режимом «озвучивать при наведении» (использует Web Speech API).
+
+Настройки сохраняются в `localStorage`.
+
+## Чат-виджет поддержки
+
+Кнопка в правом нижнем углу. Открывает диалог с предложением связаться через
+ВКонтакте / MAX / imo / E-mail или заказать обратный звонок.

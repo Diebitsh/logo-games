@@ -1,0 +1,52 @@
+<button
+  type="button"
+  class="chat-fab"
+  [class.is-open]="open()"
+  (click)="toggle()"
+  aria-label="Связаться с поддержкой"
+>
+  <i class="fi" [class.fi-rr-comments]="!open()" [class.fi-rr-cross-small]="open()"></i>
+</button>
+
+<div class="chat-card" *ngIf="open()" role="dialog" aria-label="Чат поддержки">
+  <header class="chat-card__head">
+    <div class="avatar">К</div>
+    <div>
+      <strong>Камилла Султановна</strong>
+      <span>На связи, отвечает за минуту</span>
+    </div>
+  </header>
+
+  <div class="chat-card__body" *ngIf="!submitted()">
+    <div class="bubble">
+      Здравствуйте! Меня зовут Камилла Султановна. Если у вас есть вопросы по сайту,
+      созданию игр или работе с детьми — я с радостью помогу!
+    </div>
+
+    <p class="chat-card__hint">Выберите удобный мессенджер:</p>
+    <div class="chat-card__channels">
+      <a
+        *ngFor="let c of channels"
+        [href]="c.url"
+        target="_blank"
+        rel="noopener"
+        class="channel"
+        [style.--c]="c.color"
+      >
+        <i class="fi" [class]="c.icon"></i>
+        <span>{{ c.name }}</span>
+      </a>
+    </div>
+
+    <button type="button" class="callback" (click)="requestCallback()">
+      <i class="fi fi-rr-phone-call"></i>
+      Заказать обратный звонок
+    </button>
+  </div>
+
+  <div class="chat-card__body" *ngIf="submitted()">
+    <div class="bubble success">
+      Спасибо за обращение! Специалист скоро свяжется с вами.
+    </div>
+  </div>
+</div>

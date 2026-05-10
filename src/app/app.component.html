@@ -1,35 +1,39 @@
-<div class="px-3 py-2 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-      </a>
+<header class="app-header">
+  <a routerLink="/main" class="brand" (click)="closeMenu()">
+    <span class="brand-mark">L</span>
+    <span class="brand-text">Logo<strong>Games</strong></span>
+  </a>
 
-      <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-        <li style="margin-right: 30px;">
-          <a [routerLink]="'main'" class="nav-link text-secondary" [routerLinkActive]="' text-white'">
-            <i style="font-size: 30px" class="fi fi-sr-journal-alt bi d-block mx-auto mb-1 text-center"></i>
-            Главная
-          </a>
-        </li>
-        <li style="margin-right: 30px;">
-          <a [routerLink]="'/games'" class="nav-link text-secondary" [routerLinkActive]="' text-white'">
-            <i style="font-size: 30px" class="fi fi-sr-puzzle-alt bi d-block mx-auto mb-1 text-center"></i>
-            Игры
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="'/games'" class="nav-link text-secondary">
-            <i style="font-size: 30px;" class="fi fi-sr-square-info bi d-block mx-auto mb-1 text-center"></i>
-            Дополнительно
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="image-back">
+  <button
+    class="hamburger"
+    type="button"
+    [class.is-open]="mobileMenuOpen()"
+    [attr.aria-expanded]="mobileMenuOpen()"
+    aria-label="Меню"
+    (click)="toggleMenu()"
+  >
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="app-nav" [class.is-open]="mobileMenuOpen()" (click)="closeMenu()">
+    <a routerLink="/main" routerLinkActive="active">
+      <i class="fi fi-rr-home"></i><span>Главная</span>
+    </a>
+    <a routerLink="/games" routerLinkActive="active">
+      <i class="fi fi-rr-puzzle-alt"></i><span>Игры</span>
+    </a>
+    <a routerLink="/constructor" routerLinkActive="active">
+      <i class="fi fi-rr-wand-magic-sparkles"></i><span>Конструктор</span>
+    </a>
+    <a routerLink="/my-games" routerLinkActive="active">
+      <i class="fi fi-rr-bookmark"></i><span>Мои игры</span>
+    </a>
+  </nav>
+</header>
+
+<main class="app-main">
   <router-outlet></router-outlet>
-</div>
+</main>
+
+<app-accessibility-toolbar></app-accessibility-toolbar>
+<app-chat-widget></app-chat-widget>

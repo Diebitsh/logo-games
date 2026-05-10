@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { GameModel } from '../models/game.model';
-import { Observable, Subject } from 'rxjs';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { shuffle } from '../../../common/functions/array.functions';
 import { play } from '../../../common/functions/sounds.functions';
 import { GameBaseComponent } from '../game-base/game-base.component';
@@ -8,7 +7,8 @@ import { PhonemicAwarenessGameContent, PhonemicAwarenessGameModel } from '../mod
 
 @Component({
 	selector: 'app-phonemic-awareness',
-	standalone: false,
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './phonemic-awareness.component.html',
 	styleUrl: './phonemic-awareness.component.scss'
 })

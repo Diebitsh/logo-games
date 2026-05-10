@@ -1,69 +1,161 @@
+<section class="hero lg-noise">
+  <!-- Decorative floating letters -->
+  <span class="floater f-1" aria-hidden="true">Ш</span>
+  <span class="floater f-2" aria-hidden="true">Р</span>
+  <span class="floater f-3" aria-hidden="true">С</span>
+  <span class="floater f-4" aria-hidden="true">Ж</span>
+  <span class="floater f-5" aria-hidden="true">Л</span>
 
-<div class="alert alert-info  text-block" role="alert">
-    <h4 class="alert-heading text-center">Памятка по работе с детьми с фонетико-фонематическим недоразвитием речи за
-        компьютером</h4>
-    <p>
-        Уважаемые пользователи сайта! Просим ознакомиться с данной информацией ,перед началом использования
-        компьютерных игр.<br />
-        Дети с фонетико-фонематическим недоразвитием речи имеют ряд особенностей состояния фонематических процессов,
-        а именно:
-    <ul>
-        <li>
-            трудности в определении последовательности звуков в слове;
-        </li>
-        <li>
-            неумение сознательно ориентироваться в звуковых элементах слова;
-        </li>
-        <li>
-            несформированность процесса произношения и понимания воспринимаемых на слух звуков речи;
-        </li>
-        <li>
-            искажение звука, одновременное смешение его с другими звуками или вообще опущение;
-        </li>
-        <li>
-            неспособность четко дифференцировать фонемы, слоги в своей и чужой речи;
-        </li>
-        <li>
-            затруднения в формировании процессов звукового анализа.
-        </li>
-    </ul>
+  <svg class="hero-squiggle" viewBox="0 0 220 26" aria-hidden="true">
+    <path d="M2 18 Q 22 2, 44 14 T 88 14 T 132 14 T 176 14 T 218 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+  </svg>
 
-    Игры на данном сайте созданы специально для преодоления этих трудностей, поэтому вы можете использовать его
-    для ускорения коррекционно -образовательного процесса.
-    <br />
-    Игры разделены по лексическим темам, так что помимо формирования фонематического слуха и фонематического
-    восприятия, вы можете использовать игры для закрепления знаний по пройденной теме.
-    <br />
-    Если вам нужно отрабатывать конкретный звук , то для этого есть отдельная папка, в которой находятся игры на
-    различные группы звуков. Рекомендуем начинать работу именно с отработки звуков.
-    <br />
-    Напоминаем, что существуют рекомендации по использованию ИКТ в работе с детьми:
-    <ul>
-        <li>
-            По требованиям СанПиНа обучение детей с использованием компьютера предполагает для детей 5 лет - не
-            более
-            10 минут, для детей 6-7 лет - не более 15 минут.
-        </li>
-        <li>
-            Образовательную деятельность с использованием компьютера для детей 5-7 лет следует проводить не более
-            одного раза в течение дня и не чаще трех раз в неделю.
-        </li>
-        <li>
-            В конце занятия проводить гимнастику для глаз.
-        </li>
-        <li>
-            Нельзя использовать компьютерные технологии на каждом занятии. При частом использовании ИКТ у детей
-            теряется особый интерес к таким занятиям.
+  <div class="hero-content">
+    <span class="lg-tag lg-tag--sun">для логопедов · 2026</span>
 
+    <h1>
+      <span>Логопедические</span>
+      <span class="line-with-underline">
+        игры,
+        <svg class="underline" viewBox="0 0 240 14" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M2 9 Q 60 1, 120 7 T 238 7" fill="none" stroke="var(--tomato)" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="word-block">
+        <em>собранные</em>
+        <span class="rotated-chip">руками</span>
+      </span>
+      <span>специалиста</span>
+    </h1>
 
-        </li>
-    </ul>
-
-
-    <h2 class="text-center">Спасибо за внимание! Приятного обучения!</h2>
-    <hr>
-    <p class="mb-0 text-center">
-        <a [routerLink]="'../games'" class="btn btn-primary my-2 mx-5">Перейти к играм</a>
-        <a href="#" class="btn btn-secondary my-2">Дополнительно</a>
+    <p class="lead">
+      Восемь упражнений на фонематический слух · конструктор для своих звуков
+      и картинок · работает в браузере, на планшете, в нативном приложении.
     </p>
-</div>
+
+    <div class="cta-row">
+      <a routerLink="/games" class="lg-btn lg-btn--tomato lg-btn--lg">
+        <i class="fi fi-rr-play-circle"></i>
+        Начать с готовых
+      </a>
+      <a routerLink="/constructor" class="lg-btn lg-btn--sun lg-btn--lg">
+        <i class="fi fi-rr-wand-magic-sparkles"></i>
+        Собрать свою игру
+      </a>
+    </div>
+
+    <dl class="stats">
+      <div><dt>8</dt><dd>направлений работы</dd></div>
+      <div><dt>4</dt><dd>группы звуков</dd></div>
+      <div><dt>0</dt><dd>строчек кода от вас</dd></div>
+    </dl>
+  </div>
+
+  <aside class="hero-card" aria-hidden="true">
+    <div class="card-header">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      <span class="card-title">play.sh</span>
+    </div>
+    <div class="card-body">
+      <p class="prompt"><span class="prompt-mark">›</span> выбери картинку со словом</p>
+      <p class="task">Луж<span class="accent">а</span></p>
+      <div class="choices">
+        <button type="button" class="choice correct">
+          <span class="emoji">💧</span>
+          <span class="label">Лужа</span>
+          <span class="check"><i class="fi fi-rr-check"></i></span>
+        </button>
+        <button type="button" class="choice">
+          <span class="emoji">🍐</span>
+          <span class="label">Груша</span>
+        </button>
+      </div>
+      <p class="cheer lg-script">Молодец!</p>
+    </div>
+  </aside>
+</section>
+
+<section class="strip">
+  <div class="strip-track">
+    <span>фонематический слух</span>
+    <span aria-hidden="true">✺</span>
+    <span>группы звуков</span>
+    <span aria-hidden="true">✺</span>
+    <span>лексические темы</span>
+    <span aria-hidden="true">✺</span>
+    <span>версия для слабовидящих</span>
+    <span aria-hidden="true">✺</span>
+    <span>офлайн на мобильном</span>
+    <span aria-hidden="true">✺</span>
+    <span>фонематический слух</span>
+    <span aria-hidden="true">✺</span>
+    <span>группы звуков</span>
+    <span aria-hidden="true">✺</span>
+    <span>лексические темы</span>
+    <span aria-hidden="true">✺</span>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section-head">
+    <span class="lg-tag">внутри</span>
+    <h2>Что вы получаете</h2>
+  </header>
+
+  <div class="highlight-grid">
+    <article class="highlight" *ngFor="let h of highlights; let i = index" [attr.data-tone]="i % 4">
+      <span class="big-num">{{ '0' + (i + 1) }}</span>
+      <h3>{{ h.title }}</h3>
+      <p>{{ h.description }}</p>
+      <span class="highlight-icon"><i class="fi" [class]="h.icon"></i></span>
+    </article>
+  </div>
+</section>
+
+<section class="section steps-section">
+  <header class="section-head">
+    <span class="lg-tag lg-tag--mint">за минуту</span>
+    <h2>
+      Как собрать игру
+      <span class="lg-script accent-script">с нуля</span>
+    </h2>
+  </header>
+
+  <ol class="steps">
+    <li *ngFor="let s of steps; let i = index">
+      <span class="step-tag">{{ s.step }}</span>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.text }}</p>
+      <span class="step-arrow" *ngIf="i < steps.length - 1" aria-hidden="true">
+        <svg viewBox="0 0 60 24"><path d="M2 12 H50 M40 4 L52 12 L40 20" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </li>
+  </ol>
+
+  <div class="cta-end">
+    <a routerLink="/constructor" class="lg-btn lg-btn--tomato lg-btn--lg">
+      Открыть конструктор
+      <i class="fi fi-rr-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<section class="section reminder-section">
+  <article class="reminder">
+    <span class="lg-tag lg-tag--tomato">памятка</span>
+    <h2>СанПиН для занятий за компьютером</h2>
+    <ul>
+      <li><strong>5 лет</strong> — не более 10 минут</li>
+      <li><strong>6–7 лет</strong> — не более 15 минут</li>
+      <li><strong>3 раза</strong> в неделю максимум</li>
+      <li><strong>Гимнастика для глаз</strong> в конце занятия</li>
+    </ul>
+    <svg class="reminder-eye" viewBox="0 0 80 56" aria-hidden="true">
+      <ellipse cx="40" cy="28" rx="36" ry="22" fill="none" stroke="var(--ink)" stroke-width="3"/>
+      <circle cx="40" cy="28" r="11" fill="var(--tomato)" stroke="var(--ink)" stroke-width="3"/>
+      <circle cx="44" cy="24" r="3" fill="var(--paper)"/>
+    </svg>
+  </article>
+</section>

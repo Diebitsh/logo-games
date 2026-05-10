@@ -1,10 +1,14 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Subject, Observable } from 'rxjs';
 import { GameModel } from '../models/game.model';
 import { shuffle } from '../../../common/functions/array.functions';
+import { play } from '../../../common/functions/sounds.functions';
 
 @Component({
 	selector: 'app-first-or-last-char',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './first-or-last-char.component.html',
 	styleUrl: './first-or-last-char.component.scss'
 })
@@ -58,7 +62,6 @@ export class FirstOrLastCharComponent implements OnInit {
 	}
 
 	play() {
-		var audio = new Audio(this.currentQuestion.speech)
-		audio.play();
+		void play(this.currentQuestion.speech);
 	}
 }

@@ -1,0 +1,58 @@
+<section class="my-games">
+  <header class="head">
+    <div>
+      <h1>Мои игры</h1>
+      <p>Хранятся в этом браузере · можно экспортировать в файл и принести на другой компьютер.</p>
+    </div>
+    <div class="head-actions">
+      <label class="lg-btn">
+        <i class="fi fi-rr-cloud-upload"></i>
+        Импорт
+        <input type="file" accept=".json,application/json" hidden (change)="onImport($event)">
+      </label>
+      <a routerLink="/constructor" class="lg-btn lg-btn--tomato">
+        <i class="fi fi-rr-plus"></i> Новая игра
+      </a>
+    </div>
+  </header>
+
+  <div class="empty" *ngIf="games().length === 0">
+    <i class="fi fi-rr-folder-open"></i>
+    <h2>Пока пусто</h2>
+    <p>Создайте первую игру или принесите файл от коллеги.</p>
+    <a routerLink="/constructor" class="lg-btn lg-btn--tomato">
+      <i class="fi fi-rr-wand-magic-sparkles"></i> Открыть конструктор
+    </a>
+  </div>
+
+  <div class="grid" *ngIf="games().length > 0">
+    <article class="game-card" *ngFor="let g of games()">
+      <header>
+        <span class="icon"><i class="fi" [class]="typeIcon(g.type)"></i></span>
+        <div>
+          <h3>{{ g.name }}</h3>
+          <span class="muted">{{ typeName(g.type) }} · звук {{ g.sound }}</span>
+        </div>
+      </header>
+
+      <p class="desc" *ngIf="g.description">{{ g.description }}</p>
+
+      <dl>
+        <div><dt>Заданий</dt><dd>{{ g.levels.length }}</dd></div>
+        <div><dt>Обновлено</dt><dd>{{ g.updatedAt | date: 'd MMM, HH:mm' }}</dd></div>
+      </dl>
+
+      <footer>
+        <a class="chip primary" [routerLink]="'/custom-play'" [queryParams]="{ id: g.id }">
+          <i class="fi fi-rr-play"></i> Играть
+        </a>
+        <button type="button" class="chip" (click)="export(g)">
+          <i class="fi fi-rr-download"></i> Экспорт
+        </button>
+        <button type="button" class="chip danger" (click)="remove(g)">
+          <i class="fi fi-rr-trash"></i>
+        </button>
+      </footer>
+    </article>
+  </div>
+</section>

@@ -6,6 +6,7 @@ import { BaseGameModel, IGameContentModel } from '../models/base-game.model';
 
 @Component({
   selector: 'app-game-base',
+  standalone: true,
   template: '',
   styleUrl: './game-base.component.scss'
 })

@@ -1,9 +1,12 @@
 import { Component, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 import { GameModel } from '../models/game.model';
 
 @Component({
 	selector: 'app-sound-sequence',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './sound-sequence.component.html',
 	styleUrl: './sound-sequence.component.scss'
 })

@@ -1,0 +1,244 @@
+<section class="constructor">
+  <header class="constructor__head">
+    <div>
+      <h1>
+        Конструктор
+        <span class="script-accent">собираем игру</span>
+      </h1>
+      <p>Четыре шага — и игра окажется в «Моих играх» только у вас в браузере.</p>
+    </div>
+    <a routerLink="/my-games" class="ghost-link">
+      <i class="fi fi-rr-bookmark"></i> Мои игры
+    </a>
+  </header>
+
+  <ol class="stepper">
+    <li
+      *ngFor="let s of steps; let i = index"
+      [class.active]="s.id === step()"
+    >
+      <span class="stepper__num">{{ i + 1 }}</span>
+      <span class="stepper__label">{{ s.label }}</span>
+    </li>
+  </ol>
+
+  <div class="progress"><div [style.width.%]="progress()"></div></div>
+
+  <!-- Step 1: type -->
+  <div class="step" *ngIf="step() === 'type'">
+    <h2>Выберите направление</h2>
+    <p class="muted">Восемь блоков работы над фонематическими процессами.</p>
+    <div class="grid type-grid">
+      <button
+        type="button"
+        class="type-card"
+        *ngFor="let t of gameTypes"
+        (click)="selectType(t.id)"
+      >
+        <span class="card-icon"><i class="fi" [class]="t.icon"></i></span>
+        <strong>{{ t.name }}</strong>
+        <span class="muted">{{ t.description }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 2: sound -->
+  <div class="step" *ngIf="step() === 'sound'">
+    <h2>Выберите звук</h2>
+    <p class="muted">{{ selectedTypeInfo()?.name }} · мягкие звуки помечены пунктиром</p>
+    <div class="sound-groups">
+      <article class="sound-group" *ngFor="let group of soundGroups">
+        <h3>{{ group.name }}</h3>
+        <div class="sound-grid">
+          <button
+            type="button"
+            *ngFor="let s of group.sounds"
+            class="sound-chip"
+            [class.soft]="s.soft"
+            [class.active]="selectedSound() === s.char"
+            (click)="selectSound(group.id, s.char)"
+          >
+            {{ s.char }}
+          </button>
+        </div>
+      </article>
+    </div>
+    <div class="actions">
+      <button type="button" class="lg-btn" (click)="back()">
+        <i class="fi fi-rr-arrow-left"></i> Назад
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 3: levels -->
+  <div class="step" *ngIf="step() === 'levels'">
+    <h2>Загрузите контент</h2>
+    <p class="muted">
+      Добавьте картинку и аудио с правильным ответом — и при желании
+      «отвлекающий» вариант. Drag-and-drop работает.
+    </p>
+
+    <div class="levels">
+      <article class="level" *ngFor="let level of levels(); let i = index">
+        <header class="level__head">
+          <strong>Задание №{{ i + 1 }}</strong>
+          <button
+            type="button"
+            class="icon-btn"
+            *ngIf="levels().length > 1"
+            (click)="removeLevel(level.id)"
+            aria-label="Удалить задание"
+          >
+            <i class="fi fi-rr-trash"></i>
+          </button>
+        </header>
+
+        <label class="field">
+          <span>Слово</span>
+          <input
+            type="text"
+            [value]="level.word ?? ''"
+            (input)="setWord(level.id, $any($event.target).value)"
+            placeholder="например, машина"
+          />
+        </label>
+
+        <div class="answer-grid">
+          <div class="answer-col correct">
+            <span class="pill">Правильно</span>
+
+            <div
+              appDropFile
+              accept="image/*"
+              (fileSelected)="onAsset(level.id, 'correctImage', $event)"
+            >
+              <img *ngIf="assetPreview(level.correctImage) as src" [src]="src" alt="">
+              <ng-container *ngIf="!level.correctImage">
+                <i class="fi fi-rr-picture"></i>
+                <p>Картинка · перетащите или нажмите</p>
+              </ng-container>
+            </div>
+
+            <div
+              appDropFile
+              accept="audio/*"
+              (fileSelected)="onAsset(level.id, 'correctAudio', $event)"
+            >
+              <audio *ngIf="level.correctAudio" [src]="level.correctAudio.data" controls></audio>
+              <ng-container *ngIf="!level.correctAudio">
+                <i class="fi fi-rr-volume"></i>
+                <p>Аудио · перетащите или нажмите</p>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="answer-col incorrect">
+            <span class="pill pill-secondary">Отвлекающий</span>
+
+            <div
+              appDropFile
+              accept="image/*"
+              (fileSelected)="onAsset(level.id, 'incorrectImage', $event)"
+            >
+              <img *ngIf="assetPreview(level.incorrectImage) as src" [src]="src" alt="">
+              <ng-container *ngIf="!level.incorrectImage">
+                <i class="fi fi-rr-picture"></i>
+                <p>Картинка</p>
+              </ng-container>
+            </div>
+
+            <div
+              appDropFile
+              accept="audio/*"
+              (fileSelected)="onAsset(level.id, 'incorrectAudio', $event)"
+            >
+              <audio *ngIf="level.incorrectAudio" [src]="level.incorrectAudio.data" controls></audio>
+              <ng-container *ngIf="!level.incorrectAudio">
+                <i class="fi fi-rr-volume"></i>
+                <p>Аудио</p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <button type="button" class="add-level" (click)="addLevel()">
+        <i class="fi fi-rr-plus"></i> Добавить задание
+      </button>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="lg-btn" (click)="back()">
+        <i class="fi fi-rr-arrow-left"></i> Назад
+      </button>
+      <button
+        type="button"
+        class="lg-btn lg-btn--tomato"
+        [disabled]="!hasValidLevels()"
+        (click)="goToMeta()"
+      >
+        Продолжить <i class="fi fi-rr-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 4: meta -->
+  <div class="step" *ngIf="step() === 'meta'">
+    <h2>Последний шаг</h2>
+    <p class="muted">Дайте игре имя — и сохраняем.</p>
+
+    <label class="field">
+      <span>Название игры</span>
+      <input
+        type="text"
+        [value]="name()"
+        (input)="name.set($any($event.target).value)"
+        placeholder="Например, Шипящие в осеннем лесу"
+      />
+    </label>
+    <label class="field">
+      <span>Описание (по желанию)</span>
+      <textarea
+        rows="3"
+        [value]="description()"
+        (input)="description.set($any($event.target).value)"
+        placeholder="Кому подойдёт, на что обратить внимание"
+      ></textarea>
+    </label>
+
+    <div class="summary">
+      <div><strong>Направление</strong><span>{{ selectedTypeInfo()?.name }}</span></div>
+      <div><strong>Звук</strong><span>{{ selectedSound() }}</span></div>
+      <div><strong>Заданий</strong><span>{{ levels().length }}</span></div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="lg-btn" (click)="back()">
+        <i class="fi fi-rr-arrow-left"></i> Назад
+      </button>
+      <button
+        type="button"
+        class="lg-btn lg-btn--tomato"
+        [disabled]="saving() || !name().trim()"
+        (click)="save()"
+      >
+        <i class="fi fi-rr-check"></i> Создать игру
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 5: done -->
+  <div class="step done" *ngIf="step() === 'done'">
+    <div class="success-illu"><i class="fi fi-rr-confetti"></i></div>
+    <h2>Готово!</h2>
+    <p>Игра живёт в вашем браузере и доступна в «Моих играх».</p>
+    <div class="actions" style="justify-content: center;">
+      <a routerLink="/my-games" class="lg-btn lg-btn--tomato">
+        <i class="fi fi-rr-bookmark"></i> К моим играм
+      </a>
+      <button type="button" class="lg-btn" (click)="reset()">
+        <i class="fi fi-rr-plus"></i> Ещё одну
+      </button>
+    </div>
+  </div>
+</section>

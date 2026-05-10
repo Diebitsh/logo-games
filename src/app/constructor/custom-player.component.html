@@ -1,0 +1,74 @@
+<section class="player" *ngIf="game() as g">
+  <header class="player__head">
+    <button type="button" class="back" (click)="restart()" aria-label="Заново">
+      <i class="fi fi-rr-refresh"></i>
+    </button>
+    <div>
+      <h1>{{ g.name }}</h1>
+      <span class="muted">{{ typeName() }} · звук {{ g.sound }}</span>
+    </div>
+    <a routerLink="/my-games" class="exit"><i class="fi fi-rr-cross-small"></i></a>
+  </header>
+
+  <div class="progress"><div [style.width.%]="progress()"></div></div>
+
+  <div class="stage" *ngIf="phase() === 'intro'">
+    <div class="stage__hero">
+      <i class="fi fi-rr-play-circle"></i>
+      <h2>Готовы?</h2>
+      <p>Послушайте слово и выберите правильную картинку.</p>
+      <button type="button" class="btn-action" (click)="start()">
+        <i class="fi fi-rr-play"></i> Начать
+      </button>
+    </div>
+  </div>
+
+  <div class="stage" *ngIf="phase() === 'task' && current() as level">
+    <div class="task">
+      <button type="button" class="play-word" (click)="playWord()">
+        <i class="fi fi-rr-volume"></i>
+        <span>Послушать слово</span>
+      </button>
+      <p class="hint" *ngIf="level.word">{{ level.word }}</p>
+    </div>
+
+    <div class="options">
+      <button
+        type="button"
+        class="option"
+        *ngFor="let opt of options()"
+        (click)="pickOption(opt)"
+      >
+        <img [src]="opt.asset.data" alt="">
+      </button>
+    </div>
+
+    <p class="feedback" *ngIf="feedback() as fb" [class.ok]="fb.ok">{{ fb.text }}</p>
+  </div>
+
+  <div class="stage" *ngIf="phase() === 'feedback' && feedback() as fb">
+    <div class="stage__hero success">
+      <i class="fi fi-rr-confetti"></i>
+      <h2>{{ fb.text }}</h2>
+      <button type="button" class="btn-action" (click)="next()">
+        <i class="fi fi-rr-arrow-right"></i> Дальше
+      </button>
+    </div>
+  </div>
+
+  <div class="stage" *ngIf="phase() === 'done'">
+    <div class="stage__hero success">
+      <i class="fi fi-rr-trophy"></i>
+      <h2>Игра пройдена!</h2>
+      <p>Отличный результат. Хотите сыграть ещё раз?</p>
+      <div class="row">
+        <button type="button" class="btn-action" (click)="restart()">
+          <i class="fi fi-rr-refresh"></i> Заново
+        </button>
+        <a routerLink="/my-games" class="btn-ghost">
+          <i class="fi fi-rr-bookmark"></i> К моим играм
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

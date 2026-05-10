@@ -1,9 +1,13 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 import { GameModel } from '../models/game.model';
+import { play } from '../../../common/functions/sounds.functions';
 
 @Component({
 	selector: 'app-sound-position',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './sound-position.component.html',
 	styleUrl: './sound-position.component.scss'
 })
@@ -53,7 +57,6 @@ export class SoundPositionComponent implements OnInit {
 
 	
 	play() {
-		var audio = new Audio(this.currentQuestion.speech)
-		audio.play();
+		void play(this.currentQuestion.speech);
 	}
 }

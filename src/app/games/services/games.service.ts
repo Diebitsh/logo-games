@@ -3,7 +3,7 @@ import data from '../data/source.json';
 import { GameThemeModel } from "../models/game-theme.model";
 import { GameModel } from "../models/game.model";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GamesService {
 
 

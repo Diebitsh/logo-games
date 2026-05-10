@@ -1,54 +1,260 @@
-/* You can add global styles to this file, and also import other style files */
-@import "@flaticon/flaticon-uicons/css/all/all";
+@use "@flaticon/flaticon-uicons/css/all/all";
+
+:root {
+  /* === Brand palette === */
+  --ink: #1a1f36;
+  --ink-soft: #353c5a;
+  --cream: #fbf6ee;
+  --cream-deep: #f2ead8;
+  --paper: #ffffff;
+
+  --tomato: #e94f37;
+  --tomato-dark: #c93824;
+  --sun: #ffc93c;
+  --sun-dark: #e3a600;
+  --mint: #4fb286;
+  --berry: #6a4c93;
+  --sky: #2e5783;
+  --rose: #f4a8c7;
+
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  --border: var(--ink);
+
+  /* === Typography === */
+  --font-display: "Unbounded", "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-script: "Caveat", "Manrope", cursive;
+
+  /* === Sticker / paper shadows === */
+  --shadow-sticker: 5px 5px 0 var(--ink);
+  --shadow-sticker-sm: 3px 3px 0 var(--ink);
+  --shadow-sticker-lg: 8px 8px 0 var(--ink);
+  --shadow-soft: 0 10px 30px rgba(26, 31, 54, 0.08);
+  --shadow-lift: 0 18px 40px rgba(26, 31, 54, 0.18);
+
+  --radius: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* a11y vars (kept for accessibility toolbar) */
+  --lg-font-scale: 1;
+  --lg-line-height: 1.55;
+  --lg-letter-spacing: 0;
+  --lg-font-weight: 500;
+}
+
+* { box-sizing: border-box; }
 
 html, body {
   height: 100%;
+  margin: 0;
 }
 
-.image-back {
-  background-image: url('./assets/backgrounds/main-background.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  padding: 5.5em;
-  background-size: 100% 100%;
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  font-size: calc(16px * var(--lg-font-scale));
+  line-height: var(--lg-line-height);
+  letter-spacing: var(--lg-letter-spacing);
+  font-weight: var(--lg-font-weight);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(255, 201, 60, 0.18), transparent 35%),
+    radial-gradient(circle at 88% 22%, rgba(233, 79, 55, 0.14), transparent 38%),
+    radial-gradient(circle at 50% 100%, rgba(79, 178, 134, 0.16), transparent 45%);
+  background-attachment: fixed;
 }
 
-.player {
-    background: none;
-    width: 50px;
-    height: 50px;
-    border: solid 5px #000000;
-    border-radius: 100%;
-    position: relative; 
-    text-indent:-9999px;
-    z-index: 99999;
-    box-shadow: 1px 1px 3px #999999;
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; }
+a { color: inherit; }
+
+::selection {
+  background: var(--sun);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+p { margin: 0; }
+
+/* === Shared sticker primitives === */
+.lg-sticker {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sticker);
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+}
+
+.lg-sticker:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-sticker-lg);
+}
+
+.lg-sticker:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.lg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-sticker);
+  transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease;
+  white-space: nowrap;
+
+  i { font-size: 1.1em; }
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-sticker-lg);
   }
-  
-  .player span {
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-left: 20px solid #000000;
-    border-bottom: 15px solid transparent;
-    position:absolute;
-    top:20%;
-    left:36%;    
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
   }
-  
-  .player:hover{
-    background:#4ccaea;
-    cursor:pointer;
-    opacity:0.8;
-    border:none;
-    width: 50px;
-    height: 50px; 
-    box-shadow:none;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--shadow-sticker);
   }
-  
-  .player:hover span{
-    top:25%;
-    left:38%;
+}
+
+.lg-btn--tomato { background: var(--tomato); color: var(--paper); }
+.lg-btn--sun { background: var(--sun); color: var(--ink); }
+.lg-btn--mint { background: var(--mint); color: var(--paper); }
+.lg-btn--berry { background: var(--berry); color: var(--paper); }
+.lg-btn--sky { background: var(--sky); color: var(--paper); }
+.lg-btn--ghost { background: transparent; }
+
+.lg-btn--lg {
+  padding: 1.05rem 1.7rem;
+  font-size: 1.1rem;
+}
+
+.lg-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.lg-tag--sun { background: var(--sun); }
+.lg-tag--mint { background: var(--mint); color: var(--paper); }
+.lg-tag--tomato { background: var(--tomato); color: var(--paper); }
+.lg-tag--berry { background: var(--berry); color: var(--paper); }
+
+.lg-script {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lg-noise {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='4'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>");
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    z-index: -1;
   }
+}
+
+.lg-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* === Accessibility theme === */
+body.a11y-mode {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #000000;
+  --text-muted: #1f2937;
+  --border: #000000;
+  background-image: none;
+}
+
+body.a11y-mode .lg-sticker,
+body.a11y-mode .lg-btn,
+body.a11y-mode .lg-tag {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: var(--shadow-sticker) !important;
+}
+
+body.a11y-mode .lg-btn--tomato,
+body.a11y-mode .lg-btn--mint,
+body.a11y-mode .lg-btn--berry,
+body.a11y-mode .lg-btn--sky {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/*
+ * Real overrides for slider-driven settings. Local components set their own
+ * line-height / letter-spacing / font-weight inline in SCSS, so we have to
+ * forcibly take over once the user explicitly turns the mode on.
+ * `app-accessibility-toolbar` is excluded so the panel itself stays usable.
+ */
+body.a11y-leading :not(app-accessibility-toolbar, app-accessibility-toolbar *) {
+  line-height: var(--lg-line-height) !important;
+}
+
+body.a11y-spacing :not(app-accessibility-toolbar, app-accessibility-toolbar *) {
+  letter-spacing: var(--lg-letter-spacing) !important;
+}
+
+body.a11y-bold :not(app-accessibility-toolbar, app-accessibility-toolbar *, i, [class^="fi"], [class*=" fi "]) {
+  font-weight: 700 !important;
+}
+
+body.a11y-filter-protanopia { filter: url("#protanopia"); }
+body.a11y-filter-deuteranopia { filter: url("#deuteranopia"); }
+body.a11y-filter-tritanopia { filter: url("#tritanopia"); }
+body.a11y-filter-grayscale { filter: grayscale(1); }
+body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }

@@ -1,0 +1,190 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--cream);
+  border-bottom: 2px solid var(--ink);
+
+  /* paper-cut underlay strip */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 -8px 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        var(--sun) 0 28px,
+        var(--tomato) 28px 56px,
+        var(--mint) 56px 84px,
+        var(--berry) 84px 112px,
+        var(--sky) 112px 140px
+      );
+    z-index: -1;
+    clip-path: polygon(0 calc(100% - 6px), 100% calc(100% - 6px), 100% 100%, 0 100%);
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  letter-spacing: -0.02em;
+
+  strong { color: var(--tomato); }
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--sun);
+  border: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--ink);
+  box-shadow: var(--shadow-sticker-sm);
+  transform: rotate(-6deg);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--tomato);
+    border: 2px solid var(--ink);
+  }
+}
+
+.app-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.55rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1rem;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.18s ease;
+
+    i { font-size: 1rem; }
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 var(--ink);
+      background: var(--sun);
+    }
+
+    &.active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  margin-left: auto;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--paper);
+  cursor: pointer;
+  padding: 12px 10px;
+  box-shadow: var(--shadow-sticker-sm);
+
+  span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  span + span { margin-top: 4px; }
+
+  &.is-open {
+    background: var(--tomato);
+    span { background: var(--paper); }
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .hamburger { display: block; }
+
+  .app-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: clamp(1rem, 4vw, 2.5rem);
+    right: clamp(1rem, 4vw, 2.5rem);
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.6rem;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sticker-lg);
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.18s ease;
+
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    a {
+      justify-content: flex-start;
+      padding: 0.75rem 1rem;
+      box-shadow: none;
+      border-color: transparent;
+
+      &:hover { border-color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+    }
+  }
+}

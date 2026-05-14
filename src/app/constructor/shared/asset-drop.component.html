@@ -1,0 +1,31 @@
+<div class="asset-drop">
+  <div
+    class="zone"
+    appDropFile
+    [accept]="accept()"
+    (fileSelected)="onFile($event)"
+  >
+    @if (kind() === 'image' && value()) {
+      <img [src]="value()!.data" alt="">
+    } @else if (kind() === 'audio' && value()) {
+      <audio [src]="value()!.data" controls></audio>
+    } @else {
+      <i class="fi" [class.fi-rr-picture]="kind() === 'image'" [class.fi-rr-volume]="kind() === 'audio'"></i>
+      <p>Перетащите файл сюда или нажмите, чтобы выбрать</p>
+    }
+  </div>
+
+  @if (hint()) {
+    <p class="hint">{{ hint() }}</p>
+  }
+
+  @if (kind() === 'audio') {
+    <button type="button" class="rec-btn" [class.active]="recording()" (click)="toggleRecord()">
+      <i class="fi" [class.fi-rr-microphone]="!recording()" [class.fi-rr-stop]="recording()"></i>
+      {{ recording() ? 'Остановить запись' : 'Записать с микрофона' }}
+    </button>
+    @if (recError()) {
+      <p class="rec-error">{{ recError() }}</p>
+    }
+  }
+</div>

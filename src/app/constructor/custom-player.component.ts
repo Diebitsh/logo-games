@@ -57,7 +57,8 @@ export class CustomPlayerComponent implements OnInit, OnDestroy {
   restart(): void {
     this.solved.set(0);
     this.phase.set('intro');
-    // Пересоздаём игру, чтобы per-type режим перемонтировался с нуля.
+    // Обнуляем game на один цикл — это уничтожает per-type плеер в @if,
+    // а через микротаску монтируем его заново с чистым состоянием.
     const g = this.game();
     this.game.set(null);
     queueMicrotask(() => this.game.set(g));

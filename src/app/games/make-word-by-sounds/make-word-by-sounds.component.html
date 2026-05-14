@@ -19,7 +19,8 @@
   <p class="tiles-caption">Слово:</p>
   <div class="tiles">
     @for (syllable of currentSyllables; track $index) {
-      <button type="button" class="tile tile--slot" (click)="removeSyllable(answer[$index], $index)">
+      <button type="button" class="tile tile--slot" [class.tile--empty]="!answer[$index]"
+        (click)="removeSyllable(answer[$index], $index)">
         {{ answer[$index]?.char ?? '_' }}
       </button>
     }

@@ -65,7 +65,8 @@ export class MakeWordBySoundsComponent extends GameBaseComponent<MakeWordBySound
 		}
 	}
 
-	removeSyllable(charInfo: { char: string, origIndex: number }, index: number) {
+	removeSyllable(charInfo: { char: string, origIndex: number } | undefined, index: number) {
+		if (!charInfo) return;
 		this.currentSyllables[charInfo.origIndex] = `${charInfo.char}`;
 		this.answer[index].char = undefined;
 		this.cdRef.detectChanges()

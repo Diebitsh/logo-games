@@ -1,0 +1,14 @@
+<div class="sound-group">
+  <h3>Группы парных звуков</h3>
+  <div class="sound-grid">
+    @for (p of pairs; track p.id) {
+      <button
+        type="button"
+        class="sound-chip"
+        [class.soft]="p.soft"
+        [class.active]="selected() === p.id"
+        (click)="pick(p.id)"
+      >{{ p.label }}</button>
+    }
+  </div>
+</div>

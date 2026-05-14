@@ -1,17 +1,14 @@
-
-<div class="d-flex justify-content-center mb-2">
-    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+<div class="game-replay">
+  <button type="button" class="game-replay__btn" (click)="play()">
+    <i class="fi fi-rr-volume"></i> Повтор
+  </button>
 </div>
 
-<div class="row">
-
-    <div class="col-6" (click)="sendAnswer(answer)" *ngFor="let answer of currentAnswers">
-        <div class="card">
-            <img style="width: 180px; height: 200px;" class="card-img-top mx-auto d-block" [src]="answer.image">
-            <div class="card-body text-center">
-                <h2>
-                    {{answer.answer}}</h2>
-            </div>
-        </div>
-    </div>
+<div class="game-choices">
+  @for (answer of currentAnswers; track answer.answer) {
+    <button type="button" class="game-choice" (click)="sendAnswer(answer)">
+      <img class="game-choice__img" [src]="answer.image" alt="">
+      <p class="game-choice__label">{{ answer.answer }}</p>
+    </button>
+  }
 </div>

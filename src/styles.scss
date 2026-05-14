@@ -304,3 +304,37 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   font-size: 1.5rem;
   margin-left: 0.3rem;
 }
+
+/* === Общая адаптивная вёрстка встроенных игр === */
+.game-replay {
+  display: flex; justify-content: center; margin-bottom: 1rem;
+}
+.game-replay__btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  min-height: 48px; padding: 0.7rem 1.6rem;
+  border: 2px solid var(--ink); border-radius: var(--radius-pill);
+  background: var(--sun); color: var(--ink);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm);
+}
+.game-choices {
+  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+.game-choice {
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  padding: clamp(0.6rem, 2vw, 1rem);
+  border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm); transition: transform 0.16s ease;
+  &:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-sticker); }
+}
+.game-choice__img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 12px; border: 2px solid var(--ink);
+}
+.game-choice__label {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.1rem, 3vw, 1.6rem); text-align: center; margin: 0;
+}

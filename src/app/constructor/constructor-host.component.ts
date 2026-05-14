@@ -3,11 +3,12 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CustomGamesService } from './custom-games.service';
 import { CustomGame, CUSTOM_GAME_SCHEMA, GAME_TYPES, CustomGameType } from './custom-game.model';
 import { ConstructorType } from './constructor-type';
+import { Type1NonspeechConstructor } from './types/type1-nonspeech.constructor';
 
 @Component({
   selector: 'app-constructor-host',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, Type1NonspeechConstructor],
   templateUrl: './constructor-host.component.html',
   styleUrl: './constructor-host.component.scss',
 })

@@ -3,13 +3,14 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CustomGamesService } from './custom-games.service';
 import { CustomGame, GAME_TYPES, isLegacyGame } from './custom-game.model';
 import { stop } from '../../common/functions/sounds.functions';
+import { Type1NonspeechPlayer } from './types/type1-nonspeech.player';
 
 type Phase = 'intro' | 'play' | 'done';
 
 @Component({
   selector: 'app-custom-player',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, Type1NonspeechPlayer],
   templateUrl: './custom-player.component.html',
   styleUrl: './custom-player.component.scss',
 })

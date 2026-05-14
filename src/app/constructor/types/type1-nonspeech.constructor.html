@@ -1,0 +1,60 @@
+@if (steps[stepIndex()].id === 'levels') {
+  <div class="ctor-step">
+    <h2>Загрузите контент</h2>
+    <p class="muted">
+      Картинка и звукозапись с правильным ответом, затем картинка
+      неправильного ответа — звук для него не нужен.
+    </p>
+
+    <div class="ctor-levels">
+      @for (level of levels(); track level.id; let i = $index) {
+        <article class="ctor-level">
+          <header class="ctor-level__head">
+            <span>Задание №{{ i + 1 }}</span>
+            @if (levels().length > 1) {
+              <button type="button" class="ctor-icon-btn" (click)="removeLevel(level.id)" aria-label="Удалить">
+                <i class="fi fi-rr-trash"></i>
+              </button>
+            }
+          </header>
+          <div class="ctor-answer-grid">
+            <div class="ctor-answer-col">
+              <span class="ctor-pill">Правильный ответ</span>
+              <app-asset-drop kind="image" [value]="level.image"
+                (changed)="setAsset(level.id, 'image', $event)" />
+              <app-asset-drop kind="audio" [value]="level.audio"
+                hint="Звукозапись с правильным ответом"
+                (changed)="setAsset(level.id, 'audio', $event)" />
+            </div>
+            <div class="ctor-answer-col">
+              <span class="ctor-pill ctor-pill--secondary">Неправильный ответ</span>
+              <app-asset-drop kind="image" [value]="level.distractorImage"
+                (changed)="setAsset(level.id, 'distractorImage', $event)" />
+            </div>
+          </div>
+        </article>
+      }
+      <button type="button" class="ctor-add-btn" (click)="addLevel()">
+        <i class="fi fi-rr-plus"></i> Добавить задание
+      </button>
+    </div>
+  </div>
+}
+
+@if (steps[stepIndex()].id === 'meta') {
+  <div class="ctor-step">
+    <h2>Последний шаг</h2>
+    <label class="ctor-field">
+      <span>Название игры</span>
+      <input type="text" [ngModel]="name()" (ngModelChange)="name.set($event)"
+        placeholder="Например, Звуки летнего двора" />
+    </label>
+    <label class="ctor-field">
+      <span>Описание (по желанию)</span>
+      <textarea rows="3" [ngModel]="description()" (ngModelChange)="description.set($event)"></textarea>
+    </label>
+    <div class="ctor-summary">
+      <div><strong>Заданий</strong><span>{{ build().levels.length }}</span></div>
+    </div>
+  </div>
+}

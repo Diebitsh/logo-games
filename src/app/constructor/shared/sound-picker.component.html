@@ -1,0 +1,18 @@
+<div class="sound-groups">
+  @for (group of groups; track group.id) {
+    <article class="sound-group">
+      <h3>{{ group.name }}</h3>
+      <div class="sound-grid">
+        @for (s of group.sounds; track s.char) {
+          <button
+            type="button"
+            class="sound-chip"
+            [class.soft]="s.soft"
+            [class.active]="isActive(s.char)"
+            (click)="toggle(s.char)"
+          >{{ s.char }}</button>
+        }
+      </div>
+    </article>
+  }
+</div>

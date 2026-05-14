@@ -1,0 +1,18 @@
+.sound-groups {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+}
+.sound-group {
+  border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); padding: 0.9rem;
+  h3 { margin: 0 0 0.6rem; font-family: var(--font-display); font-size: 1rem; }
+}
+.sound-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sound-chip {
+  min-width: 44px; min-height: 44px; padding: 0.3rem 0.5rem;
+  border: 2px solid var(--ink); border-radius: 12px;
+  background: var(--cream); font-family: var(--font-display);
+  font-weight: 800; font-size: 1.05rem; cursor: pointer; color: var(--ink);
+  &.soft { border-style: dashed; }
+  &.active { background: var(--tomato); color: var(--paper); }
+}

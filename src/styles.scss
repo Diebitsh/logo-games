@@ -330,6 +330,10 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   box-shadow: var(--shadow-sticker-sm); transition: transform 0.16s ease;
   &:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-sticker); }
 }
+.game-choice:focus-visible,
+.game-replay__btn:focus-visible {
+  outline: 3px solid var(--sky); outline-offset: 2px;
+}
 .game-choice__img {
   width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
   border-radius: 12px; border: 2px solid var(--ink);

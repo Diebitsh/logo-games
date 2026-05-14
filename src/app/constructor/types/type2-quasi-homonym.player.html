@@ -1,0 +1,14 @@
+<div class="cp-task">
+  <button type="button" class="cp-replay" (click)="playSound()">
+    <i class="fi fi-rr-volume"></i> Послушать слово
+  </button>
+  <p class="cp-prompt">Выбери правильную картинку</p>
+  <div class="cp-choices">
+    @for (choice of choices; track choice.img) {
+      <button type="button" class="cp-choice" (click)="pick(choice)">
+        <img class="cp-choice__img" [src]="choice.img" alt="">
+      </button>
+    }
+  </div>
+  <p class="cp-feedback">{{ feedback }}</p>
+</div>

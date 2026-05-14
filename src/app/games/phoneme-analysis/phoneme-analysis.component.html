@@ -6,7 +6,8 @@
 
 <div class="game-choices">
   @for (answer of answers; track $index) {
-    <button type="button" class="game-choice" (click)="sendAnswer($index)">
+    <button type="button" class="game-choice" (click)="sendAnswer($index)"
+      [attr.aria-label]="$index === 1 ? 'Да' : 'Нет'">
       <img class="game-choice__img" [src]="answer" alt="">
     </button>
   }

@@ -9,7 +9,7 @@ export const CUSTOM_GAME_SCHEMA = 2;
 
 interface CustomGameBase {
   id: string;
-  schema: number;
+  schema: number; // намеренно number, а не литерал: позволяет читать игры старого формата
   name: string;
   description?: string;
   createdAt: number;
@@ -22,7 +22,7 @@ export interface NonSpeechLevel {
   id: number;
   image?: CustomGameAsset;
   audio?: CustomGameAsset;
-  distractorImage?: CustomGameAsset;
+  distractorImage?: CustomGameAsset; // у отвлекающего ответа звук не нужен — только картинка
 }
 export interface NonSpeechGame extends CustomGameBase {
   type: 1;
@@ -34,7 +34,7 @@ export interface QuasiHomonymLevel {
   id: number;
   correctImage?: CustomGameAsset;
   correctAudio?: CustomGameAsset;
-  incorrectImage?: CustomGameAsset;
+  incorrectImage?: CustomGameAsset; // у слова-пары звук не нужен — только картинка
 }
 export interface QuasiHomonymGame extends CustomGameBase {
   type: 2;
@@ -75,7 +75,7 @@ export interface FirstLastLevel {
   id: number;
   image?: CustomGameAsset;
   audio?: CustomGameAsset;
-  mode: FirstLastMode;
+  mode: FirstLastMode; // «первый» или «последний» отмечается для каждого задания отдельно
   correctSoundImage?: CustomGameAsset;
   incorrectSoundImage?: CustomGameAsset;
 }
@@ -107,7 +107,7 @@ export interface RelativePositionLevel {
 }
 export interface RelativePositionGame extends CustomGameBase {
   type: 7;
-  sounds: string[];
+  sounds: string[]; // несколько звуков: игра строит вопросы про соседей каждого из них
   levels: RelativePositionLevel[];
 }
 
@@ -141,6 +141,7 @@ export function isLegacyGame(game: { schema?: number } | null | undefined): bool
   return (game?.schema ?? 1) !== CUSTOM_GAME_SCHEMA;
 }
 
+// Порядок — для отображения в интерфейсе, не числовой.
 export const GAME_TYPES: Array<{ id: CustomGameType; name: string; description: string; icon: string }> = [
   { id: 1, name: 'Различение неречевых звуков', description: 'Ребёнок угадывает источник звука: машина, вертолёт и др.', icon: 'fi-rr-volume' },
   { id: 2, name: 'Слова-квазиомонимы', description: 'Выбрать слово, отличающееся от пары одной фонемой (коза — коса).', icon: 'fi-rr-comment' },

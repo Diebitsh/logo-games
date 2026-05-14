@@ -6,9 +6,9 @@
     (fileSelected)="onFile($event)"
   >
     @if (kind() === 'image' && value()) {
-      <img [src]="value()!.data" alt="">
+      <img [src]="value()!.data" [alt]="value()!.name">
     } @else if (kind() === 'audio' && value()) {
-      <audio [src]="value()!.data" controls></audio>
+      <audio [src]="value()!.data" controls [attr.aria-label]="value()!.name"></audio>
     } @else {
       <i class="fi" [class.fi-rr-picture]="kind() === 'image'" [class.fi-rr-volume]="kind() === 'audio'"></i>
       <p>Перетащите файл сюда или нажмите, чтобы выбрать</p>

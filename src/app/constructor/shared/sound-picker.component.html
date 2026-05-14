@@ -9,6 +9,7 @@
             class="sound-chip"
             [class.soft]="s.soft"
             [class.active]="isActive(s.char)"
+            [attr.aria-pressed]="isActive(s.char)"
             (click)="toggle(s.char)"
           >{{ s.char }}</button>
         }

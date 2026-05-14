@@ -7,6 +7,7 @@
         class="sound-chip"
         [class.soft]="p.soft"
         [class.active]="selected() === p.id"
+        [attr.aria-pressed]="selected() === p.id"
         (click)="pick(p.id)"
       >{{ p.label }}</button>
     }

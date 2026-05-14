@@ -4,11 +4,12 @@ import { CustomGamesService } from './custom-games.service';
 import { CustomGame, CUSTOM_GAME_SCHEMA, GAME_TYPES, CustomGameType } from './custom-game.model';
 import { ConstructorType } from './constructor-type';
 import { Type1NonspeechConstructor } from './types/type1-nonspeech.constructor';
+import { Type2QuasiHomonymConstructor } from './types/type2-quasi-homonym.constructor';
 
 @Component({
   selector: 'app-constructor-host',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechConstructor],
+  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor],
   templateUrl: './constructor-host.component.html',
   styleUrl: './constructor-host.component.scss',
 })

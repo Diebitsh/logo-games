@@ -1,53 +1,19 @@
-.letter {
-    width: 50px;
-    height: 50px;
-    background-color: #3498db;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    border-radius: 8px;
-    cursor: pointer;
+.tiles-block { margin-bottom: 1.4rem; }
+.tiles-caption {
+  margin: 0 0 0.5rem; font-weight: 700; color: var(--text-muted);
 }
-
-.letter:hover {
-    background-color: #002fff;
-    transition: 10ms;
+.tiles {
+  display: flex; flex-wrap: wrap; gap: clamp(0.4rem, 1.5vw, 0.7rem);
+  justify-content: center;
 }
-
-.word-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+.tile {
+  width: clamp(48px, 12vw, 64px); height: clamp(48px, 12vw, 64px);
+  display: grid; place-items: center;
+  border: 2px solid var(--ink); border-radius: 12px;
+  background: var(--sky); color: var(--paper);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.4rem, 5vw, 2rem); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm);
 }
-
-.keyboard-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.keyboard-row {
-    display: flex;
-    gap: 10px;
-}
-
-.keyboard-letter {
-    width: 50px;
-    height: 50px;
-    background-color: #3498db;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-
-.badge {
-    font-size: 5em;
-    font-weight: 700;
-}
+.tile--empty { background: var(--cream-deep); color: var(--text-muted); cursor: default; }
+.tile--slot { background: var(--paper); color: var(--ink); border-style: dashed; }

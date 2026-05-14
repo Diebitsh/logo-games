@@ -1,29 +1,27 @@
-<div class="d-flex justify-content-center mb-2">
-    <button (click)="play()" class="btn btn-primary btn-lg btn-block w-15">Повтор</button>
+<div class="game-replay">
+  <button type="button" class="game-replay__btn" (click)="play()">
+    <i class="fi fi-rr-volume"></i> Повтор
+  </button>
 </div>
 
-<div class="d-flex justify-content-center mb-5">
-
-    <div class="row">
-        <div class="col-12">
-            <span style="margin-left: 0.5em; width: 2em;" class="badge bg-primary" (click)="selectSyllable(i)"
-                *ngFor="let syllable of currentSyllables; let i = index">
-                {{syllable ?? "-"}}
-            </span>
-        </div>
-    </div>
+<div class="tiles-block">
+  <p class="tiles-caption">Буквы:</p>
+  <div class="tiles">
+    @for (syllable of currentSyllables; track $index) {
+      <button type="button" class="tile" [class.tile--empty]="!syllable" (click)="selectSyllable($index)">
+        {{ syllable ?? '·' }}
+      </button>
+    }
+  </div>
 </div>
-<div class="d-flex justify-content-center">
 
-    
-
-    <div class="row">
-        <div class="col-12">
-            <span style="margin-left: 0.5em; width: 2em;" class="badge bg-primary" (click)="removeSyllable(answer[i], i)"
-                *ngFor="let syllable of currentSyllables; let i = index">
-                {{ answer[i]?.char ?? "_" }}
-            </span>
-        </div>
-    </div>
-
+<div class="tiles-block">
+  <p class="tiles-caption">Слово:</p>
+  <div class="tiles">
+    @for (syllable of currentSyllables; track $index) {
+      <button type="button" class="tile tile--slot" (click)="removeSyllable(answer[$index], $index)">
+        {{ answer[$index]?.char ?? '_' }}
+      </button>
+    }
+  </div>
 </div>

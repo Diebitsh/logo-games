@@ -1,0 +1,13 @@
+.position-options {
+  display: grid; gap: clamp(0.6rem, 2vw, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+}
+.position-btn {
+  min-height: 64px; padding: 0.8rem 1rem;
+  border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.1rem, 3vw, 1.6rem); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm); transition: transform 0.16s ease;
+  &:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-sticker); }
+}

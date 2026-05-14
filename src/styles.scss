@@ -288,3 +288,19 @@ body.a11y-filter-deuteranopia { filter: url("#deuteranopia"); }
 body.a11y-filter-tritanopia { filter: url("#tritanopia"); }
 body.a11y-filter-grayscale { filter: grayscale(1); }
 body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
+
+.ghost-link {
+  display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap;
+  text-decoration: none; color: var(--ink); font-weight: 700;
+  border: 2px solid var(--ink); border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem; background: var(--paper);
+}
+
+.script-accent {
+  display: inline-block;
+  font-family: var(--font-script);
+  color: var(--tomato);
+  transform: rotate(-2deg);
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+}

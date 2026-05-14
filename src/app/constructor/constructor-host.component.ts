@@ -17,7 +17,8 @@ export class ConstructorHostComponent {
   private router = inject(Router);
 
   /** Per-type конструктор регистрирует себя здесь через `register()`. */
-  active = signal<ConstructorType | null>(null);
+  private readonly _active = signal<ConstructorType | null>(null);
+  readonly active = this._active.asReadonly();
 
   type = signal<CustomGameType>(
     Number(this.route.snapshot.paramMap.get('type')) as CustomGameType,
@@ -41,7 +42,7 @@ export class ConstructorHostComponent {
 
   /** Вызывается per-type конструктором из его конструктора класса. */
   register(impl: ConstructorType): void {
-    this.active.set(impl);
+    this._active.set(impl);
   }
 
   advance(): void {

@@ -6,12 +6,6 @@
   h1 { font-family: var(--font-display); font-weight: 900; margin: 0 0 0.3rem; }
   p { color: var(--text-muted); margin: 0; }
 }
-.ghost-link {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  text-decoration: none; color: var(--ink); font-weight: 700;
-  border: 2px solid var(--ink); border-radius: var(--radius-pill);
-  padding: 0.5rem 1rem; background: var(--paper);
-}
 .picker__grid {
   display: grid; gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));

@@ -31,6 +31,10 @@
     @if (phase() === 'play') {
       <div class="stage stage--game">
         @switch (g.type) {
+          @case (1) {
+            <app-type1-nonspeech-player [game]="g"
+              (answered)="onAnswered($event)" (finished)="onFinished()" />
+          }
           @default {
             <div class="stage__hero">
               <i class="fi fi-rr-hammer"></i>

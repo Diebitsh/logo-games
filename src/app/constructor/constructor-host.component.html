@@ -25,6 +25,7 @@
   @if (!done()) {
     <div class="host__body">
       @switch (type()) {
+        @case (1) { <app-type1-nonspeech-constructor /> }
         @default {
           <div class="todo-card">
             <i class="fi fi-rr-hammer"></i>

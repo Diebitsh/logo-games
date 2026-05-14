@@ -50,4 +50,11 @@ describe('buildRelativeQuestion', () => {
     expect(buildRelativeQuestion(['К', 'О', 'Т'], 'К', 'before')).toBeNull();
     expect(buildRelativeQuestion(['К', 'О', 'Т'], 'Т', 'after')).toBeNull();
   });
+  it('отвлекающий вариант всегда отличается от правильного', () => {
+    // ['А','А']: pool пуст, старый код возвращал 'А' как запасной — дубликат.
+    const q = buildRelativeQuestion(['А', 'А'], 'А', 'after')!;
+    expect(q.correct).toBe('А');
+    expect(q.options.length).toBe(2);
+    expect(q.options[0]).not.toBe(q.options[1]);
+  });
 });

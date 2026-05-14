@@ -58,9 +58,12 @@ export function buildRelativeQuestion(
 
   const correct = letters[neighborIdx];
   const pool = letters.filter((_, i) => i !== neighborIdx && letters[i] !== correct);
+  // Запасные буквы на случай, когда в слове нет других звуков-кандидатов —
+  // гарантируем, что отвлекающий вариант не совпадёт с правильным.
+  const fallback = ['А', 'О', 'У', 'И', 'М', 'Н', 'Т'].filter((l) => l !== correct);
   const distractor = pool.length
     ? pool[Math.floor(Math.random() * pool.length)]
-    : correct === 'А' ? 'О' : 'А';
+    : fallback[Math.floor(Math.random() * fallback.length)];
 
   const word = direction === 'after' ? 'после' : 'до';
   return {

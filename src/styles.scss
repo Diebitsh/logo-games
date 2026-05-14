@@ -342,3 +342,108 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(1.1rem, 3vw, 1.6rem); text-align: center; margin: 0;
 }
+
+/* === Общая вёрстка per-type конструкторов === */
+.ctor-step { display: flex; flex-direction: column; gap: 1rem; }
+.ctor-step h2 { font-family: var(--font-display); margin: 0; }
+.ctor-step .muted { color: var(--text-muted); margin: 0; }
+.ctor-levels { display: flex; flex-direction: column; gap: 1rem; }
+.ctor-level {
+  border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); padding: 1rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.ctor-level__head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-display); font-weight: 800;
+}
+.ctor-answer-grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+.ctor-answer-col {
+  display: flex; flex-direction: column; gap: 0.6rem;
+  padding: 0.8rem; border-radius: var(--radius);
+  border: 2px solid var(--ink); background: var(--cream);
+}
+.ctor-pill {
+  align-self: flex-start; padding: 0.2rem 0.7rem;
+  border: 2px solid var(--ink); border-radius: var(--radius-pill);
+  font-weight: 800; font-size: 0.8rem; background: var(--mint); color: var(--paper);
+}
+.ctor-pill--secondary { background: var(--cream-deep); color: var(--ink); }
+.ctor-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.ctor-field > span { font-weight: 700; font-size: 0.9rem; }
+.ctor-field input, .ctor-field textarea {
+  font: inherit; padding: 0.6rem 0.8rem; min-height: 44px;
+  border: 2px solid var(--ink); border-radius: 12px; background: var(--paper);
+}
+.ctor-toggle-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ctor-toggle {
+  min-height: 44px; padding: 0.4rem 1rem;
+  border: 2px solid var(--ink); border-radius: var(--radius-pill);
+  background: var(--paper); font-weight: 700; cursor: pointer; color: var(--ink);
+  &.active { background: var(--tomato); color: var(--paper); }
+}
+.ctor-add-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start;
+  min-height: 44px; padding: 0.5rem 1rem;
+  border: 2px dashed var(--ink); border-radius: var(--radius-pill);
+  background: var(--paper); font-weight: 700; cursor: pointer; color: var(--ink);
+}
+.ctor-icon-btn {
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border: 2px solid var(--ink); border-radius: 10px;
+  background: var(--paper); cursor: pointer; color: var(--tomato-dark);
+}
+.ctor-summary {
+  display: grid; gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  div {
+    border: 2px solid var(--ink); border-radius: 12px;
+    padding: 0.6rem 0.8rem; background: var(--cream);
+    display: flex; flex-direction: column;
+  }
+  strong { font-size: 0.8rem; color: var(--text-muted); }
+  span { font-family: var(--font-display); font-weight: 800; }
+}
+
+/* === Общая вёрстка per-type плееров === */
+.cp-task { display: flex; flex-direction: column; gap: 1.2rem; width: 100%; align-items: center; }
+.cp-replay {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  min-height: 48px; padding: 0.7rem 1.6rem;
+  border: 2px solid var(--ink); border-radius: var(--radius-pill);
+  background: var(--sun); color: var(--ink);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm);
+}
+.cp-prompt {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1rem, 3vw, 1.3rem); text-align: center; margin: 0;
+}
+.cp-choices {
+  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem); width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+.cp-choice {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: clamp(0.6rem, 2vw, 1rem);
+  border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm); transition: transform 0.16s ease;
+  &:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-sticker); }
+}
+.cp-choice__img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 12px; border: 2px solid var(--ink);
+}
+.cp-choice__label {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1rem, 3vw, 1.4rem); margin: 0; text-align: center;
+}
+.cp-feedback {
+  font-weight: 700; color: var(--tomato-dark); margin: 0; min-height: 1.4em;
+  &.ok { color: var(--mint); }
+}

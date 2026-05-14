@@ -1,0 +1,21 @@
+<section class="picker">
+  <header class="picker__head">
+    <div>
+      <h1>Конструктор <span class="script-accent">собираем игру</span></h1>
+      <p>Выберите направление работы — для каждого свой простой мастер.</p>
+    </div>
+    <a routerLink="/my-games" class="ghost-link">
+      <i class="fi fi-rr-bookmark"></i> Мои игры
+    </a>
+  </header>
+
+  <div class="picker__grid">
+    @for (t of gameTypes; track t.id) {
+      <a class="type-card" [routerLink]="['/constructor', t.id]">
+        <span class="card-icon"><i class="fi" [class]="t.icon"></i></span>
+        <strong>{{ t.name }}</strong>
+        <span class="muted">{{ t.description }}</span>
+      </a>
+    }
+  </div>
+</section>

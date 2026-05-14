@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CustomGamesService } from './custom-games.service';
-import { CustomGame, GAME_TYPES } from './custom-game.model';
+import { CustomGame, GAME_TYPES, isLegacyGame } from './custom-game.model';
 
 @Component({
   selector: 'app-my-games',
@@ -25,6 +25,10 @@ export class MyGamesComponent {
     return this.types.find((t) => t.id === id)?.icon ?? 'fi-rr-puzzle-alt';
   }
 
+  legacy(game: CustomGame): boolean {
+    return isLegacyGame(game);
+  }
+
   async export(game: CustomGame): Promise<void> {
     await this.store.exportToFile(game);
   }
@@ -37,9 +41,7 @@ export class MyGamesComponent {
 
   async onImport(ev: Event): Promise<void> {
     const file = (ev.target as HTMLInputElement).files?.[0];
-    if (file) {
-      await this.store.importFromFile(file);
-    }
+    if (file) await this.store.importFromFile(file);
     (ev.target as HTMLInputElement).value = '';
   }
 }

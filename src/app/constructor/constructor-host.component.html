@@ -1,0 +1,67 @@
+<section class="host">
+  <header class="host__head">
+    <div>
+      <h1>{{ typeInfo()?.name }}</h1>
+      <p>{{ typeInfo()?.description }}</p>
+    </div>
+    <a routerLink="/constructor" class="ghost-link">
+      <i class="fi fi-rr-apps"></i> Все направления
+    </a>
+  </header>
+
+  @if (!done()) {
+    <ol class="stepper">
+      @for (s of steps(); track s.id; let i = $index) {
+        <li [class.active]="i === stepIndex()" [class.passed]="i < stepIndex()">
+          <span class="stepper__num">{{ i + 1 }}</span>
+          <span class="stepper__label">{{ s.label }}</span>
+        </li>
+      }
+    </ol>
+  }
+
+  <div class="progress"><div [style.width.%]="progress()"></div></div>
+
+  @if (!done()) {
+    <div class="host__body">
+      @switch (type()) {
+        @default {
+          <div class="todo-card">
+            <i class="fi fi-rr-hammer"></i>
+            <h2>Конструктор в разработке</h2>
+            <p>Этот тип игры скоро появится.</p>
+          </div>
+        }
+      }
+    </div>
+
+    <div class="actions">
+      <button type="button" class="lg-btn" (click)="back()">
+        <i class="fi fi-rr-arrow-left"></i> Назад
+      </button>
+      @if (stepIndex() < steps().length - 1) {
+        <button type="button" class="lg-btn lg-btn--tomato" [disabled]="!canAdvance()" (click)="advance()">
+          Продолжить <i class="fi fi-rr-arrow-right"></i>
+        </button>
+      } @else {
+        <button type="button" class="lg-btn lg-btn--tomato" [disabled]="!readyToSave() || saving()" (click)="save()">
+          <i class="fi fi-rr-check"></i> Создать игру
+        </button>
+      }
+    </div>
+  } @else {
+    <div class="done">
+      <div class="success-illu"><i class="fi fi-rr-confetti"></i></div>
+      <h2>Готово!</h2>
+      <p>Игра сохранена в вашем браузере и доступна в «Моих играх».</p>
+      <div class="actions" style="justify-content: center;">
+        <a routerLink="/my-games" class="lg-btn lg-btn--tomato">
+          <i class="fi fi-rr-bookmark"></i> К моим играм
+        </a>
+        <a routerLink="/constructor" class="lg-btn">
+          <i class="fi fi-rr-plus"></i> Ещё одну
+        </a>
+      </div>
+    </div>
+  }
+</section>

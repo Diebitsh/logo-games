@@ -19,7 +19,12 @@ export const routes: Routes = [
   {
     path: 'constructor',
     loadComponent: () =>
-      import('./constructor/constructor.component').then((m) => m.ConstructorComponent),
+      import('./constructor/constructor-picker.component').then((m) => m.ConstructorPickerComponent),
+  },
+  {
+    path: 'constructor/:type',
+    loadComponent: () =>
+      import('./constructor/constructor-host.component').then((m) => m.ConstructorHostComponent),
   },
   {
     path: 'my-games',

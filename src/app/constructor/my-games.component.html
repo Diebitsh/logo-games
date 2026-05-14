@@ -26,16 +26,19 @@
   </div>
 
   <div class="grid" *ngIf="games().length > 0">
-    <article class="game-card" *ngFor="let g of games()">
+    <article class="game-card" *ngFor="let g of games()" [class.legacy]="legacy(g)">
       <header>
         <span class="icon"><i class="fi" [class]="typeIcon(g.type)"></i></span>
         <div>
           <h3>{{ g.name }}</h3>
-          <span class="muted">{{ typeName(g.type) }} · звук {{ g.sound }}</span>
+          <span class="muted">{{ typeName(g.type) }}</span>
         </div>
       </header>
 
       <p class="desc" *ngIf="g.description">{{ g.description }}</p>
+      <p class="legacy-note" *ngIf="legacy(g)">
+        <i class="fi fi-rr-triangle-warning"></i> Устаревший формат — пересоздайте игру.
+      </p>
 
       <dl>
         <div><dt>Заданий</dt><dd>{{ g.levels.length }}</dd></div>
@@ -43,7 +46,7 @@
       </dl>
 
       <footer>
-        <a class="chip primary" [routerLink]="'/custom-play'" [queryParams]="{ id: g.id }">
+        <a *ngIf="!legacy(g)" class="chip primary" [routerLink]="'/custom-play'" [queryParams]="{ id: g.id }">
           <i class="fi fi-rr-play"></i> Играть
         </a>
         <button type="button" class="chip" (click)="export(g)">

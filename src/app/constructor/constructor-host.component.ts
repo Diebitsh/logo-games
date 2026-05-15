@@ -5,11 +5,12 @@ import { CustomGame, CUSTOM_GAME_SCHEMA, GAME_TYPES, CustomGameType } from './cu
 import { ConstructorType } from './constructor-type';
 import { Type1NonspeechConstructor } from './types/type1-nonspeech.constructor';
 import { Type2QuasiHomonymConstructor } from './types/type2-quasi-homonym.constructor';
+import { Type3SoundPresenceConstructor } from './types/type3-sound-presence.constructor';
 
 @Component({
   selector: 'app-constructor-host',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor],
+  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor, Type3SoundPresenceConstructor],
   templateUrl: './constructor-host.component.html',
   styleUrl: './constructor-host.component.scss',
 })

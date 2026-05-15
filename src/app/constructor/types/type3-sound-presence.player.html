@@ -1,0 +1,16 @@
+<div class="cp-task">
+  <img class="cp-choice__img" style="max-width: 260px;" [src]="current.image!.data" alt="">
+  <button type="button" class="cp-replay" (click)="playSound()">
+    <i class="fi fi-rr-volume"></i> Повторить вопрос
+  </button>
+  <p class="cp-prompt">Есть ли звук [{{ g.sound }}] в этом слове?</p>
+  <div class="cp-choices" style="grid-template-columns: repeat(2, 1fr); max-width: 360px;">
+    <button type="button" class="cp-choice" (click)="answer(true)">
+      <span class="cp-choice__label">Да</span>
+    </button>
+    <button type="button" class="cp-choice" (click)="answer(false)">
+      <span class="cp-choice__label">Нет</span>
+    </button>
+  </div>
+  <p class="cp-feedback">{{ feedback }}</p>
+</div>

@@ -39,6 +39,10 @@
             <app-type2-quasi-homonym-player [game]="g"
               (answered)="onAnswered($event)" (finished)="onFinished()" />
           }
+          @case (3) {
+            <app-type3-sound-presence-player [game]="g"
+              (answered)="onAnswered($event)" (finished)="onFinished()" />
+          }
           @default {
             <div class="stage__hero">
               <i class="fi fi-rr-hammer"></i>

@@ -5,13 +5,14 @@ import { CustomGame, GAME_TYPES, isLegacyGame } from './custom-game.model';
 import { stop } from '../../common/functions/sounds.functions';
 import { Type1NonspeechPlayer } from './types/type1-nonspeech.player';
 import { Type2QuasiHomonymPlayer } from './types/type2-quasi-homonym.player';
+import { Type3SoundPresencePlayer } from './types/type3-sound-presence.player';
 
 type Phase = 'intro' | 'play' | 'done';
 
 @Component({
   selector: 'app-custom-player',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechPlayer, Type2QuasiHomonymPlayer],
+  imports: [RouterLink, Type1NonspeechPlayer, Type2QuasiHomonymPlayer, Type3SoundPresencePlayer],
   templateUrl: './custom-player.component.html',
   styleUrl: './custom-player.component.scss',
 })

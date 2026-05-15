@@ -1,0 +1,15 @@
+<div class="cp-task">
+  <img class="cp-choice__img" style="max-width: 260px;" [src]="current.image!.data" alt="">
+  <button type="button" class="cp-replay" (click)="playSound()">
+    <i class="fi fi-rr-volume"></i> Повторить вопрос
+  </button>
+  <p class="cp-prompt">Где находится звук [{{ g.sound }}]?</p>
+  <div class="cp-choices" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+    @for (spot of spots; track spot.id) {
+      <button type="button" class="cp-choice" (click)="answer(spot.id)">
+        <span class="cp-choice__label">{{ spot.label }}</span>
+      </button>
+    }
+  </div>
+  <p class="cp-feedback">{{ feedback }}</p>
+</div>

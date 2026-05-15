@@ -1,0 +1,71 @@
+@if (steps[stepIndex()].id === 'levels') {
+  <div class="ctor-step">
+    <h2>Загрузите контент</h2>
+    <p class="muted">
+      Звукозапись слова и само слово текстом — из него соберутся буквы для игры.
+    </p>
+    <div class="ctor-levels">
+      @for (level of levels(); track level.id; let i = $index) {
+        <article class="ctor-level">
+          <header class="ctor-level__head">
+            <span>Задание №{{ i + 1 }}</span>
+            @if (levels().length > 1) {
+              <button type="button" class="ctor-icon-btn" (click)="removeLevel(level.id)" aria-label="Удалить задание">
+                <i class="fi fi-rr-trash"></i>
+              </button>
+            }
+          </header>
+          <div class="ctor-answer-col">
+            <span class="ctor-pill">Звукозапись слова</span>
+            <app-asset-drop kind="audio" [value]="level.wordAudio"
+              hint="Запишите слово, которое нужно будет собирать из звуков"
+              (changed)="setAudio(level.id, $event)" />
+          </div>
+          <label class="ctor-field">
+            <span>Слово текстом</span>
+            <input type="text" [ngModel]="level.word"
+              (ngModelChange)="setWord(level.id, $event)" placeholder="например, кот" />
+          </label>
+        </article>
+      }
+      <button type="button" class="ctor-add-btn" (click)="addLevel()">
+        <i class="fi fi-rr-plus"></i> Добавить задание
+      </button>
+    </div>
+  </div>
+}
+
+@if (steps[stepIndex()].id === 'difficulty') {
+  <div class="ctor-step">
+    <h2>Сложность перемешивания</h2>
+    <p class="muted">Как сильно перемешивать буквы при игре.</p>
+    <div class="ctor-toggle-group">
+      @for (d of difficulties; track d.id) {
+        <button type="button" class="ctor-toggle" [class.active]="difficulty() === d.id"
+          [attr.aria-pressed]="difficulty() === d.id"
+          (click)="difficulty.set(d.id)">
+          {{ d.label }} — {{ d.hint }}
+        </button>
+      }
+    </div>
+  </div>
+}
+
+@if (steps[stepIndex()].id === 'meta') {
+  <div class="ctor-step">
+    <h2>Последний шаг</h2>
+    <label class="ctor-field">
+      <span>Название игры</span>
+      <input type="text" [ngModel]="name()" (ngModelChange)="name.set($event)"
+        placeholder="Например, Собери слово" />
+    </label>
+    <label class="ctor-field">
+      <span>Описание (по желанию)</span>
+      <textarea rows="3" [ngModel]="description()" (ngModelChange)="description.set($event)"></textarea>
+    </label>
+    <div class="ctor-summary">
+      <div><strong>Сложность</strong><span>{{ difficulty() }}</span></div>
+      <div><strong>Заданий</strong><span>{{ build().levels.length }}</span></div>
+    </div>
+  </div>
+}

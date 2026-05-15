@@ -1,0 +1,26 @@
+<div class="cp-task">
+  <button type="button" class="cp-replay" (click)="playWord()">
+    <i class="fi fi-rr-volume"></i> Повтор
+  </button>
+
+  <div class="aw-slots" aria-label="Слово">
+    @for (slot of slots; track $index) {
+      <button type="button" class="aw-cell aw-cell--slot" [class.filled]="slot"
+        [attr.aria-label]="'Слот ' + ($index + 1)"
+        (click)="returnTile($index)">
+        {{ slot?.char ?? '' }}
+      </button>
+    }
+  </div>
+
+  <div class="aw-tray" aria-label="Буквы">
+    @for (tile of tray; track $index) {
+      <button type="button" class="aw-cell aw-cell--tile" [class.taken]="!tile"
+        [disabled]="!tile" (click)="takeTile($index)">
+        {{ tile?.char ?? '' }}
+      </button>
+    }
+  </div>
+
+  <p class="cp-feedback" [class.ok]="!feedback">{{ feedback }}</p>
+</div>

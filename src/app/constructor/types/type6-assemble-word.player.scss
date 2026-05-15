@@ -1,0 +1,22 @@
+.aw-slots, .aw-tray {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: clamp(0.4rem, 1.5vw, 0.7rem);
+}
+.aw-tray { margin-top: 0.4rem; }
+.aw-cell {
+  width: clamp(48px, 12vw, 64px); height: clamp(48px, 12vw, 64px);
+  display: grid; place-items: center;
+  border: 2px solid var(--ink); border-radius: 12px;
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.4rem, 5vw, 2rem); cursor: pointer;
+  box-shadow: var(--shadow-sticker-sm);
+}
+.aw-cell--slot {
+  background: var(--paper); color: var(--ink); border-style: dashed;
+  &.filled { border-style: solid; background: var(--sun); }
+}
+.aw-cell--tile { background: var(--sky); color: var(--paper); }
+.aw-cell--tile.taken {
+  background: var(--cream-deep); border-style: dashed;
+  cursor: default; box-shadow: none;
+}

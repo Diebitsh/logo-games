@@ -51,6 +51,10 @@
             <app-type5-first-last-player [game]="g"
               (answered)="onAnswered($event)" (finished)="onFinished()" />
           }
+          @case (8) {
+            <app-type8-word-change-player [game]="g"
+              (answered)="onAnswered($event)" (finished)="onFinished()" />
+          }
           @default {
             <div class="stage__hero">
               <i class="fi fi-rr-hammer"></i>

@@ -1,0 +1,11 @@
+<div class="cp-task">
+  <p class="cp-prompt">Какой звук добавить в слово «{{ current.sourceWord }}»?</p>
+  <img class="cp-choice__img" style="max-width: 240px;" [src]="current.resultImage!.data" alt="">
+  <div class="ctor-toggle-group" style="justify-content: center;">
+    @for (option of options; track option) {
+      <button type="button" class="ctor-toggle" style="font-size: 1.4rem; min-width: 56px;"
+        (click)="pick(option)">{{ option }}</button>
+    }
+  </div>
+  <p class="cp-feedback">{{ feedback }}</p>
+</div>

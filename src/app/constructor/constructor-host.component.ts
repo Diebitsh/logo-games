@@ -7,11 +7,12 @@ import { Type1NonspeechConstructor } from './types/type1-nonspeech.constructor';
 import { Type2QuasiHomonymConstructor } from './types/type2-quasi-homonym.constructor';
 import { Type3SoundPresenceConstructor } from './types/type3-sound-presence.constructor';
 import { Type4SoundPositionConstructor } from './types/type4-sound-position.constructor';
+import { Type5FirstLastConstructor } from './types/type5-first-last.constructor';
 
 @Component({
   selector: 'app-constructor-host',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor, Type3SoundPresenceConstructor, Type4SoundPositionConstructor],
+  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor, Type3SoundPresenceConstructor, Type4SoundPositionConstructor, Type5FirstLastConstructor],
   templateUrl: './constructor-host.component.html',
   styleUrl: './constructor-host.component.scss',
 })

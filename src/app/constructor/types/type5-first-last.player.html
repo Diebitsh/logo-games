@@ -1,0 +1,15 @@
+<div class="cp-task">
+  <img class="cp-choice__img" style="max-width: 220px;" [src]="current.image!.data" alt="">
+  <button type="button" class="cp-replay" (click)="playSound()">
+    <i class="fi fi-rr-volume"></i> Повторить вопрос
+  </button>
+  <p class="cp-prompt">{{ prompt }}</p>
+  <div class="cp-choices" style="grid-template-columns: repeat(2, 1fr); max-width: 360px;">
+    @for (choice of choices; track choice.img) {
+      <button type="button" class="cp-choice" (click)="pick(choice)">
+        <img class="cp-choice__img" [src]="choice.img" alt="">
+      </button>
+    }
+  </div>
+  <p class="cp-feedback">{{ feedback }}</p>
+</div>

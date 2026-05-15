@@ -47,6 +47,10 @@
             <app-type4-sound-position-player [game]="g"
               (answered)="onAnswered($event)" (finished)="onFinished()" />
           }
+          @case (5) {
+            <app-type5-first-last-player [game]="g"
+              (answered)="onAnswered($event)" (finished)="onFinished()" />
+          }
           @default {
             <div class="stage__hero">
               <i class="fi fi-rr-hammer"></i>

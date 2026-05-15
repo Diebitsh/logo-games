@@ -1,0 +1,72 @@
+@if (steps[stepIndex()].id === 'sound') {
+  <div class="ctor-step">
+    <h2>Выберите звук</h2>
+    <p class="muted">С каким звуком будет работа. Мягкие звуки помечены пунктиром.</p>
+    <app-sound-picker mode="single" [(selected)]="sound" />
+  </div>
+}
+
+@if (steps[stepIndex()].id === 'levels') {
+  <div class="ctor-step">
+    <h2>Загрузите контент</h2>
+    <p class="muted">Картинка слова, звукозапись вопроса и отметка места звука.</p>
+    <div class="ctor-levels">
+      @for (level of levels(); track level.id; let i = $index) {
+        <article class="ctor-level">
+          <header class="ctor-level__head">
+            <span>Задание №{{ i + 1 }}</span>
+            @if (levels().length > 1) {
+              <button type="button" class="ctor-icon-btn" (click)="removeLevel(level.id)" aria-label="Удалить">
+                <i class="fi fi-rr-trash"></i>
+              </button>
+            }
+          </header>
+          <div class="ctor-answer-grid">
+            <div class="ctor-answer-col">
+              <span class="ctor-pill">Картинка</span>
+              <app-asset-drop kind="image" [value]="level.image"
+                (changed)="setAsset(level.id, 'image', $event)" />
+            </div>
+            <div class="ctor-answer-col">
+              <span class="ctor-pill">Звукозапись вопроса</span>
+              <app-asset-drop kind="audio" [value]="level.audio"
+                [hint]="audioHint()"
+                (changed)="setAsset(level.id, 'audio', $event)" />
+            </div>
+          </div>
+          <div class="ctor-field">
+            <span>Правильный ответ</span>
+            <div class="ctor-toggle-group">
+              @for (spot of spots; track spot.id) {
+                <button type="button" class="ctor-toggle" [class.active]="level.position === spot.id"
+                  (click)="setPosition(level.id, spot.id)">{{ spot.label }}</button>
+              }
+            </div>
+          </div>
+        </article>
+      }
+      <button type="button" class="ctor-add-btn" (click)="addLevel()">
+        <i class="fi fi-rr-plus"></i> Добавить задание
+      </button>
+    </div>
+  </div>
+}
+
+@if (steps[stepIndex()].id === 'meta') {
+  <div class="ctor-step">
+    <h2>Последний шаг</h2>
+    <label class="ctor-field">
+      <span>Название игры</span>
+      <input type="text" [ngModel]="name()" (ngModelChange)="name.set($event)"
+        placeholder="Например, Где звук [Р]" />
+    </label>
+    <label class="ctor-field">
+      <span>Описание (по желанию)</span>
+      <textarea rows="3" [ngModel]="description()" (ngModelChange)="description.set($event)"></textarea>
+    </label>
+    <div class="ctor-summary">
+      <div><strong>Звук</strong><span>{{ soundChar() }}</span></div>
+      <div><strong>Заданий</strong><span>{{ build().levels.length }}</span></div>
+    </div>
+  </div>
+}

@@ -55,6 +55,10 @@
             <app-type8-word-change-player [game]="g"
               (answered)="onAnswered($event)" (finished)="onFinished()" />
           }
+          @case (7) {
+            <app-type7-relative-position-player [game]="g"
+              (answered)="onAnswered($event)" (finished)="onFinished()" />
+          }
           @default {
             <div class="stage__hero">
               <i class="fi fi-rr-hammer"></i>

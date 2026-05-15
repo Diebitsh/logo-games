@@ -396,6 +396,13 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   border: 2px solid var(--ink); border-radius: 10px;
   background: var(--paper); cursor: pointer; color: var(--tomato-dark);
 }
+.letter-cell.letter-cell {
+  /* Удвоенный селектор повышает специфичность, чтобы перекрыть `.ctor-field input`. */
+  width: 44px; height: 44px; min-height: 44px; padding: 0; text-align: center;
+  font: inherit; font-family: var(--font-display); font-weight: 800;
+  font-size: 1.2rem; text-transform: uppercase;
+  border: 2px solid var(--ink); border-radius: 10px; background: var(--paper);
+}
 .ctor-summary {
   display: grid; gap: 0.6rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));

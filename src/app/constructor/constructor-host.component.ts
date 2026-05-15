@@ -9,11 +9,12 @@ import { Type3SoundPresenceConstructor } from './types/type3-sound-presence.cons
 import { Type4SoundPositionConstructor } from './types/type4-sound-position.constructor';
 import { Type5FirstLastConstructor } from './types/type5-first-last.constructor';
 import { Type8WordChangeConstructor } from './types/type8-word-change.constructor';
+import { Type7RelativePositionConstructor } from './types/type7-relative-position.constructor';
 
 @Component({
   selector: 'app-constructor-host',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor, Type3SoundPresenceConstructor, Type4SoundPositionConstructor, Type5FirstLastConstructor, Type8WordChangeConstructor],
+  imports: [RouterLink, Type1NonspeechConstructor, Type2QuasiHomonymConstructor, Type3SoundPresenceConstructor, Type4SoundPositionConstructor, Type5FirstLastConstructor, Type8WordChangeConstructor, Type7RelativePositionConstructor],
   templateUrl: './constructor-host.component.html',
   styleUrl: './constructor-host.component.scss',
 })

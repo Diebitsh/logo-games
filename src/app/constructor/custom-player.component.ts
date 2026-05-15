@@ -9,13 +9,14 @@ import { Type3SoundPresencePlayer } from './types/type3-sound-presence.player';
 import { Type4SoundPositionPlayer } from './types/type4-sound-position.player';
 import { Type5FirstLastPlayer } from './types/type5-first-last.player';
 import { Type8WordChangePlayer } from './types/type8-word-change.player';
+import { Type7RelativePositionPlayer } from './types/type7-relative-position.player';
 
 type Phase = 'intro' | 'play' | 'done';
 
 @Component({
   selector: 'app-custom-player',
   standalone: true,
-  imports: [RouterLink, Type1NonspeechPlayer, Type2QuasiHomonymPlayer, Type3SoundPresencePlayer, Type4SoundPositionPlayer, Type5FirstLastPlayer, Type8WordChangePlayer],
+  imports: [RouterLink, Type1NonspeechPlayer, Type2QuasiHomonymPlayer, Type3SoundPresencePlayer, Type4SoundPositionPlayer, Type5FirstLastPlayer, Type8WordChangePlayer, Type7RelativePositionPlayer],
   templateUrl: './custom-player.component.html',
   styleUrl: './custom-player.component.scss',
 })

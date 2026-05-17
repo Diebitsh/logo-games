@@ -188,6 +188,27 @@ export const SOUND_GROUPS: Array<{
       { char: 'М' }, { char: 'М’', soft: true }, { char: 'Н' }, { char: 'Н’', soft: true }, { char: 'Й' },
     ],
   },
+  {
+    id: 'voiced',
+    name: 'Звонкие согласные',
+    sounds: [
+      { char: 'Б' }, { char: 'Б’', soft: true },
+      { char: 'В' }, { char: 'В’', soft: true },
+      { char: 'Г' }, { char: 'Г’', soft: true },
+      { char: 'Д' }, { char: 'Д’', soft: true },
+    ],
+  },
+  {
+    id: 'voiceless',
+    name: 'Глухие согласные',
+    sounds: [
+      { char: 'П' }, { char: 'П’', soft: true },
+      { char: 'Ф' }, { char: 'Ф’', soft: true },
+      { char: 'К' }, { char: 'К’', soft: true },
+      { char: 'Т' }, { char: 'Т’', soft: true },
+      { char: 'Х' }, { char: 'Х’', soft: true },
+    ],
+  },
 ];
 
 /** Парные звуки для типа 2 (квазиомонимы): твёрдые и мягкие пары. */

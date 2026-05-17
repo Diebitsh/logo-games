@@ -319,8 +319,8 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   box-shadow: var(--shadow-sticker-sm);
 }
 .game-choices {
-  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem); justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 220px));
 }
 .game-choice {
   display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
@@ -335,7 +335,7 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   outline: 3px solid var(--sky); outline-offset: 2px;
 }
 .game-choice__img {
-  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  width: min(100%, 160px); aspect-ratio: 1 / 1; object-fit: cover;
   border-radius: 12px; border: 2px solid var(--ink);
 }
 .game-choice__label {
@@ -431,8 +431,8 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   font-size: clamp(1rem, 3vw, 1.3rem); text-align: center; margin: 0;
 }
 .cp-choices {
-  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem); width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  display: grid; gap: clamp(0.6rem, 2vw, 1.2rem); width: 100%; justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 220px));
 }
 .cp-choice {
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
@@ -443,7 +443,7 @@ body.a11y-filter-invert { filter: invert(1) hue-rotate(180deg); }
   &:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-sticker); }
 }
 .cp-choice__img {
-  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  width: min(100%, 180px); aspect-ratio: 1 / 1; object-fit: cover;
   border-radius: 12px; border: 2px solid var(--ink);
 }
 .cp-choice__label {
